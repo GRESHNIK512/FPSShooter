@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 668cb926a532a034d8a8bda4c0620bbb, type: 3}
+  m_Name: WeaponConfig
+  m_EditorClassIdentifier: 
+  Weapons:
+  - Prefab: {fileID: 8258902923376479775, guid: 0c23acc55de41a1428f3188310ae4e95,
+      type: 3}
+    WeaponType: 0
+    SupportedFireModes: 1
+    DefaultFireMode: 1
+    BurstCount: 1
+    TimeReaload: 3
+    ShootingDelay: 999
+    MagazineSize: 12
+    AmmoType: 0
+    DamageFalloffCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 8
+        outSlope: 8
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 5
+        inSlope: 8
+        outSlope: -0.53379697
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 8
+        value: 0.99652296
+        inSlope: -0.53379697
+        outSlope: -0.53379697
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    DistanceShoot: 8
+    MinDamage: 1
+    MaxDamage: 5
+  - Prefab: {fileID: 4047169002933741479, guid: 9495310878e1e8a4eba05fa186d5fdc1,
+      type: 3}
+    WeaponType: 1
+    SupportedFireModes: 7
+    DefaultFireMode: 4
+    BurstCount: 3
+    TimeReaload: 5
+    ShootingDelay: 0.1
+    MagazineSize: 30
+    AmmoType: 1
+    DamageFalloffCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 5
+        inSlope: -3.0831847
+        outSlope: 20.000002
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 15.000001
+        inSlope: 20.000002
+        outSlope: -0.7179485
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 20
+        value: 1.0000044
+        inSlope: -0.7179485
+        outSlope: -0.7179485
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    DistanceShoot: 20
+    MinDamage: 5
+    MaxDamage: 15

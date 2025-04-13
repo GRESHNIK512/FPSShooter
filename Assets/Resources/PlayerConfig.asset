@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7686c8ad426794c48bbb534e232f47aa, type: 3}
+  m_Name: PlayerConfig
+  m_EditorClassIdentifier: 
+  PlayerView: {fileID: 874196266426237651, guid: f51c3788e860843449c749c5981b294b,
+    type: 3}
+  Speed: 2
+  JumpHeight: 2
+  GroundLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  SitHeight: 0.65
+  SitDownDelay: 1
+  Sensitivity: 4
+  RightPersentScreenArea: 0.7
+  MaxDistanceRay: 100
+  ShootLayerMasks:
+    serializedVersion: 2
+    m_Bits: 136
+  ShootTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
