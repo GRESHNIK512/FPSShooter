@@ -18,7 +18,7 @@ public abstract class LevelObject : MonoBehaviour, IUnlinkListener, IPoolable
         _gameEntity.isObjectLevel = true;
         _gameEntity.AddTransform(transform);
         _gameEntity.AddUnlinkListener(this);
-        Show();
+        EnableObject(true);
 
 #if UNITY_EDITOR
         gameObject.Link(_gameEntity);
@@ -34,8 +34,8 @@ public abstract class LevelObject : MonoBehaviour, IUnlinkListener, IPoolable
         _gameEntity.Destroy(); 
     } 
 
-    public void Show()
+    public void EnableObject(bool visible)
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(visible);
     }
 }

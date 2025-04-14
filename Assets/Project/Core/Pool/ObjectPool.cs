@@ -4,9 +4,9 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     private MonoBehaviour _poolPrefab;
-
     private Queue<IPoolable> _objectQueue = new();
-    private List<IPoolable> _activeObjects = new();
+
+    private IPoolable _poolableObj;
 
     public void Initialize(MonoBehaviour poolPrefab, int initialCount)
     {
@@ -20,40 +20,30 @@ public class ObjectPool : MonoBehaviour
 
     private IPoolable CreateObject(bool putInQueue)
     {
-        var obj = (IPoolable)Instantiate(_poolPrefab, transform);
-        obj.ReturnPoolEvent += ReturnObject;
+        _poolableObj = (IPoolable)Instantiate(_poolPrefab, transform);
+        _poolableObj.ReturnPoolEvent += ReturnObject;
 
         if (putInQueue)
         {
-            obj.GameObject.SetActive(false);
-            _objectQueue.Enqueue(obj);
+            _poolableObj.GameObject.SetActive(false);
+            _objectQueue.Enqueue(_poolableObj);
         }
 
-        return obj;
+        return _poolableObj;
     }
 
     public IPoolable GetObject(Transform newParent)
     {
-        var obj = _objectQueue.Count > 0 ? _objectQueue.Dequeue() : CreateObject(false);
-        obj.Transform.SetParent(newParent);
-        obj.Transform.localPosition = Vector3.zero;
-        _activeObjects.Add(obj);
-        return obj;
+        _poolableObj = _objectQueue.Count > 0 ? _objectQueue.Dequeue() : CreateObject(false);
+        _poolableObj.Transform.SetParent(newParent);
+        _poolableObj.Transform.localPosition = Vector3.zero; 
+        return _poolableObj;
     }
 
     public void ReturnObject(IPoolable obj)
     {
         obj.GameObject.SetActive(false); //dirt 1 time 
         obj.Transform.SetParent(transform);
-        _objectQueue.Enqueue(obj);
-        _activeObjects.Remove(obj);
-    }
-
-    public void ReturnAllActiveObjects()
-    {
-        for (int i = _activeObjects.Count - 1; i >= 0; i--)
-        {
-            ReturnObject(_activeObjects[i]);
-        }
-    }
+        _objectQueue.Enqueue(obj); 
+    }  
 }

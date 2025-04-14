@@ -50,8 +50,7 @@ namespace Game
                     _levelManagerEnt.isRepeatLevel = true; 
                 }
                 else
-                {
-                    unitEnt.isUnlink = true;
+                { 
                     if (_unitLiveBotGroup.count == 0)
                     { 
                         ClearInteface();

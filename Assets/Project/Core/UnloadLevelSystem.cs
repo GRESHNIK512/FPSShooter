@@ -41,7 +41,7 @@ namespace Game
             levelManagerEnt.isUnloadLevelInProcess = true;
 
             foreach (var levelObjEnt in _levelObjectGroup.GetEntities())
-            {
+            { 
                 levelObjEnt.isUnlink = true;
             }
             
