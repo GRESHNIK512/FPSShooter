@@ -17,27 +17,28 @@ public static class UiComponentsLookup {
     public const int TrigRefreshStatusWindowDelayListener = 6;
     public const int Button = 7;
     public const int CanvasEnable = 8;
-    public const int GameLevelWindow = 9;
-    public const int GraphicRaycasterEnable = 10;
-    public const int Joystick = 11;
-    public const int JoystickDirection = 12;
-    public const int JumpPlayerButton = 13;
-    public const int LoseEndGameWindow = 14;
-    public const int MainMenuButton = 15;
-    public const int MainMenuWindow = 16;
-    public const int NextLevelButton = 17;
-    public const int RectTransform = 18;
-    public const int ShootButton = 19;
-    public const int ShowOnlyThisWindow = 20;
-    public const int SitDownButton = 21;
-    public const int StartGameButton = 22;
-    public const int TrigRefreshStatusWindowDelay = 23;
-    public const int TrigTryPlayerClick = 24;
-    public const int Window = 25;
-    public const int WinEndGameWindow = 26;
-    public const int UiHpListener = 27;
+    public const int CloseGameLevelButton = 9;
+    public const int GameLevelWindow = 10;
+    public const int GraphicRaycasterEnable = 11;
+    public const int Joystick = 12;
+    public const int JoystickDirection = 13;
+    public const int JumpPlayerButton = 14;
+    public const int LoseEndGameWindow = 15;
+    public const int MainMenuButton = 16;
+    public const int MainMenuWindow = 17;
+    public const int NextLevelButton = 18;
+    public const int RectTransform = 19;
+    public const int ShootButton = 20;
+    public const int ShowOnlyThisWindow = 21;
+    public const int SitDownButton = 22;
+    public const int StartGameButton = 23;
+    public const int TrigRefreshStatusWindowDelay = 24;
+    public const int TrigTryPlayerClick = 25;
+    public const int Window = 26;
+    public const int WinEndGameWindow = 27;
+    public const int UiHpListener = 28;
 
-    public const int TotalComponents = 28;
+    public const int TotalComponents = 29;
 
     public static readonly string[] componentNames = {
         "CanvasEnableListener",
@@ -49,6 +50,7 @@ public static class UiComponentsLookup {
         "TrigRefreshStatusWindowDelayListener",
         "Button",
         "CanvasEnable",
+        "CloseGameLevelButton",
         "GameLevelWindow",
         "GraphicRaycasterEnable",
         "Joystick",
@@ -80,6 +82,7 @@ public static class UiComponentsLookup {
         typeof(TrigRefreshStatusWindowDelayListenerComponent),
         typeof(Ui.ButtonComponent),
         typeof(Ui.CanvasEnableComponent),
+        typeof(Ui.CloseGameLevelButtonComponent),
         typeof(Ui.GameLevelWindowComponent),
         typeof(Ui.GraphicRaycasterEnableComponent),
         typeof(Ui.JoystickComponent),

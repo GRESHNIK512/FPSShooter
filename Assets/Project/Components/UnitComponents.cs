@@ -1,12 +1,11 @@
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Game, Unique]
-public class PlayerComponent : IComponent { }
-
-[Game]
-public class UnitIdComponent : IComponent { }
+public class PlayerComponent : IComponent { }  
 
 [Game]
 public class UnitComponent : IComponent { }
@@ -105,4 +104,10 @@ public class ShootPointComponent : IComponent
 public class AgroShootingComponent : IComponent
 {
     public float Value;
+}
+
+[Game]
+public class InventoryIdComponent : IComponent
+{
+    public List<int> Value;
 } 

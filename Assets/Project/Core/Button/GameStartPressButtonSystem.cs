@@ -11,10 +11,9 @@ namespace Button
         private GameEntity _levelManagerEnt;
         private DataEntity _clientDataEnt;
 
-
         private IGroup<UiEntity> _windowGroup;
         private IGroup<GameEntity> _startLoadLevelGroup;
-        private List<int> _allLevelIndex = new();
+        private List<int> _LevelIndexs = new();
 
         public GameStartPressButtonSystem(Contexts contexts) : base(contexts.ui)
         {
@@ -61,14 +60,15 @@ namespace Button
                     _clientDataEnt.ReplaceCurrentSceneIndex(currentSceneIndex);
                     _levelManagerEnt.isRepeatLevel = false;
 
-                    var asyncLoad = SceneManager.LoadSceneAsync(currentSceneIndex, LoadSceneMode.Additive);
-                    asyncLoad.completed += LoadComplete;
+                    StartLoadLevelAsync(currentSceneIndex); 
                 } 
             }
         }
 
-        private void LoadComplete(AsyncOperation obj)
+        private async void StartLoadLevelAsync(int levelIndex)
         {
+            await SceneManager.LoadSceneAsync(levelIndex, LoadSceneMode.Additive);
+
             foreach (var windowEnt in _windowGroup.GetEntities())
             {
                 windowEnt.isShowOnlyThisWindow = windowEnt.isGameLevelWindow;
@@ -79,17 +79,17 @@ namespace Button
 
         private void SetNewIndexScene(in int currentSceneIndex, out int newSceneIndex)
         {
-            if (_allLevelIndex.Count == 0)
+            if (_LevelIndexs.Count == 0)
             {
                 for (int i = 0; i < ConfigsManager.LevelConfig.MaxlevelCount; i++)
                 {
                     if (i == currentSceneIndex) continue;
-                    _allLevelIndex.Add(i);
+                    _LevelIndexs.Add(i);
                 }
             }
 
-            newSceneIndex = _allLevelIndex[Random.Range(0, _allLevelIndex.Count)];
-            _allLevelIndex.Remove(newSceneIndex);
+            newSceneIndex = _LevelIndexs[Random.Range(0, _LevelIndexs.Count)];
+            _LevelIndexs.Remove(newSceneIndex);
         }
     }
 }

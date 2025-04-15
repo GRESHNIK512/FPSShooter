@@ -18,9 +18,9 @@ MonoBehaviour:
     WeaponType: 0
     SupportedFireModes: 1
     DefaultFireMode: 1
-    BurstCount: 1
+    BurstCount: 0
     TimeReaload: 3
-    ShootingDelay: 999
+    ShootingDelay: 0.15
     MagazineSize: 12
     AmmoType: 0
     DamageFalloffCurve:
@@ -28,18 +28,9 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: 8
-        outSlope: 8
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.5
         value: 5
-        inSlope: 8
-        outSlope: -0.53379697
+        inSlope: 17.40013
+        outSlope: -0.50043464
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -47,8 +38,8 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 8
         value: 0.99652296
-        inSlope: -0.53379697
-        outSlope: -0.53379697
+        inSlope: -0.50043464
+        outSlope: -0.50043464
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -74,18 +65,9 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 5
-        inSlope: -3.0831847
-        outSlope: 20.000002
-        tangentMode: 69
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.5
         value: 15.000001
         inSlope: 20.000002
-        outSlope: -0.7179485
+        outSlope: -0.6999998
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -93,8 +75,8 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 20
         value: 1.0000044
-        inSlope: -0.7179485
-        outSlope: -0.7179485
+        inSlope: -0.6999998
+        outSlope: -0.6999998
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334

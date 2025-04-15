@@ -27,4 +27,7 @@ namespace Ui
 
     [Ui]
     public class MainMenuButtonComponent : IComponent { }
+
+    [Ui]
+    public class CloseGameLevelButtonComponent : IComponent { }
 }

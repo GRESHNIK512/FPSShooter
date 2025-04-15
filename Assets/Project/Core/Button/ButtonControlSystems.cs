@@ -15,6 +15,8 @@ namespace Button
 
             Add(new NextLevelPressButtonSystem(contexts));
             Add(new MainMenuPressButtonSystem(contexts));
+
+            Add(new CloseGameLevelPressButtonSystem(contexts));
         }
     }
 }

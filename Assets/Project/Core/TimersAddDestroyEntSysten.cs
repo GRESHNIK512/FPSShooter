@@ -26,11 +26,8 @@ namespace Core
         {
             foreach (var timerEnt in entities)
             {
-                //if (timerEnt.isEnabled)
-                //{
-                    timerEnt.AddStartTimeDelay(timerEnt.time.Value);
-                    timerEnt.isDestroyOnEndLevel = true;
-                //}
+                timerEnt.AddOriginalTimeDelay(timerEnt.time.Value);
+                timerEnt.isDestroyOnEndLevel = true; 
             }
         }
     }

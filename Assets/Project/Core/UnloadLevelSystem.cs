@@ -9,6 +9,7 @@ namespace Game
     {
         private Contexts _context;
         private IGroup<GameEntity> _levelObjectGroup;
+        private IGroup<GameEntity> _destroyOnEndLevelGroup;
         private IGroup<UiEntity> _starGameButtonGroup;
 
         public UnloadLevelSystem(Contexts contexts) : base (contexts.game)
@@ -16,6 +17,7 @@ namespace Game
             _context = contexts;
             _levelObjectGroup = _context.game.GetGroup(GameMatcher.ObjectLevel);
             _starGameButtonGroup = _context.ui.GetGroup(UiMatcher.StartGameButton);
+            _destroyOnEndLevelGroup = _context.game.GetGroup(GameMatcher.DestroyOnEndLevel);
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -32,17 +34,22 @@ namespace Game
         {
             foreach (var levelManagerEnt in entities) 
             {
-                UnloadLevel(levelManagerEnt);
+                UnloadLevelAsync(levelManagerEnt);
             }
         }
 
-        private async void UnloadLevel(GameEntity levelManagerEnt)
+        private async void UnloadLevelAsync(GameEntity levelManagerEnt)
         {
             levelManagerEnt.isUnloadLevelInProcess = true;
 
             foreach (var levelObjEnt in _levelObjectGroup.GetEntities())
             { 
                 levelObjEnt.isUnlink = true;
+            }
+
+            foreach (var destroyEnt in _destroyOnEndLevelGroup.GetEntities())
+            {
+                destroyEnt.Destroy();
             }
             
             await SceneManager.UnloadSceneAsync(_context.data.clientDataEntity.currentSceneIndex.Value);
@@ -51,11 +58,12 @@ namespace Game
 
             if (levelManagerEnt.isNeedLoadNextLevelAfterUnload) 
             {
+                levelManagerEnt.isNeedLoadNextLevelAfterUnload = false;
+               
                 foreach (var startGameButtonEnt in _starGameButtonGroup.GetEntities())
                 {
                     startGameButtonEnt.isTrigTryPlayerClick = true;
-                }
-                levelManagerEnt.isNeedLoadNextLevelAfterUnload = false;
+                } 
             }
         }
     }

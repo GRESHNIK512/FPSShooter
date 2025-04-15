@@ -3,7 +3,14 @@ using Entitas.CodeGeneration.Attributes;
 using UnityEngine;
 
 [Game]
-public class WeaponComponent : IComponent { }   
+public class WeaponComponent : IComponent { }
+
+[Game]
+public sealed class IdComponent : IComponent //context.GetEntityWithId(id);
+{
+    [PrimaryEntityIndex]
+    public int Value;
+}
 
 [Game]
 public class SelectComponent : IComponent { }

@@ -49,21 +49,29 @@ namespace Game
                     Debug.LogError("Add WeaponType in AddWeaponBotSystem");
                     continue;
                 }
+               
+                InitWeapon();
 
-                _weapon.Init();
-                _weaponEnt = _weapon.GameEntity;
-
-                _weaponEnt.AddWeaponType(_weaponSetting.WeaponType);
-                _weaponEnt.AddSupportedFireModes(_weaponSetting.SupportedFireModes);
-                _weaponEnt.AddDefaultFireMode(_weaponSetting.DefaultFireMode);
-                _weaponEnt.AddBurstCount(_weaponSetting.BurstCount);
-                _weaponEnt.AddTimeReload(_weaponSetting.TimeReaload);
-                _weaponEnt.AddShootingDelay(_weaponSetting.ShootingDelay);
-                _weaponEnt.AddMagazineSize(_weaponSetting.MagazineSize);
-                _weaponEnt.AddAmmoType(_weaponSetting.AmmoType);
-                _weaponEnt.AddDamageFalloffCurve(_weaponSetting.DamageFalloffCurve);
-                _weaponEnt.AddDistanceShoot(_weaponSetting.DistanceShoot);
+                var inventoryEnt = _context.game.GetEntityWithId(unitEnt.inventoryId.Value[0]);
+                inventoryEnt.AddWeaponsId(new List<int> { _weaponEnt.id.Value });
             }
+        }
+
+        private void InitWeapon() 
+        {
+            _weapon.Init();
+            _weaponEnt = _weapon.GameEntity;
+
+            _weaponEnt.AddWeaponType(_weaponSetting.WeaponType);
+            _weaponEnt.AddSupportedFireModes(_weaponSetting.SupportedFireModes);
+            _weaponEnt.AddDefaultFireMode(_weaponSetting.DefaultFireMode);
+            _weaponEnt.AddBurstCount(_weaponSetting.BurstCount);
+            _weaponEnt.AddTimeReload(_weaponSetting.TimeReaload);
+            _weaponEnt.AddShootingDelay(_weaponSetting.ShootingDelay);
+            _weaponEnt.AddMagazineSize(_weaponSetting.MagazineSize);
+            _weaponEnt.AddAmmoType(_weaponSetting.AmmoType);
+            _weaponEnt.AddDamageFalloffCurve(_weaponSetting.DamageFalloffCurve);
+            _weaponEnt.AddDistanceShoot(_weaponSetting.DistanceShoot);
         }
     }
 }

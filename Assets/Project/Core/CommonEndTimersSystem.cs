@@ -19,10 +19,12 @@ namespace Core
         {  
             foreach (var timerEnt in _timersGroup.GetEntities())
             {
+                if (timerEnt.isTimerOnPause) continue;
+                
                 _newTime = timerEnt.time.Value - Time.deltaTime;
                 if (_newTime < 0f)
                     timerEnt.isTrigTimerEnd = true;
-                else if (!timerEnt.isTimerOnPause)
+                else 
                     timerEnt.ReplaceTime(_newTime);
             }
         }

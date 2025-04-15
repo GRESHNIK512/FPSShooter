@@ -12,7 +12,7 @@ public class BotView : Unit, IUnitRotationListener
 
     public void OnUnitRotation(GameEntity entity, Vector3 value)
     {
-        var _currentModelRotation = _unitModelTranform.rotation;
+        var _currentModelRotation = _unitModelTranform.localRotation;
         var _currentWeaponRotation = _weaponTranform.localRotation;
 
         // Целевое вращение (меняем только ось Y)

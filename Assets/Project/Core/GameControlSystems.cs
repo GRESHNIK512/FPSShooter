@@ -8,6 +8,8 @@ namespace Game
         { 
             Add(new SpawnPlayerSystem(contexts));
             Add(new SpawnBotSystem(contexts));
+
+            Add(new CreateUnitInventorySystem(contexts));
             Add(new AddWeaponBotSystem(contexts));
 
             Add(new SitControlPlayerSystem(contexts)); 

@@ -18,9 +18,7 @@ namespace Core
             
             Add(new TimerControlSystems(contexts));
             
-            Add(new Game.GameControlSystems(contexts));
-
-
+            Add(new Game.GameControlSystems(contexts));  
 
             //AutoGenerate
             Add(new DataEventSystems(contexts));

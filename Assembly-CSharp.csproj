@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameCaplsuleOriginalHeightComponent.cs" />
+    <Compile Include="Assets\Project\Scripts\GameLevel\Weapon\Pistol.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Components\VelocityListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameNeedLoadNextLevelAfterUnloadComponent.cs" />
     <Compile Include="Assets\Project\Scripts\SceneUI\Button\LoseEndGameWindow\MainMenuButtonView.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Assets\Project\Scripts\GameLevel\Unit\Unit.cs" />
     <Compile Include="Assets\Project\Core\FixedGame\PlayerIcreaseVelositySystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Data\Systems\RemoveDataLoadFailDataSystem.cs" />
+    <Compile Include="Assets\Entitas\Generated\Game\Components\GameWeaponsIdComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiGraphicRaycasterEnableListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiGameLevelWindowComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Components\KeyDataListenerComponent.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Assets\Project\Scripts\Configs\AllConfig\PlayerConfig.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameSelectComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiWinEndGameWindowComponent.cs" />
+    <Compile Include="Assets\Project\Scripts\SceneUI\Button\GameLevelWindow\CloseGameLevelButtonView.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\UiCleanupSystems.cs" />
     <Compile Include="Assets\Project\Core\SaveDataSystem.cs" />
     <Compile Include="Assets\Project\Scripts\SceneUI\Windows\MainMenuWindowView.cs" />
@@ -123,10 +126,10 @@
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameAmmoTypeComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Components\RectTransformListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameJumpListenerComponent.cs" />
+    <Compile Include="Assets\Project\Scripts\GameLevel\Weapon\M16.cs" />
     <Compile Include="Assets\Entitas\Generated\Feature.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Systems\TouchDeltaPositionEventSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameHpComponent.cs" />
-    <Compile Include="Assets\Entitas\Generated\Game\Components\GameUnitIdComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Input\Components\InputTouchDeltaPositionListenerComponent.cs" />
     <Compile Include="Assets\Project\Scripts\Configs\ConfigManager.cs" />
     <Compile Include="Assets\Project\Scripts\SceneUI\Windows\GameLevelWindowView.cs" />
@@ -139,11 +142,11 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Entitas\Generated\Data\Components\DataCurrentSceneIndexComponent.cs" />
     <Compile Include="Assets\Project\Scripts\SceneUI\Button\GameLevelWindow\ShootButtonView.cs" />
-    <Compile Include="Assets\Project\Core\PlayerGroundCollisionSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\GameContext.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameUnitRotationListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiGraphicRaycasterEnableComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameCaplsuleHeightListenerComponent.cs" />
+    <Compile Include="Assets\Entitas\Generated\Game\Components\GameInventoryIdComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameVelocityListenerComponent.cs" />
     <Compile Include="Assets\Project\Core\LevelManagerInitSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Components\ReloadingListenerComponent.cs" />
@@ -181,6 +184,7 @@
     <Compile Include="Assets\Project\Scripts\GameLevel\Unit\Player\PlayerView.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameRefreshWindowStatusTimerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameLevelUnloadComponent.cs" />
+    <Compile Include="Assets\Project\Core\FixedButton\PlayerGroundCollisionSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameSetPositionComponent.cs" />
     <Compile Include="Assets\Project\Components\UiComponents.cs" />
     <Compile Include="Assets\Project\Scripts\SceneUI\Button\GameLevelWindow\SitDownButtonView.cs" />
@@ -188,7 +192,6 @@
     <Compile Include="Assets\Project\Scripts\SceneUI\HeadCanvas.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameShootingDelayListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiTrigTryPlayerClickComponent.cs" />
-    <Compile Include="Assets\Project\Scripts\GameLevel\Ammo\M16.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\UiContext.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Components\GameHpListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiWindowComponent.cs" />
@@ -210,8 +213,8 @@
     <Compile Include="Assets\Entitas\Generated\Events\Systems\SetPositionEventSystem.cs" />
     <Compile Include="Assets\Project\Core\Button\SitDownPressButtonSystem.cs" />
     <Compile Include="Assets\Project\Core\BotRotateSystem.cs" />
+    <Compile Include="Assets\Entitas\Generated\Game\Components\GameOriginalTimeDelayComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Data\Components\DataKeyDataListenerComponent.cs" />
-    <Compile Include="Assets\Entitas\Generated\Game\Components\GameStartTimeDelayComponent.cs" />
     <Compile Include="Assets\Project\Core\HpControlDeadSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Data\Components\DataDataLoadFailComponent.cs" />
     <Compile Include="Assets\Project\Components\ButtonComponents.cs" />
@@ -251,6 +254,7 @@
     <Compile Include="Assets\Project\Components\InputComponents.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IShootingDelayListener.cs" />
     <Compile Include="Assets\Entitas\Generated\Data\DataAttribute.cs" />
+    <Compile Include="Assets\Entitas\Generated\Game\Components\GameIdComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IJoystickListener.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameVelocityComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Components\UnlinkListenerComponent.cs" />
@@ -264,7 +268,6 @@
     <Compile Include="Assets\Project\Scripts\SceneUI\Button\WinEndGameWindow\NextLevelButtonView.cs" />
     <Compile Include="Assets\Project\Installers\HeadInstaller.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameLevelComponent.cs" />
-    <Compile Include="Assets\Project\Scripts\GameLevel\Ammo\Weapon.cs" />
     <Compile Include="Assets\Project\Core\AddWeaponBotSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Systems\JumpEventSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameReloadingComponent.cs" />
@@ -290,6 +293,7 @@
     <Compile Include="Assets\Entitas\Generated\Game\Systems\RemoveLevelUnloadGameSystem.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Entitas\Generated\Data\DataCleanupSystems.cs" />
+    <Compile Include="Assets\Project\Core\Button\CloseGameLevelPressButtonSystem.cs" />
     <Compile Include="Assets\Project\Core\WindowControlSystems.cs" />
     <Compile Include="Assets\Entitas\Generated\Input\InputContext.cs" />
     <Compile Include="Assets\Project\Core\TimerControlSystems.cs" />
@@ -298,6 +302,7 @@
     <Compile Include="Assets\Entitas\Generated\Data\DataEntity.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\InputEventSystems.cs" />
     <Compile Include="Assets\Project\Scripts\Configs\AllConfig\LevelConfig.cs" />
+    <Compile Include="Assets\Project\Components\InventoryComponents.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameStayOnGroundComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiCanvasEnableComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Systems\GameHpEventSystem.cs" />
@@ -307,6 +312,7 @@
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiCanvasEnableListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameRepeatLevelComponent.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
+    <Compile Include="Assets\Project\Core\CreateUnitInventorySystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IReloadingListener.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameAgroShootingComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameSpawnerComponent.cs" />
@@ -320,7 +326,6 @@
     <Compile Include="Assets\Entitas\Generated\Game\GameAttribute.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameTimeShootDelayComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\ITimeListener.cs" />
-    <Compile Include="Assets\Project\Scripts\GameLevel\Ammo\Pistol.cs" />
     <Compile Include="Assets\Project\Core\Game\SpawnPlayerSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IGraphicRaycasterEnableListener.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameLevelManagerComponent.cs" />
@@ -332,6 +337,7 @@
     <Compile Include="Assets\Entitas\Generated\Events\Systems\CameraPositionEventSystem.cs" />
     <Compile Include="Assets\Project\Components\TimerComponents.cs" />
     <Compile Include="Assets\Project\Core\Button\GameStartPressButtonSystem.cs" />
+    <Compile Include="Assets\Entitas\Generated\Ui\Components\UiCloseGameLevelButtonComponent.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiMainMenuWindowComponent.cs" />
     <Compile Include="Assets\Project\Core\AppStartGroupSystems.cs" />
@@ -340,11 +346,13 @@
     <Compile Include="Assets\Project\Core\FixedButton\JumpPlayerPressButtonSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\ISetPositionListener.cs" />
     <Compile Include="Assets\Entitas\Generated\Input\InputComponentsLookup.cs" />
+    <Compile Include="Assets\Project\Scripts\GameLevel\Weapon\Weapon.cs" />
     <Compile Include="Assets\Project\Core\GameControlSystems.cs" />
     <Compile Include="Assets\Project\Scripts\SceneUI\Screens\GameLevelScreenView.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameCapsuleColliderComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameShootingDelayComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\ITrigRefreshStatusWindowDelayListener.cs" />
+    <Compile Include="Assets\Entitas\Generated\Game\Components\GameInventoryComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameCameraComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiNextLevelButtonComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Contexts.cs" />

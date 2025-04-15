@@ -11,7 +11,7 @@ public class TimeComponent : IComponent
 }
 
 [Game]
-public class StartTimeDelayComponent : IComponent
+public class OriginalTimeDelayComponent: IComponent
 {
     public float Value;
 }
