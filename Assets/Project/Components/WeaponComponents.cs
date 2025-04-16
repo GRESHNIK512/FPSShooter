@@ -5,6 +5,10 @@ using UnityEngine;
 [Game]
 public class WeaponComponent : IComponent { }
 
+
+[Game, Cleanup(CleanupMode.RemoveComponent)]
+public class ShootComponent : IComponent { }
+
 [Game]
 public sealed class IdComponent : IComponent //context.GetEntityWithId(id);
 {
@@ -71,6 +75,12 @@ public class ShootingDelayComponent : IComponent
 
 [Game]
 public class MagazineSizeComponent : IComponent
+{
+    public int Value;
+}
+
+[Game]
+public class MagazineAmmoComponent : IComponent
 {
     public int Value;
 }

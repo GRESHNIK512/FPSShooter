@@ -11,6 +11,7 @@ namespace Game
 
             Add(new CreateUnitInventorySystem(contexts));
             Add(new AddWeaponBotSystem(contexts));
+            Add(new BotAgroSystem(contexts));
 
             Add(new SitControlPlayerSystem(contexts)); 
             Add(new PlayerRotationCameraSystem(contexts));

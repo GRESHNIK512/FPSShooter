@@ -8,8 +8,8 @@ namespace Game
     {
         private Contexts _context;
         private IGroup<GameEntity> _playerGroup;
-        private float rotationX = 0.0f;
-        private float rotationY = 0.0f; 
+        private float rotationX = 0;
+        private float rotationY = 0; 
 
         public PlayerRotationCameraSystem(Contexts contexts) : base(contexts.input)
         {

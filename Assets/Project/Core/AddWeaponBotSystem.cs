@@ -7,11 +7,7 @@ namespace Game
     internal class AddWeaponBotSystem : ReactiveSystem<GameEntity>
     {
         private Contexts _context;
-        private WeaponConfig _weaponConfig;
-
-        private WeaponSettings _weaponSetting;
-        private Weapon _weapon;
-        private GameEntity _weaponEnt;
+        private WeaponConfig _weaponConfig;   
 
         public AddWeaponBotSystem(Contexts contexts) : base(contexts.game)
         {
@@ -34,44 +30,47 @@ namespace Game
             {
                 if (_weaponConfig == null) _weaponConfig = ConfigsManager.WeaponConfig;
 
-                var indexWeapon = UnityEngine.Random.Range(0, _weaponConfig.Weapons.Length);
-                _weaponSetting = _weaponConfig.Weapons[indexWeapon];
+                var indexWeapon = Random.Range(0, _weaponConfig.Weapons.Length);
+                var weaponSetting = _weaponConfig.Weapons[indexWeapon];
 
-                _weapon = _weaponSetting.WeaponType switch
+                Weapon weapon = weaponSetting.WeaponType switch
                 {
                     WeaponType.Pistol => PoolService.Instance.GetObjectFromPool<Pistol>(unitEnt.unitWeaponTransform.Value),
                     WeaponType.M16 => PoolService.Instance.GetObjectFromPool<M16>(unitEnt.unitWeaponTransform.Value),
                     _ => null
                 };
 
-                if (_weapon == null)
+                if (weapon == null)
                 {
-                    Debug.LogError("Add WeaponType in AddWeaponBotSystem");
-                    continue;
+                    Debug.LogError("not Found WeaponType in AddWeaponBotSystem");
+                    continue; 
                 }
-               
-                InitWeapon();
+
+                GameEntity weaponEnt = CreateWeapon(weapon, weaponSetting);
 
                 var inventoryEnt = _context.game.GetEntityWithId(unitEnt.inventoryId.Value[0]);
-                inventoryEnt.AddWeaponsId(new List<int> { _weaponEnt.id.Value });
+                inventoryEnt.AddWeaponsId(new List<int> { weaponEnt.id.Value });
             }
         }
 
-        private void InitWeapon() 
+        private GameEntity CreateWeapon(Weapon weapon, WeaponSettings weaponSetting)
         {
-            _weapon.Init();
-            _weaponEnt = _weapon.GameEntity;
+            weapon.Init();
+            var weaponEnt = weapon.GameEntity;
 
-            _weaponEnt.AddWeaponType(_weaponSetting.WeaponType);
-            _weaponEnt.AddSupportedFireModes(_weaponSetting.SupportedFireModes);
-            _weaponEnt.AddDefaultFireMode(_weaponSetting.DefaultFireMode);
-            _weaponEnt.AddBurstCount(_weaponSetting.BurstCount);
-            _weaponEnt.AddTimeReload(_weaponSetting.TimeReaload);
-            _weaponEnt.AddShootingDelay(_weaponSetting.ShootingDelay);
-            _weaponEnt.AddMagazineSize(_weaponSetting.MagazineSize);
-            _weaponEnt.AddAmmoType(_weaponSetting.AmmoType);
-            _weaponEnt.AddDamageFalloffCurve(_weaponSetting.DamageFalloffCurve);
-            _weaponEnt.AddDistanceShoot(_weaponSetting.DistanceShoot);
+            weaponEnt.AddWeaponType(weaponSetting.WeaponType);
+            weaponEnt.AddSupportedFireModes(weaponSetting.SupportedFireModes);
+            weaponEnt.AddDefaultFireMode(weaponSetting.DefaultFireMode);
+            weaponEnt.AddBurstCount(weaponSetting.BurstCount);
+            weaponEnt.AddTimeReload(weaponSetting.TimeReaload);
+            weaponEnt.AddShootingDelay(weaponSetting.ShootingDelay);
+            weaponEnt.AddMagazineSize(weaponSetting.MagazineSize);
+            weaponEnt.AddAmmoType(weaponSetting.AmmoType);
+            weaponEnt.AddDamageFalloffCurve(weaponSetting.DamageFalloffCurve);
+            weaponEnt.AddDistanceShoot(weaponSetting.DistanceShoot);
+            weaponEnt.AddMagazineAmmo(weaponSetting.MagazineSize);
+
+            return weaponEnt;
         }
     }
 }

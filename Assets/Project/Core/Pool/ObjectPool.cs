@@ -4,9 +4,7 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     private MonoBehaviour _poolPrefab;
-    private Queue<IPoolable> _objectQueue = new();
-
-    private IPoolable _poolableObj;
+    private Queue<IPoolable> _objectQueue = new();  
 
     public void Initialize(MonoBehaviour poolPrefab, int initialCount)
     {
@@ -20,7 +18,7 @@ public class ObjectPool : MonoBehaviour
 
     private IPoolable CreateObject(bool putInQueue)
     {
-        _poolableObj = (IPoolable)Instantiate(_poolPrefab, transform);
+        var _poolableObj = (IPoolable)Instantiate(_poolPrefab, transform);
         _poolableObj.ReturnPoolEvent += ReturnObject;
 
         if (putInQueue)
@@ -34,7 +32,7 @@ public class ObjectPool : MonoBehaviour
 
     public IPoolable GetObject(Transform newParent)
     {
-        _poolableObj = _objectQueue.Count > 0 ? _objectQueue.Dequeue() : CreateObject(false);
+        var _poolableObj = _objectQueue.Count > 0 ? _objectQueue.Dequeue() : CreateObject(false);
         _poolableObj.Transform.SetParent(newParent);
         _poolableObj.Transform.localPosition = Vector3.zero; 
         return _poolableObj;

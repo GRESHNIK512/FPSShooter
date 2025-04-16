@@ -13,6 +13,7 @@ public sealed class GameCleanupSystems : Feature {
         Add(new RemoveJumpGameSystem(contexts));
         Add(new RemoveLevelUnloadGameSystem(contexts));
         Add(new RemoveUnlinkGameSystem(contexts));
+        Add(new RemoveShootGameSystem(contexts));
         Add(new DestroyTrigTimerEndGameSystem(contexts));
     }
 }

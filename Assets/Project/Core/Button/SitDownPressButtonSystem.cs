@@ -33,8 +33,7 @@ namespace Button
                 {
                     if (!playerEnt.sitDown.Value) 
                         playerEnt.ReplaceSitDown(true); //sit
-                    else 
-                    if (!HaveHeadObsticale(playerEnt)) //up
+                    else if (!HaveHeadObsticale(playerEnt)) //up
                     {
                         playerEnt.ReplaceSitDown(false);
                     }

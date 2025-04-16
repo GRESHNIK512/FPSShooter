@@ -8,4 +8,5 @@ public class BotConfig : ScriptableObject
     [Header("Shoot")] 
     public LayerMask ShootLayerMasks;
     public LayerMask ShootTargetLayerMask;
+    public float AgroDelay;
 } 

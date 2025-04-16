@@ -26,7 +26,7 @@ namespace Game
         {
             foreach (var entity in entities) 
             {
-                if (entity.hp.Value<=0) entity.isDead = true;
+                if (entity.hp.Value <= 0) entity.isDead = true;
             }
         } 
     }

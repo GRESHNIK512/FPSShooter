@@ -1,6 +1,5 @@
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -101,10 +100,10 @@ public class ShootPointComponent : IComponent
 }
 
 [Game]
-public class AgroShootingComponent : IComponent
+public class AgroShootingTimerComponent : IComponent
 {
     public float Value;
-}
+} 
 
 [Game]
 public class InventoryIdComponent : IComponent
