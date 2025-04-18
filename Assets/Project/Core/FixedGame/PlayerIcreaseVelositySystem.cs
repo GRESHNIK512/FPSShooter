@@ -12,7 +12,7 @@ namespace FixedGame
         public PlayerIcreaseVelositySystem(Contexts contexts) : base (contexts.ui)
         {
             _context = contexts;
-            _playerUnitGroup = _context.game.GetGroup(GameMatcher.Player);
+            _playerUnitGroup = _context.game.GetGroup(GameMatcher.AllOf(GameMatcher.Unit, GameMatcher.Player));
         }
 
         protected override ICollector<UiEntity> GetTrigger(IContext<UiEntity> context)
@@ -39,7 +39,7 @@ namespace FixedGame
                         joysticEnt.joystickDirection.Value.y);
 
                     VelocityVector = playerEnt.transform.Value.TransformDirection(VelocityVector);
-                    VelocityVector *= ConfigsManager.PlayerConfig.Speed;
+                    VelocityVector *= ConfigsManager.PlayerConfig.MoveSpeed * Time.fixedDeltaTime;
                    
                     playerEnt.ReplaceVelocity(VelocityVector);
                 } 

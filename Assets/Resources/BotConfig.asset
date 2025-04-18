@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd4961b17df8984d8d7930a5d272a9a, type: 3}
   m_Name: BotConfig
   m_EditorClassIdentifier: 
-  BotView: {fileID: 3468302164469902828, guid: 8accd5215cd03214eb18b7b9322bfb69, type: 3}
   RotationSpeed: 10
   ShootLayerMasks:
     serializedVersion: 2
@@ -20,3 +19,4 @@ MonoBehaviour:
   ShootTargetLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  AgroDelay: 1.5

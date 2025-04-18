@@ -12,11 +12,11 @@ public class WeaponSettings
 {
     public Weapon Prefab;
     public WeaponType WeaponType;
-    public FireMode SupportedFireModes;
+    //public FireMode SupportedFireModes;
     public FireMode DefaultFireMode; // Режим по умолчанию
-    public int BurstCount; // Количество выстрелов в очереди   
+    //public int BurstCount; // Количество выстрелов в очереди   
     public float TimeReaload;
-    public float ShootingDelay;
+    public float TimeShootDelay;
     public int MagazineSize;   
     public AmmoType AmmoType;
     public AnimationCurve DamageFalloffCurve;
@@ -35,9 +35,9 @@ public enum WeaponType
 public enum FireMode
 {
     Single = 1,      // Одиночный
-    Burst = 2,       // Очередь (например, по 3 выстрела)
+    //Burst = 2,       // Очередь (например, по 3 выстрела)
     Auto = 4,        // Автоматический
-    BoltAction = 8   // Для снайперских винтовок
+    //BoltAction = 8   // Для снайперских винтовок
 }
 
 public enum AmmoType

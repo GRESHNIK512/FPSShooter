@@ -33,12 +33,7 @@ namespace Game
                 var indexWeapon = Random.Range(0, _weaponConfig.Weapons.Length);
                 var weaponSetting = _weaponConfig.Weapons[indexWeapon];
 
-                Weapon weapon = weaponSetting.WeaponType switch
-                {
-                    WeaponType.Pistol => PoolService.Instance.GetObjectFromPool<Pistol>(unitEnt.unitWeaponTransform.Value),
-                    WeaponType.M16 => PoolService.Instance.GetObjectFromPool<M16>(unitEnt.unitWeaponTransform.Value),
-                    _ => null
-                };
+                var weapon = PoolService.Instance.GetObjectFromPool<Weapon>(weaponSetting.WeaponType, unitEnt.unitWeaponTransform.Value);
 
                 if (weapon == null)
                 {
@@ -59,16 +54,17 @@ namespace Game
             var weaponEnt = weapon.GameEntity;
 
             weaponEnt.AddWeaponType(weaponSetting.WeaponType);
-            weaponEnt.AddSupportedFireModes(weaponSetting.SupportedFireModes);
+            //weaponEnt.AddSupportedFireModes(weaponSetting.SupportedFireModes);
             weaponEnt.AddDefaultFireMode(weaponSetting.DefaultFireMode);
-            weaponEnt.AddBurstCount(weaponSetting.BurstCount);
+            //weaponEnt.AddBurstCount(weaponSetting.BurstCount);
             weaponEnt.AddTimeReload(weaponSetting.TimeReaload);
-            weaponEnt.AddShootingDelay(weaponSetting.ShootingDelay);
+            weaponEnt.AddTimeShootDelay(weaponSetting.TimeShootDelay);
             weaponEnt.AddMagazineSize(weaponSetting.MagazineSize);
             weaponEnt.AddAmmoType(weaponSetting.AmmoType);
             weaponEnt.AddDamageFalloffCurve(weaponSetting.DamageFalloffCurve);
             weaponEnt.AddDistanceShoot(weaponSetting.DistanceShoot);
-            weaponEnt.AddMagazineAmmo(weaponSetting.MagazineSize);
+            weaponEnt.AddSetLocalPosition(Vector3.zero);
+            weaponEnt.AddReloading(1);
 
             return weaponEnt;
         }

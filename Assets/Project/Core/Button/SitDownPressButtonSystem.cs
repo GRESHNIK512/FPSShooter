@@ -12,7 +12,7 @@ namespace Button
         public SitDownPressButtonSystem(Contexts contexts) : base(contexts.ui)
         {
             _context = contexts;
-            _playerUnitGroup = _context.game.GetGroup(GameMatcher.Player);
+            _playerUnitGroup = _context.game.GetGroup(GameMatcher.AllOf(GameMatcher.Unit, GameMatcher.Player));
         }
 
         protected override ICollector<UiEntity> GetTrigger(IContext<UiEntity> context)

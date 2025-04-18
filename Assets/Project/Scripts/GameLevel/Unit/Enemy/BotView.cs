@@ -42,4 +42,9 @@ public class BotView : Unit, IUnitRotationListener
             ConfigsManager.BotConfig.RotationSpeed * Time.deltaTime
         );
     }
+
+    public override void OnDead(GameEntity entity)
+    {
+        EnableObject(false);
+    }
 }

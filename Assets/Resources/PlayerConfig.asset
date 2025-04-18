@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7686c8ad426794c48bbb534e232f47aa, type: 3}
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
-  PlayerView: {fileID: 874196266426237651, guid: f51c3788e860843449c749c5981b294b,
-    type: 3}
-  Speed: 2
+  MoveSpeed: 100
   JumpHeight: 2
   GroundLayerMask:
     serializedVersion: 2

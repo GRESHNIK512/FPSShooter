@@ -14,31 +14,33 @@ public static class UiComponentsLookup {
     public const int JoystickDirectionListener = 3;
     public const int JoystickListener = 4;
     public const int RectTransformListener = 5;
-    public const int TrigRefreshStatusWindowDelayListener = 6;
-    public const int Button = 7;
-    public const int CanvasEnable = 8;
-    public const int CloseGameLevelButton = 9;
-    public const int GameLevelWindow = 10;
-    public const int GraphicRaycasterEnable = 11;
-    public const int Joystick = 12;
-    public const int JoystickDirection = 13;
-    public const int JumpPlayerButton = 14;
-    public const int LoseEndGameWindow = 15;
-    public const int MainMenuButton = 16;
-    public const int MainMenuWindow = 17;
-    public const int NextLevelButton = 18;
-    public const int RectTransform = 19;
-    public const int ShootButton = 20;
-    public const int ShowOnlyThisWindow = 21;
-    public const int SitDownButton = 22;
-    public const int StartGameButton = 23;
-    public const int TrigRefreshStatusWindowDelay = 24;
-    public const int TrigTryPlayerClick = 25;
-    public const int Window = 26;
-    public const int WinEndGameWindow = 27;
-    public const int UiHpListener = 28;
+    public const int Select = 6;
+    public const int TrigRefreshStatusWindowDelayListener = 7;
+    public const int Button = 8;
+    public const int CanvasEnable = 9;
+    public const int CloseGameLevelButton = 10;
+    public const int GameLevelWindow = 11;
+    public const int GraphicRaycasterEnable = 12;
+    public const int Joystick = 13;
+    public const int JoystickDirection = 14;
+    public const int JumpPlayerButton = 15;
+    public const int LoseEndGameWindow = 16;
+    public const int MainMenuButton = 17;
+    public const int MainMenuWindow = 18;
+    public const int NextLevelButton = 19;
+    public const int RectTransform = 20;
+    public const int ShootButton = 21;
+    public const int ShowOnlyThisWindow = 22;
+    public const int SitDownButton = 23;
+    public const int StartGameButton = 24;
+    public const int TrigRefreshStatusWindowDelay = 25;
+    public const int TrigTryPlayerClick = 26;
+    public const int Window = 27;
+    public const int WinEndGameWindow = 28;
+    public const int UiHpListener = 29;
+    public const int UiSelectListener = 30;
 
-    public const int TotalComponents = 29;
+    public const int TotalComponents = 31;
 
     public static readonly string[] componentNames = {
         "CanvasEnableListener",
@@ -47,6 +49,7 @@ public static class UiComponentsLookup {
         "JoystickDirectionListener",
         "JoystickListener",
         "RectTransformListener",
+        "Select",
         "TrigRefreshStatusWindowDelayListener",
         "Button",
         "CanvasEnable",
@@ -69,7 +72,8 @@ public static class UiComponentsLookup {
         "TrigTryPlayerClick",
         "Window",
         "WinEndGameWindow",
-        "UiHpListener"
+        "UiHpListener",
+        "UiSelectListener"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -79,6 +83,7 @@ public static class UiComponentsLookup {
         typeof(JoystickDirectionListenerComponent),
         typeof(JoystickListenerComponent),
         typeof(RectTransformListenerComponent),
+        typeof(SelectComponent),
         typeof(TrigRefreshStatusWindowDelayListenerComponent),
         typeof(Ui.ButtonComponent),
         typeof(Ui.CanvasEnableComponent),
@@ -101,6 +106,7 @@ public static class UiComponentsLookup {
         typeof(Ui.TrigTryPlayerClickComponent),
         typeof(Ui.WindowComponent),
         typeof(Ui.WinEndGameWindowComponent),
-        typeof(UiHpListenerComponent)
+        typeof(UiHpListenerComponent),
+        typeof(UiSelectListenerComponent)
     };
 }

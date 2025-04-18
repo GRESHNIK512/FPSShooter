@@ -20,8 +20,8 @@ MonoBehaviour:
     DefaultFireMode: 1
     BurstCount: 0
     TimeReaload: 3
-    ShootingDelay: 0.15
-    MagazineSize: 12
+    TimeShootDelay: 0.1
+    MagazineSize: 7
     AmmoType: 0
     DamageFalloffCurve:
       serializedVersion: 2
@@ -57,7 +57,7 @@ MonoBehaviour:
     DefaultFireMode: 4
     BurstCount: 3
     TimeReaload: 5
-    ShootingDelay: 0.1
+    TimeShootDelay: 0.075
     MagazineSize: 30
     AmmoType: 1
     DamageFalloffCurve:

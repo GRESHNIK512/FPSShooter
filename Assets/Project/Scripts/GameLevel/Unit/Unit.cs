@@ -26,8 +26,8 @@ public abstract class Unit : LevelObject, ISetPositionListener, IDeadListener
         transform.position = value;
     }
 
-    public void OnDead(GameEntity entity)
+    public virtual void OnDead(GameEntity entity)
     {
-        EnableObject(false);
+       
     }
 } 

@@ -2,7 +2,8 @@ using Entitas.Unity;
 using System;
 using UnityEngine;
 
-public abstract class LevelObject : MonoBehaviour, IUnlinkListener, IPoolable
+public abstract class LevelObject : MonoBehaviour, IUnlinkListener, ISetLocalPositionListener, 
+    IPoolable
 {
     protected GameEntity _gameEntity; 
     public GameEntity GameEntity => _gameEntity;
@@ -18,6 +19,7 @@ public abstract class LevelObject : MonoBehaviour, IUnlinkListener, IPoolable
         _gameEntity.isObjectLevel = true;
         _gameEntity.AddTransform(transform);
         _gameEntity.AddUnlinkListener(this);
+        _gameEntity.AddSetLocalPositionListener(this);
         EnableObject(true);
 
 #if UNITY_EDITOR
@@ -37,5 +39,10 @@ public abstract class LevelObject : MonoBehaviour, IUnlinkListener, IPoolable
     public void EnableObject(bool visible)
     {
         gameObject.SetActive(visible);
+    }
+
+    public void OnSetLocalPosition(GameEntity entity, Vector3 value)
+    {
+        transform.localPosition = value;
     }
 }

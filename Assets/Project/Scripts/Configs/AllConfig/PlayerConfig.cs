@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerConfig : ScriptableObject
 { 
     [Header("Move")]
-    public float Speed;
+    public float MoveSpeed;
     public float JumpHeight;  
     public LayerMask GroundLayerMask;  
     public float SitHeight;

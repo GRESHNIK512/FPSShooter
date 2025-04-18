@@ -19,9 +19,9 @@ public class GameLevelWindowView : Window, IUiHpListener
     } 
 
     public void OnHp(UiEntity entity, float value)
-    {
+    { 
         _roundHp = Mathf.CeilToInt(value);
-       
+        
         if (_lastHp != _roundHp)
         {
             _hpTmp.text = $"{_roundHp}";

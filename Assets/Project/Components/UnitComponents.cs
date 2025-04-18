@@ -3,7 +3,7 @@ using Entitas.CodeGeneration.Attributes;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Game, Unique]
+[Game]
 public class PlayerComponent : IComponent { }  
 
 [Game]

@@ -33,8 +33,7 @@ public class ObjectPool : MonoBehaviour
     public IPoolable GetObject(Transform newParent)
     {
         var _poolableObj = _objectQueue.Count > 0 ? _objectQueue.Dequeue() : CreateObject(false);
-        _poolableObj.Transform.SetParent(newParent);
-        _poolableObj.Transform.localPosition = Vector3.zero; 
+        _poolableObj.Transform.SetParent(newParent); 
         return _poolableObj;
     }
 

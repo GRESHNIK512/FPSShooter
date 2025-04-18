@@ -10,13 +10,13 @@ namespace Button
         private IGroup<GameEntity> _playerUnitGroup;
 
         private RaycastHit[] _hitsBuffer = new RaycastHit[10];
-        private Ray _ray = new Ray();
+        private Ray _ray = new();
         private Transform _camTranform;
 
         public ShootPressButtonSystem(Contexts contexts) : base(contexts.ui)
         {
             _context = contexts;
-            _playerUnitGroup = _context.game.GetGroup(GameMatcher.Player);
+            _playerUnitGroup = _context.game.GetGroup(GameMatcher.AllOf(GameMatcher.Unit, GameMatcher.Player));
         }
 
         protected override ICollector<UiEntity> GetTrigger(IContext<UiEntity> context)
@@ -33,39 +33,39 @@ namespace Button
         {
             foreach (var buttoEnt in entities)
             {
-                SetPositionAndDirForRaycast();
+                //SetPositionAndDirForRaycast();
 
-                // Проверяем попадание в объект на нужном слое
-                int hitsCount = Physics.RaycastNonAlloc(_ray, _hitsBuffer, ConfigsManager.PlayerConfig.MaxDistanceRay, ConfigsManager.PlayerConfig.ShootLayerMasks);
+                //// Проверяем попадание в объект на нужном слое
+                //int hitsCount = Physics.RaycastNonAlloc(_ray, _hitsBuffer, ConfigsManager.PlayerConfig.MaxDistanceRay, ConfigsManager.PlayerConfig.ShootLayerMasks);
 
-                if (hitsCount == 0) continue;
+                //if (hitsCount == 0) continue;
 
-                float minDist = float.MaxValue;
-                int targetIndexHit = -1;
+                //float minDist = float.MaxValue;
+                //int targetIndexHit = -1;
 
-                for (int i = 0; i < hitsCount; i++)
-                {
-                    var distance = (_ray.origin - _hitsBuffer[i].point).sqrMagnitude;
-                    if (distance > minDist) continue;
+                //for (int i = 0; i < hitsCount; i++)
+                //{
+                //    var distance = (_ray.origin - _hitsBuffer[i].point).sqrMagnitude;
+                //    if (distance > minDist) continue;
 
-                    minDist = distance;
-                    targetIndexHit = i;
-                }
+                //    minDist = distance;
+                //    targetIndexHit = i;
+                //}
 
-                var targetCollider = _hitsBuffer[targetIndexHit].collider;
-                if ((1 << targetCollider.gameObject.layer & ConfigsManager.PlayerConfig.ShootTargetLayerMask.value) == 0) continue;
+                //var targetCollider = _hitsBuffer[targetIndexHit].collider;
+                //if ((1 << targetCollider.gameObject.layer & ConfigsManager.PlayerConfig.ShootTargetLayerMask.value) == 0) continue;
 
-                if (!targetCollider.TryGetComponent<BodyPart>(out var bodyPart)) continue;
+                //if (!targetCollider.TryGetComponent<BodyPart>(out var bodyPart)) continue;
 
-                var hitEntity = bodyPart.UnitEntity;
+                //var hitEntity = bodyPart.UnitEntity;
 
-                if (hitEntity.isDead) continue;
+                //if (hitEntity.isDead) continue;
 
-                var damage = 50f;
-                float damageMultiplier = GetDamageMultiplier(bodyPart.PartType);
-                var newHp = hitEntity.hp.Value - damage * damageMultiplier;
+                //var damage = 50f;
+                //float damageMultiplier = GetDamageMultiplier(bodyPart.PartType);
+                //var newHp = hitEntity.hp.Value - damage * damageMultiplier;
 
-                hitEntity.ReplaceHp(Mathf.Max(newHp, 0));
+                //hitEntity.ReplaceHp(Mathf.Max(newHp, 0));
             }
         }
 

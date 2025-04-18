@@ -24,10 +24,10 @@ namespace InputSys
                 }
                 else if (joysticEnt.hasJoystickDirection)
                 {
-                    var nowDir = joysticEnt.joystickDirection.Value;
-                    if (nowDir.magnitude > 0.001f)
+                    var joystickDir = joysticEnt.joystickDirection.Value;
+                    if (joystickDir.magnitude > 0.001f)
                     { 
-                        joysticEnt.ReplaceJoystickDirection(nowDir - nowDir * Time.deltaTime * 8);
+                        joysticEnt.ReplaceJoystickDirection(joystickDir - joystickDir * Time.deltaTime * 8);
                     }
                 }
             }

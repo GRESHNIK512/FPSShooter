@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Collections.Generic; 
 using UnityEngine;
 
 public class PoolService : MonoBehaviour
@@ -7,7 +7,8 @@ public class PoolService : MonoBehaviour
     public static PoolService Instance => _instance;
 
     [SerializeField] private PoolSettings[] PoolSettingsList; 
-    private readonly Dictionary<System.Type, ObjectPool> _pools = new ();  
+    private readonly Dictionary<System.Type, ObjectPool> _pools = new ();
+    private readonly Dictionary<System.Enum, System.Type> _enumToTypeMap = new();  
 
     void Awake()
     {
@@ -19,9 +20,17 @@ public class PoolService : MonoBehaviour
 
         _instance = this;
         DontDestroyOnLoad(gameObject);
-        
+
+        InitializeTypeMappings();
         InitializePools();
-    }  
+    }
+
+    private void InitializeTypeMappings()
+    {
+        // Оружие
+        _enumToTypeMap.Add(WeaponType.Pistol, typeof(Pistol));
+        _enumToTypeMap.Add(WeaponType.M16, typeof(M16)); 
+    }
 
     private void InitializePools()
     {
@@ -37,5 +46,12 @@ public class PoolService : MonoBehaviour
     } 
 
     public T GetObjectFromPool<T>(Transform parent) where T : MonoBehaviour =>
-        _pools.TryGetValue(typeof(T), out var pool) ? (T)pool.GetObject(parent) : null;  
+        _pools.TryGetValue(typeof(T), out var pool) 
+        ? (T)pool.GetObject(parent) 
+        : null;
+
+    public T GetObjectFromPool<T>(System.Enum enumType, Transform parent) where T : MonoBehaviour =>
+    _enumToTypeMap.TryGetValue(enumType, out var type) && _pools.TryGetValue(type, out var pool)
+        ? (T)pool.GetObject(parent)
+        : null;
 }

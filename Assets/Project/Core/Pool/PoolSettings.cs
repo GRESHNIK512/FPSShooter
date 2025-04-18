@@ -9,7 +9,7 @@ public class PoolSettings
 }
 
 public interface IPoolable
-{
+{ 
     event Action<IPoolable> ReturnPoolEvent;
     GameObject GameObject { get; }
     Transform Transform { get; }   

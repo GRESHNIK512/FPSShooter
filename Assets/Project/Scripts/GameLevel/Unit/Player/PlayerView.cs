@@ -61,4 +61,9 @@ public class PlayerView : Unit, IVelocityListener, IJumpListener, ICameraPositio
     {
         _rigidbody.velocity = new Vector3(value.x, _rigidbody.velocity.y, value.z); 
     }
+
+    public override void OnDead(GameEntity entity)
+    {
+        base.OnDead(entity);
+    }
 } 

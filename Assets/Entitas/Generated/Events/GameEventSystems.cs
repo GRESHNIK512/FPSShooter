@@ -15,6 +15,8 @@ public sealed class GameEventSystems : Feature {
         Add(new GameHpEventSystem(contexts)); // priority: 0
         Add(new JumpEventSystem(contexts)); // priority: 0
         Add(new ReloadingEventSystem(contexts)); // priority: 0
+        Add(new GameSelectEventSystem(contexts)); // priority: 0
+        Add(new SetLocalPositionEventSystem(contexts)); // priority: 0
         Add(new SetPositionEventSystem(contexts)); // priority: 0
         Add(new ShootingDelayEventSystem(contexts)); // priority: 0
         Add(new TimeEventSystem(contexts)); // priority: 0

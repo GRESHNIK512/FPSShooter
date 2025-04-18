@@ -52,7 +52,7 @@ namespace Button
                     if (levelCompleteCount >= ConfigsManager.LevelConfig.MaxlevelCount)
                     {
                         if (!_levelManagerEnt.isRepeatLevel)
-                            SetNewIndexScene(in currentSceneIndex, out currentSceneIndex);
+                            SetNewIndexScene(ref currentSceneIndex);
                     }
                     else
                         currentSceneIndex = levelCompleteCount;
@@ -77,19 +77,19 @@ namespace Button
             _context.ui.CreateEntity().AddTrigRefreshStatusWindowDelay(0f);
         }
 
-        private void SetNewIndexScene(in int currentSceneIndex, out int newSceneIndex)
+        private void SetNewIndexScene(ref int sceneIndex)
         {
             if (_LevelIndexs.Count == 0)
             {
                 for (int i = 0; i < ConfigsManager.LevelConfig.MaxlevelCount; i++)
                 {
-                    if (i == currentSceneIndex) continue;
+                    if (i == sceneIndex) continue;
                     _LevelIndexs.Add(i);
                 }
             }
 
-            newSceneIndex = _LevelIndexs[Random.Range(0, _LevelIndexs.Count)];
-            _LevelIndexs.Remove(newSceneIndex);
+            sceneIndex = _LevelIndexs[Random.Range(0, _LevelIndexs.Count)];
+            _LevelIndexs.Remove(sceneIndex);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Game
         {
             _context = contexts;
 
-            _playerUnitGroup = _context.game.GetGroup(GameMatcher.Player);
+            _playerUnitGroup = _context.game.GetGroup(GameMatcher.AllOf(GameMatcher.Unit, GameMatcher.Player));
             _spawnGroup = _context.game.GetGroup(GameMatcher.Spawner);
             _levelGroup = _context.game.GetGroup(GameMatcher.Level);
         }

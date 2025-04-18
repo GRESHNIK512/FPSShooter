@@ -46,3 +46,9 @@ public class VelocityComponent : IComponent
 {
     public Vector3 Value;
 }
+
+[Game, Event(EventTarget.Self)]
+public class SetLocalPosition : IComponent
+{
+    public Vector3 Value;
+}

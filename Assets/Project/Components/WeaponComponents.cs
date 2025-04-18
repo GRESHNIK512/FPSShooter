@@ -16,8 +16,11 @@ public sealed class IdComponent : IComponent //context.GetEntityWithId(id);
     public int Value;
 }
 
-[Game]
-public class SelectComponent : IComponent { }
+[Game, Ui, Event(EventTarget.Self)]
+public class SelectComponent : IComponent 
+{
+
+}
 
 [Game]
 public class WeaponTypeComponent : IComponent
@@ -95,4 +98,7 @@ public class AmmoTypeComponent : IComponent
 public class DamageFalloffCurveComponent : IComponent
 {
     public AnimationCurve Value;
-} 
+}
+
+[Game]
+public class FireWeaponComponent : IComponent { }  
