@@ -16,6 +16,7 @@ public sealed class GameEventSystems : Feature {
         Add(new JumpEventSystem(contexts)); // priority: 0
         Add(new ReloadingEventSystem(contexts)); // priority: 0
         Add(new GameSelectEventSystem(contexts)); // priority: 0
+        Add(new GameSelectRemovedEventSystem(contexts)); // priority: 0
         Add(new SetLocalPositionEventSystem(contexts)); // priority: 0
         Add(new SetPositionEventSystem(contexts)); // priority: 0
         Add(new ShootingDelayEventSystem(contexts)); // priority: 0
@@ -23,5 +24,6 @@ public sealed class GameEventSystems : Feature {
         Add(new UnitRotationEventSystem(contexts)); // priority: 0
         Add(new UnlinkEventSystem(contexts)); // priority: 0
         Add(new VelocityEventSystem(contexts)); // priority: 0
+        Add(new GameWeaponTypeEventSystem(contexts)); // priority: 0
     }
 }

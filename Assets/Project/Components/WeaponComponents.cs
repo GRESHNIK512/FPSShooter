@@ -1,6 +1,6 @@
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
-using UnityEngine;
+ 
 
 [Game]
 public class WeaponComponent : IComponent { }
@@ -16,13 +16,13 @@ public sealed class IdComponent : IComponent //context.GetEntityWithId(id);
     public int Value;
 }
 
-[Game, Ui, Event(EventTarget.Self)]
+[Game, Ui, Event(EventTarget.Self, EventType.Added), Event(EventTarget.Self, EventType.Removed)]
 public class SelectComponent : IComponent 
 {
 
 }
 
-[Game]
+[Game, Ui, Event(EventTarget.Self)]
 public class WeaponTypeComponent : IComponent
 {
     public WeaponType Value;
@@ -97,7 +97,7 @@ public class AmmoTypeComponent : IComponent
 [Game]
 public class DamageFalloffCurveComponent : IComponent
 {
-    public AnimationCurve Value;
+    public UnityEngine.AnimationCurve Value;
 }
 
 [Game]

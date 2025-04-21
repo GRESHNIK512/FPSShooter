@@ -29,21 +29,15 @@ namespace Game
             {  
                 foreach (var weaponInfo in ConfigsManager.WeaponConfig.Weapons)
                 {
-                    var weapon = PoolService.Instance.GetObjectFromPool<Weapon>(weaponInfo.WeaponType, unitEnt.unitWeaponTransform.Value);
-                    
-                    if (weapon == null)
-                    {
-                        Debug.LogError("not Found WeaponType in AddWeaponBotSystem");
-                        continue;
-                    }
+                    var weapon = PoolService.Instance.GetObjectFromPool<Weapon>(weaponInfo.WeaponType, unitEnt.unitWeaponTransform.Value);  
 
                     GameEntity weaponEnt = CreateWeapon(weapon, weaponInfo);
                     _weaponsIdPlayer.Add(weaponEnt.id.Value);
                 }      
 
-                var inventoryEnt = _context.game.GetEntityWithId(unitEnt.inventoryId.Value[0]); 
-                inventoryEnt.AddWeaponsId(new (_weaponsIdPlayer));
+                var inventoryEnt = _context.game.GetEntityWithId(unitEnt.inventoryId.Value[0]);
                 inventoryEnt.isPlayer = true;
+                inventoryEnt.AddWeaponsId(new (_weaponsIdPlayer)); 
 
                 _weaponsIdPlayer.Clear();
             }
@@ -54,6 +48,7 @@ namespace Game
             weapon.Init();
             var weaponEnt = weapon.GameEntity;
 
+            weaponEnt.isPlayer = true;  
             weaponEnt.AddWeaponType(weaponSetting.WeaponType);
             //weaponEnt.AddSupportedFireModes(weaponSetting.SupportedFireModes);
             weaponEnt.AddDefaultFireMode(weaponSetting.DefaultFireMode);
@@ -64,10 +59,7 @@ namespace Game
             weaponEnt.AddAmmoType(weaponSetting.AmmoType);
             weaponEnt.AddDamageFalloffCurve(weaponSetting.DamageFalloffCurve);
             weaponEnt.AddDistanceShoot(weaponSetting.DistanceShoot);
-            weaponEnt.AddSetLocalPosition(Vector3.zero);
-
-            weaponEnt.isPlayer = true;
-            weaponEnt.isSelect = true;
+            weaponEnt.AddSetLocalPosition(Vector3.zero);  
 
             return weaponEnt;
         }

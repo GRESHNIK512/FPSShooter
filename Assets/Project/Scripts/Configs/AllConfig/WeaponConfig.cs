@@ -23,10 +23,11 @@ public class WeaponSettings
     public float DistanceShoot;
     public float MinDamage;
     public float MaxDamage;
+    public Sprite Sprite;
 }
 
 public enum WeaponType
-{
+{ 
     Pistol,
     M16,
 }

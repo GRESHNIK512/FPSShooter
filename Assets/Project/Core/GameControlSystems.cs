@@ -1,5 +1,4 @@
-﻿using Entitas;
-using Zenject;
+﻿using Entitas; 
 
 namespace Game
 {
@@ -15,7 +14,11 @@ namespace Game
 
             Add(new CreateUnitInventorySystem(contexts));
             Add(new AddWeaponPlayerSystem(contexts));
-            Add(new AddWeaponBotSystem(contexts)); 
+            Add(new AddWeaponBotSystem(contexts));
+
+            Add(new ChangeWeaponInventoryPlayerSystem(contexts));
+            Add(new SelectWeaponSlotSystem(contexts));
+            Add(new ChageSelectPlayerWeapon(contexts));
 
             Add(new SitControlPlayerSystem(contexts)); 
             Add(new PlayerRotationCameraSystem(contexts));

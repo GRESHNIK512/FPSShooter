@@ -34,13 +34,7 @@ namespace Game
                 var weaponSetting = _weaponConfig.Weapons[indexWeapon];
 
                 var weapon = PoolService.Instance.GetObjectFromPool<Weapon>(weaponSetting.WeaponType, unitEnt.unitWeaponTransform.Value);
-
-                if (weapon == null)
-                {
-                    Debug.LogError("not Found WeaponType in AddWeaponBotSystem");
-                    continue; 
-                }
-
+                  
                 GameEntity weaponEnt = CreateWeapon(weapon, weaponSetting);
 
                 var inventoryEnt = _context.game.GetEntityWithId(unitEnt.inventoryId.Value[0]);

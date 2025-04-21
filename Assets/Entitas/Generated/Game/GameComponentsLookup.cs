@@ -28,66 +28,68 @@ public static class GameComponentsLookup {
     public const int FireWeapon = 17;
     public const int GameHpListener = 18;
     public const int GameSelectListener = 19;
-    public const int Hp = 20;
-    public const int Id = 21;
-    public const int Inventory = 22;
-    public const int InventoryId = 23;
-    public const int Jump = 24;
-    public const int JumpListener = 25;
-    public const int Level = 26;
-    public const int LevelManager = 27;
-    public const int LevelStartInit = 28;
-    public const int LevelUnload = 29;
-    public const int MagazineAmmo = 30;
-    public const int MagazineSize = 31;
-    public const int NeedLoadNextLevelAfterUnload = 32;
-    public const int ObjectLevel = 33;
-    public const int OriginalTimeDelay = 34;
-    public const int Owner = 35;
-    public const int Player = 36;
-    public const int PlayerShootPoints = 37;
-    public const int RefreshWindowStatusTimer = 38;
-    public const int Reloading = 39;
-    public const int ReloadingListener = 40;
-    public const int RepeatLevel = 41;
-    public const int RigidBody = 42;
-    public const int Select = 43;
-    public const int SetLocalPosition = 44;
-    public const int SetLocalPositionListener = 45;
-    public const int SetPosition = 46;
-    public const int SetPositionListener = 47;
-    public const int Shoot = 48;
-    public const int ShootingDelay = 49;
-    public const int ShootingDelayListener = 50;
-    public const int ShootPoint = 51;
-    public const int SitDown = 52;
-    public const int Spawner = 53;
-    public const int StartLoadLevel = 54;
-    public const int StayOnGround = 55;
-    public const int SupportedFireModes = 56;
-    public const int Time = 57;
-    public const int TimeListener = 58;
-    public const int Timer = 59;
-    public const int TimeReload = 60;
-    public const int TimerOnPause = 61;
-    public const int TimeShootDelay = 62;
-    public const int Transform = 63;
-    public const int TrigTimerEnd = 64;
-    public const int TrigTryPlayerClick = 65;
-    public const int Unit = 66;
-    public const int UnitRotation = 67;
-    public const int UnitRotationListener = 68;
-    public const int UnitWeaponTransform = 69;
-    public const int Unlink = 70;
-    public const int UnlinkListener = 71;
-    public const int UnloadLevelInProcess = 72;
-    public const int Velocity = 73;
-    public const int VelocityListener = 74;
-    public const int Weapon = 75;
-    public const int WeaponsId = 76;
-    public const int WeaponType = 77;
+    public const int GameSelectRemovedListener = 20;
+    public const int GameWeaponTypeListener = 21;
+    public const int Hp = 22;
+    public const int Id = 23;
+    public const int Inventory = 24;
+    public const int InventoryId = 25;
+    public const int Jump = 26;
+    public const int JumpListener = 27;
+    public const int Level = 28;
+    public const int LevelManager = 29;
+    public const int LevelStartInit = 30;
+    public const int LevelUnload = 31;
+    public const int MagazineAmmo = 32;
+    public const int MagazineSize = 33;
+    public const int NeedLoadNextLevelAfterUnload = 34;
+    public const int ObjectLevel = 35;
+    public const int OriginalTimeDelay = 36;
+    public const int Owner = 37;
+    public const int Player = 38;
+    public const int PlayerShootPoints = 39;
+    public const int RefreshWindowStatusTimer = 40;
+    public const int Reloading = 41;
+    public const int ReloadingListener = 42;
+    public const int RepeatLevel = 43;
+    public const int RigidBody = 44;
+    public const int Select = 45;
+    public const int SetLocalPosition = 46;
+    public const int SetLocalPositionListener = 47;
+    public const int SetPosition = 48;
+    public const int SetPositionListener = 49;
+    public const int Shoot = 50;
+    public const int ShootingDelay = 51;
+    public const int ShootingDelayListener = 52;
+    public const int ShootPoint = 53;
+    public const int SitDown = 54;
+    public const int Spawner = 55;
+    public const int StartLoadLevel = 56;
+    public const int StayOnGround = 57;
+    public const int SupportedFireModes = 58;
+    public const int Time = 59;
+    public const int TimeListener = 60;
+    public const int Timer = 61;
+    public const int TimeReload = 62;
+    public const int TimerOnPause = 63;
+    public const int TimeShootDelay = 64;
+    public const int Transform = 65;
+    public const int TrigTimerEnd = 66;
+    public const int TrigTryPlayerClick = 67;
+    public const int Unit = 68;
+    public const int UnitRotation = 69;
+    public const int UnitRotationListener = 70;
+    public const int UnitWeaponTransform = 71;
+    public const int Unlink = 72;
+    public const int UnlinkListener = 73;
+    public const int UnloadLevelInProcess = 74;
+    public const int Velocity = 75;
+    public const int VelocityListener = 76;
+    public const int Weapon = 77;
+    public const int WeaponsId = 78;
+    public const int WeaponType = 79;
 
-    public const int TotalComponents = 78;
+    public const int TotalComponents = 80;
 
     public static readonly string[] componentNames = {
         "AgroShootingTimer",
@@ -110,6 +112,8 @@ public static class GameComponentsLookup {
         "FireWeapon",
         "GameHpListener",
         "GameSelectListener",
+        "GameSelectRemovedListener",
+        "GameWeaponTypeListener",
         "Hp",
         "Id",
         "Inventory",
@@ -191,6 +195,8 @@ public static class GameComponentsLookup {
         typeof(FireWeaponComponent),
         typeof(GameHpListenerComponent),
         typeof(GameSelectListenerComponent),
+        typeof(GameSelectRemovedListenerComponent),
+        typeof(GameWeaponTypeListenerComponent),
         typeof(HpComponent),
         typeof(IdComponent),
         typeof(InventoryComponent),

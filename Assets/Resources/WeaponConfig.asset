@@ -16,9 +16,7 @@ MonoBehaviour:
   - Prefab: {fileID: 8258902923376479775, guid: 0c23acc55de41a1428f3188310ae4e95,
       type: 3}
     WeaponType: 0
-    SupportedFireModes: 1
     DefaultFireMode: 1
-    BurstCount: 0
     TimeReaload: 3
     TimeShootDelay: 0.1
     MagazineSize: 7
@@ -50,12 +48,11 @@ MonoBehaviour:
     DistanceShoot: 8
     MinDamage: 1
     MaxDamage: 5
+    Sprite: {fileID: 21300000, guid: c0da98efe3f28e6488e1e4f4cf3f0e53, type: 3}
   - Prefab: {fileID: 4047169002933741479, guid: 9495310878e1e8a4eba05fa186d5fdc1,
       type: 3}
     WeaponType: 1
-    SupportedFireModes: 7
     DefaultFireMode: 4
-    BurstCount: 3
     TimeReaload: 5
     TimeShootDelay: 0.075
     MagazineSize: 30
@@ -87,3 +84,4 @@ MonoBehaviour:
     DistanceShoot: 20
     MinDamage: 5
     MaxDamage: 15
+    Sprite: {fileID: 21300000, guid: 18dbabb5985e34642a5f8bc63a6f252a, type: 3}
