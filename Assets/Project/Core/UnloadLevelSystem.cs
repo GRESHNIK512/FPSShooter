@@ -51,19 +51,23 @@ namespace Game
             {
                 destroyEnt.Destroy();
             }
-            
-            await SceneManager.UnloadSceneAsync(_context.data.clientDataEntity.currentSceneIndex.Value);
 
-            levelManagerEnt.isUnloadLevelInProcess = false;
+            AsyncOperation asyncUnLoad = SceneManager.UnloadSceneAsync(_context.data.clientDataEntity.currentSceneIndex.Value);
+            await asyncUnLoad;
 
-            if (levelManagerEnt.isNeedLoadNextLevelAfterUnload) 
+            if (asyncUnLoad.isDone)
             {
-                levelManagerEnt.isNeedLoadNextLevelAfterUnload = false;
-               
-                foreach (var startGameButtonEnt in _starGameButtonGroup.GetEntities())
+                levelManagerEnt.isUnloadLevelInProcess = false;
+
+                if (levelManagerEnt.isNeedLoadNextLevelAfterUnload)
                 {
-                    startGameButtonEnt.isTrigTryPlayerClick = true;
-                } 
+                    levelManagerEnt.isNeedLoadNextLevelAfterUnload = false;
+
+                    foreach (var startGameButtonEnt in _starGameButtonGroup.GetEntities())
+                    {
+                        startGameButtonEnt.isTrigTryPlayerClick = true;
+                    }
+                }
             }
         }
     }

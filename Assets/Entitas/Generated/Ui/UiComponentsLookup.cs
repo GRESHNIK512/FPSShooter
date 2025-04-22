@@ -34,18 +34,19 @@ public static class UiComponentsLookup {
     public const int ShowOnlyThisWindow = 23;
     public const int SitDownButton = 24;
     public const int StartGameButton = 25;
-    public const int TrigRefreshStatusWindowDelay = 26;
-    public const int TrigTryPlayerClick = 27;
-    public const int WeaponSlotButton = 28;
-    public const int Window = 29;
-    public const int WinEndGameWindow = 30;
-    public const int UiHpListener = 31;
-    public const int UiSelectListener = 32;
-    public const int UiSelectRemovedListener = 33;
-    public const int UiWeaponTypeListener = 34;
-    public const int WeaponType = 35;
+    public const int TrigButtonUp = 26;
+    public const int TrigRefreshStatusWindowDelay = 27;
+    public const int TrigTryPlayerClick = 28;
+    public const int WeaponSlotButton = 29;
+    public const int Window = 30;
+    public const int WinEndGameWindow = 31;
+    public const int UiHpListener = 32;
+    public const int UiSelectListener = 33;
+    public const int UiSelectRemovedListener = 34;
+    public const int UiWeaponTypeListener = 35;
+    public const int WeaponType = 36;
 
-    public const int TotalComponents = 36;
+    public const int TotalComponents = 37;
 
     public static readonly string[] componentNames = {
         "CanvasEnableListener",
@@ -74,6 +75,7 @@ public static class UiComponentsLookup {
         "ShowOnlyThisWindow",
         "SitDownButton",
         "StartGameButton",
+        "TrigButtonUp",
         "TrigRefreshStatusWindowDelay",
         "TrigTryPlayerClick",
         "WeaponSlotButton",
@@ -113,6 +115,7 @@ public static class UiComponentsLookup {
         typeof(Ui.ShowOnlyThisWindowComponent),
         typeof(Ui.SitDownButtonComponent),
         typeof(Ui.StartGameButtonComponent),
+        typeof(Ui.TrigButtonUpComponent),
         typeof(Ui.TrigRefreshStatusWindowDelayComponent),
         typeof(Ui.TrigTryPlayerClickComponent),
         typeof(Ui.WeaponSlotButtonComponent),

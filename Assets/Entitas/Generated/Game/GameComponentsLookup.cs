@@ -75,21 +75,22 @@ public static class GameComponentsLookup {
     public const int TimeShootDelay = 64;
     public const int Transform = 65;
     public const int TrigTimerEnd = 66;
-    public const int TrigTryPlayerClick = 67;
-    public const int Unit = 68;
-    public const int UnitRotation = 69;
-    public const int UnitRotationListener = 70;
-    public const int UnitWeaponTransform = 71;
-    public const int Unlink = 72;
-    public const int UnlinkListener = 73;
-    public const int UnloadLevelInProcess = 74;
-    public const int Velocity = 75;
-    public const int VelocityListener = 76;
-    public const int Weapon = 77;
-    public const int WeaponsId = 78;
-    public const int WeaponType = 79;
+    public const int TryShoot = 67;
+    public const int TrigTryPlayerClick = 68;
+    public const int Unit = 69;
+    public const int UnitRotation = 70;
+    public const int UnitRotationListener = 71;
+    public const int UnitWeaponTransform = 72;
+    public const int Unlink = 73;
+    public const int UnlinkListener = 74;
+    public const int UnloadLevelInProcess = 75;
+    public const int Velocity = 76;
+    public const int VelocityListener = 77;
+    public const int Weapon = 78;
+    public const int WeaponsId = 79;
+    public const int WeaponType = 80;
 
-    public const int TotalComponents = 80;
+    public const int TotalComponents = 81;
 
     public static readonly string[] componentNames = {
         "AgroShootingTimer",
@@ -159,6 +160,7 @@ public static class GameComponentsLookup {
         "TimeShootDelay",
         "Transform",
         "TrigTimerEnd",
+        "TryShoot",
         "TrigTryPlayerClick",
         "Unit",
         "UnitRotation",
@@ -242,6 +244,7 @@ public static class GameComponentsLookup {
         typeof(TimeShootDelayComponent),
         typeof(TransformComponent),
         typeof(TrigTimerEndComponent),
+        typeof(TryShootComponent),
         typeof(Ui.TrigTryPlayerClickComponent),
         typeof(UnitComponent),
         typeof(UnitRotationComponent),

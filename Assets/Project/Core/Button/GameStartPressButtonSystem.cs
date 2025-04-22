@@ -1,7 +1,8 @@
-﻿using Entitas;
-using System.Collections.Generic;
+﻿using Cysharp.Threading.Tasks;
+using Entitas;
+using System.Collections.Generic; 
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement; 
 
 namespace Button
 {
@@ -67,14 +68,18 @@ namespace Button
 
         private async void StartLoadLevelAsync(int levelIndex)
         {
-            await SceneManager.LoadSceneAsync(levelIndex, LoadSceneMode.Additive);
-
-            foreach (var windowEnt in _windowGroup.GetEntities())
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelIndex, LoadSceneMode.Additive);
+            await asyncLoad;
+           
+            if (asyncLoad.isDone)
             {
-                windowEnt.isShowOnlyThisWindow = windowEnt.isGameLevelWindow;
-            }
+                foreach (var windowEnt in _windowGroup.GetEntities())
+                {
+                    windowEnt.isShowOnlyThisWindow = windowEnt.isGameLevelWindow;
+                }
 
-            _context.ui.CreateEntity().AddTrigRefreshStatusWindowDelay(0f);
+                _context.ui.CreateEntity().AddTrigRefreshStatusWindowDelay(0f);
+            }
         }
 
         private void SetNewIndexScene(ref int sceneIndex)

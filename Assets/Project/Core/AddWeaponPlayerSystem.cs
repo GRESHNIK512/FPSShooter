@@ -59,7 +59,9 @@ namespace Game
             weaponEnt.AddAmmoType(weaponSetting.AmmoType);
             weaponEnt.AddDamageFalloffCurve(weaponSetting.DamageFalloffCurve);
             weaponEnt.AddDistanceShoot(weaponSetting.DistanceShoot);
-            weaponEnt.AddSetLocalPosition(Vector3.zero);  
+            weaponEnt.AddSetLocalPosition(Vector3.zero);
+
+            weaponEnt.AddMagazineAmmo(weaponEnt.magazineSize.Value);
 
             return weaponEnt;
         }

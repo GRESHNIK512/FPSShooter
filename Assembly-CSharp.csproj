@@ -109,10 +109,10 @@
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameWeaponComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Components\TouchDeltaPositionListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameUnlinkListenerComponent.cs" />
+    <Compile Include="Assets\Project\Core\ShootBotFireWeaponSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameGameHpListenerComponent.cs" />
     <Compile Include="Assets\Project\Core\Pool\PoolSettings.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameTimerComponent.cs" />
-    <Compile Include="Assets\Project\Core\ShootFireWeaponSystem.cs" />
     <Compile Include="Assets\Project\Core\ControlDistanceForShootSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameAgroShootingTimerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Systems\RemoveUnlinkGameSystem.cs" />
@@ -187,8 +187,8 @@
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameReloadingListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Systems\JoystickEventSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Systems\ReloadingEventSystem.cs" />
-    <Compile Include="Assets\Project\Core\BotAgroSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Systems\KeyDataEventSystem.cs" />
+    <Compile Include="Assets\Entitas\Generated\Game\Components\GameTryShootComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiWeaponSlotButtonComponent.cs" />
     <Compile Include="Assets\Project\Core\SwipeExecuteSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Components\SetLocalPositionListenerComponent.cs" />
@@ -239,6 +239,7 @@
     <Compile Include="Assets\Entitas\Generated\Data\Components\DataDataLoadFailComponent.cs" />
     <Compile Include="Assets\Project\Components\ButtonComponents.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IRectTransformListener.cs" />
+    <Compile Include="Assets\Project\Core\ShootExecuteSystem.cs" />
     <Compile Include="Assets\Project\Core\Button\MainMenuPressButtonSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Data\DataComponentsLookup.cs" />
     <Compile Include="Assets\Project\Core\SaveDataSystems.cs" />
@@ -280,6 +281,7 @@
     <Compile Include="Assets\Project\Components\InputComponents.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IShootingDelayListener.cs" />
     <Compile Include="Assets\Entitas\Generated\Data\DataAttribute.cs" />
+    <Compile Include="Assets\Project\Core\Button\ShootPressUpButtonSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameGameSelectRemovedListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameIdComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IJoystickListener.cs" />
@@ -297,6 +299,7 @@
     <Compile Include="Assets\Project\Scripts\SceneUI\Button\WinEndGameWindow\NextLevelButtonView.cs" />
     <Compile Include="Assets\Project\Installers\HeadInstaller.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameLevelComponent.cs" />
+    <Compile Include="Assets\Entitas\Generated\Ui\Components\UiTrigButtonUpComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiIndexComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Components\GameSelectListenerComponent.cs" />
     <Compile Include="Assets\Project\Core\AddWeaponBotSystem.cs" />
@@ -313,10 +316,12 @@
     <Compile Include="Assets\Entitas\Generated\Game\Systems\DestroyTrigTimerEndGameSystem.cs" />
     <Compile Include="Assets\Project\Core\UnloadLevelSystem.cs" />
     <Compile Include="Assets\Project\Core\UiElement\UiElement.cs" />
+    <Compile Include="Assets\Project\Core\BotAgroExecuteSystem.cs" />
     <Compile Include="Assets\Project\Core\RefreshStatusWindowSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameDefaultFireModeComponent.cs" />
     <Compile Include="Assets\Project\Components\GameLevelComponents.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameGameWeaponTypeListenerComponent.cs" />
+    <Compile Include="Assets\Project\Core\ShootPlayerFireWeaponSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiButtonComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameDeadComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Components\UnitRotationListenerComponent.cs" />
@@ -420,10 +425,11 @@
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameUnitWeaponTransformComponent.cs" />
     <Compile Include="Assets\Project\Core\InputSystems.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Systems\CanvasEnableEventSystem.cs" />
+    <Compile Include="Assets\Entitas\Generated\Ui\Systems\RemoveTrigButtonUpUiSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameSitDownComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameCameraPositionListenerComponent.cs" />
-    <Compile Include="Assets\Entitas\Generated\Events\Systems\TimeEventSystem.cs" />
     <Compile Include="Assets\Project\Scripts\Root.cs" />
+    <Compile Include="Assets\Entitas\Generated\Events\Systems\TimeEventSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Components\CanvasEnableListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Systems\RemoveShootGameSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IUnitRotationListener.cs" />
@@ -1729,6 +1735,14 @@
       <Project>{FA05D968-DDE5-39CA-6B5D-9089A38F2A63}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
+    <ProjectReference Include="UniTask.Linq.csproj">
+      <Project>{AFDF40BC-1445-9BEE-9961-82BBA0950F42}</Project>
+      <Name>UniTask.Linq</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.csproj">
+      <Project>{02E10A66-3E8F-57FA-6124-F789FCC79B07}</Project>
+      <Name>UniTask</Name>
+    </ProjectReference>
     <ProjectReference Include="Zenject-ReflectionBaking-Editor.csproj">
       <Project>{B92765A1-4485-26D4-6D1A-55DAAAEA4A84}</Project>
       <Name>Zenject-ReflectionBaking-Editor</Name>
@@ -1737,9 +1751,21 @@
       <Project>{A504A3AB-12E5-A706-DAE1-EE05CFB3A2BD}</Project>
       <Name>Zenject-Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="UniTask.Addressables.csproj">
+      <Project>{FEDA99AA-2043-99EF-050E-160CD84369D0}</Project>
+      <Name>UniTask.Addressables</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.DOTween.csproj">
+      <Project>{55804B8C-038F-1145-3074-DF191A83378D}</Project>
+      <Name>UniTask.DOTween</Name>
+    </ProjectReference>
     <ProjectReference Include="Zenject-PoolMonitor-Editor.csproj">
       <Project>{0502493F-4DB1-54DD-8FA7-A8EB3232DD41}</Project>
       <Name>Zenject-PoolMonitor-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.TextMeshPro.csproj">
+      <Project>{769FEC52-BAD5-778E-BDC9-68BFF013C0F8}</Project>
+      <Name>UniTask.TextMeshPro</Name>
     </ProjectReference>
     <ProjectReference Include="Zenject.csproj">
       <Project>{EF62ADA1-531E-E940-853C-3454EAA1C1C6}</Project>

@@ -25,8 +25,12 @@ namespace Game
 
             Add(new BotRotateSystem(contexts));
             Add(new ControlDistanceForShootSystem(contexts)); 
-            Add(new BotAgroSystem(contexts));
-            Add(new ShootFireWeaponSystem(contexts));  
+            Add(new BotAgroExecuteSystem(contexts)); 
+           
+            Add(new ShootExecuteSystem(contexts));
+
+            Add(new ShootBotFireWeaponSystem(contexts));
+            Add(new ShootPlayerFireWeaponSystem(contexts));
 
             Add(new HpControlDeadSystem(contexts));
             Add(new PlayerHpTransferToUiSystem(contexts));

@@ -12,10 +12,13 @@ namespace Button
             Add(new SitDownPressButtonSystem(contexts));
 
             Add(new ShootPressButtonSystem(contexts));
+            Add(new ShootPressUpButtonSystem(contexts));
 
             Add(new NextLevelPressButtonSystem(contexts));
             Add(new MainMenuPressButtonSystem(contexts));
+           
             Add(new WeaponSlotPressButtonSystem(contexts));
+           
 
             Add(new CloseGameLevelPressButtonSystem(contexts));
         }

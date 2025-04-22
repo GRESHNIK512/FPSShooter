@@ -3,11 +3,13 @@ using Entitas.CodeGeneration.Attributes;
  
 
 [Game]
-public class WeaponComponent : IComponent { }
-
+public class WeaponComponent : IComponent { } 
 
 [Game, Cleanup(CleanupMode.RemoveComponent)]
 public class ShootComponent : IComponent { }
+
+[Game]
+public class TryShootComponent : IComponent { }
 
 [Game]
 public sealed class IdComponent : IComponent //context.GetEntityWithId(id);

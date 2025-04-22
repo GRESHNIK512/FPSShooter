@@ -4,7 +4,7 @@ using Entitas.CodeGeneration.Attributes;
 namespace Ui
 {
     [Ui]
-    public class ButtonComponent : IComponent { }
+    public class ButtonComponent : IComponent { } 
 
     [Ui]
     public class IndexComponent : IComponent 
@@ -13,7 +13,10 @@ namespace Ui
     }
 
     [Game, Ui, Cleanup(CleanupMode.RemoveComponent)]
-    public class TrigTryPlayerClickComponent : IComponent { }  
+    public class TrigTryPlayerClickComponent : IComponent { }
+
+    [Ui, Cleanup(CleanupMode.RemoveComponent)]
+    public class TrigButtonUpComponent : IComponent { }
 
     //buttons
     [Ui]
