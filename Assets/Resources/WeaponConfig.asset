@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668cb926a532a034d8a8bda4c0620bbb, type: 3}
   m_Name: WeaponConfig
   m_EditorClassIdentifier: 
+  BackgroundColor: {r: 0.39607844, g: 0.39607844, b: 0.39607844, a: 0.39215687}
+  SelectColor: {r: 0, g: 0.34610033, b: 1, a: 0.39215687}
   Weapons:
   - Prefab: {fileID: 8258902923376479775, guid: 0c23acc55de41a1428f3188310ae4e95,
       type: 3}
     WeaponType: 0
     DefaultFireMode: 1
-    TimeReaload: 3
+    TimeReaload: 2
     TimeShootDelay: 0.1
     MagazineSize: 7
     AmmoType: 0
@@ -53,7 +55,7 @@ MonoBehaviour:
       type: 3}
     WeaponType: 1
     DefaultFireMode: 4
-    TimeReaload: 5
+    TimeReaload: 3
     TimeShootDelay: 0.075
     MagazineSize: 30
     AmmoType: 1

@@ -6,6 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public interface IReloadingListener {
-    void OnReloading(GameEntity entity, float value);
+public interface IGameTimeReloadListener {
+    void OnTimeReload(GameEntity entity, float value);
 }

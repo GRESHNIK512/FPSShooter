@@ -9,53 +9,65 @@
 public static class UiComponentsLookup {
 
     public const int CanvasEnableListener = 0;
-    public const int GraphicRaycasterEnableListener = 1;
-    public const int Hp = 2;
-    public const int JoystickDirectionListener = 3;
-    public const int JoystickListener = 4;
-    public const int RectTransformListener = 5;
-    public const int Select = 6;
-    public const int TrigRefreshStatusWindowDelayListener = 7;
-    public const int Button = 8;
-    public const int CanvasEnable = 9;
-    public const int CloseGameLevelButton = 10;
-    public const int GameLevelWindow = 11;
-    public const int GraphicRaycasterEnable = 12;
-    public const int Index = 13;
-    public const int Joystick = 14;
-    public const int JoystickDirection = 15;
-    public const int JumpPlayerButton = 16;
-    public const int LoseEndGameWindow = 17;
-    public const int MainMenuButton = 18;
-    public const int MainMenuWindow = 19;
-    public const int NextLevelButton = 20;
-    public const int RectTransform = 21;
-    public const int ShootButton = 22;
-    public const int ShowOnlyThisWindow = 23;
-    public const int SitDownButton = 24;
-    public const int StartGameButton = 25;
-    public const int TrigButtonUp = 26;
-    public const int TrigRefreshStatusWindowDelay = 27;
-    public const int TrigTryPlayerClick = 28;
-    public const int WeaponSlotButton = 29;
-    public const int Window = 30;
-    public const int WinEndGameWindow = 31;
-    public const int UiHpListener = 32;
-    public const int UiSelectListener = 33;
-    public const int UiSelectRemovedListener = 34;
-    public const int UiWeaponTypeListener = 35;
-    public const int WeaponType = 36;
+    public const int DestroyOnEndLevel = 1;
+    public const int GraphicRaycasterEnableListener = 2;
+    public const int Hp = 3;
+    public const int JoystickDirectionListener = 4;
+    public const int JoystickListener = 5;
+    public const int MagazineAmmo = 6;
+    public const int RectTransformListener = 7;
+    public const int Reloading = 8;
+    public const int Select = 9;
+    public const int TimeReload = 10;
+    public const int TrigRefreshStatusWindowDelayListener = 11;
+    public const int Button = 12;
+    public const int CanvasEnable = 13;
+    public const int CloseGameLevelButton = 14;
+    public const int GameLevelWindow = 15;
+    public const int GraphicRaycasterEnable = 16;
+    public const int Index = 17;
+    public const int Joystick = 18;
+    public const int JoystickDirection = 19;
+    public const int JumpPlayerButton = 20;
+    public const int LoseEndGameWindow = 21;
+    public const int MainMenuButton = 22;
+    public const int MainMenuWindow = 23;
+    public const int NextLevelButton = 24;
+    public const int RectTransform = 25;
+    public const int ReloadButton = 26;
+    public const int ShootButton = 27;
+    public const int ShowOnlyThisWindow = 28;
+    public const int SitDownButton = 29;
+    public const int StartGameButton = 30;
+    public const int TrigButtonUp = 31;
+    public const int TrigRefreshStatusWindowDelay = 32;
+    public const int TrigTryPlayerClick = 33;
+    public const int WeaponSlotButton = 34;
+    public const int Window = 35;
+    public const int WinEndGameWindow = 36;
+    public const int UiHpListener = 37;
+    public const int UiMagazineAmmoListener = 38;
+    public const int UiReloadingListener = 39;
+    public const int UiSelectListener = 40;
+    public const int UiSelectRemovedListener = 41;
+    public const int UiTimeReloadListener = 42;
+    public const int UiWeaponTypeListener = 43;
+    public const int WeaponType = 44;
 
-    public const int TotalComponents = 37;
+    public const int TotalComponents = 45;
 
     public static readonly string[] componentNames = {
         "CanvasEnableListener",
+        "DestroyOnEndLevel",
         "GraphicRaycasterEnableListener",
         "Hp",
         "JoystickDirectionListener",
         "JoystickListener",
+        "MagazineAmmo",
         "RectTransformListener",
+        "Reloading",
         "Select",
+        "TimeReload",
         "TrigRefreshStatusWindowDelayListener",
         "Button",
         "CanvasEnable",
@@ -71,6 +83,7 @@ public static class UiComponentsLookup {
         "MainMenuWindow",
         "NextLevelButton",
         "RectTransform",
+        "ReloadButton",
         "ShootButton",
         "ShowOnlyThisWindow",
         "SitDownButton",
@@ -82,20 +95,27 @@ public static class UiComponentsLookup {
         "Window",
         "WinEndGameWindow",
         "UiHpListener",
+        "UiMagazineAmmoListener",
+        "UiReloadingListener",
         "UiSelectListener",
         "UiSelectRemovedListener",
+        "UiTimeReloadListener",
         "UiWeaponTypeListener",
         "WeaponType"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(CanvasEnableListenerComponent),
+        typeof(DestroyOnEndLevelComponent),
         typeof(GraphicRaycasterEnableListenerComponent),
         typeof(HpComponent),
         typeof(JoystickDirectionListenerComponent),
         typeof(JoystickListenerComponent),
+        typeof(MagazineAmmoComponent),
         typeof(RectTransformListenerComponent),
+        typeof(ReloadingComponent),
         typeof(SelectComponent),
+        typeof(TimeReloadComponent),
         typeof(TrigRefreshStatusWindowDelayListenerComponent),
         typeof(Ui.ButtonComponent),
         typeof(Ui.CanvasEnableComponent),
@@ -111,6 +131,7 @@ public static class UiComponentsLookup {
         typeof(Ui.MainMenuWindowComponent),
         typeof(Ui.NextLevelButtonComponent),
         typeof(Ui.RectTransformComponent),
+        typeof(Ui.ReloadButtonComponent),
         typeof(Ui.ShootButtonComponent),
         typeof(Ui.ShowOnlyThisWindowComponent),
         typeof(Ui.SitDownButtonComponent),
@@ -122,8 +143,11 @@ public static class UiComponentsLookup {
         typeof(Ui.WindowComponent),
         typeof(Ui.WinEndGameWindowComponent),
         typeof(UiHpListenerComponent),
+        typeof(UiMagazineAmmoListenerComponent),
+        typeof(UiReloadingListenerComponent),
         typeof(UiSelectListenerComponent),
         typeof(UiSelectRemovedListenerComponent),
+        typeof(UiTimeReloadListenerComponent),
         typeof(UiWeaponTypeListenerComponent),
         typeof(WeaponTypeComponent)
     };

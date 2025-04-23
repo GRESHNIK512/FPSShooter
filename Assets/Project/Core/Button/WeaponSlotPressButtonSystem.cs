@@ -24,11 +24,11 @@ namespace Button
 
         protected override void Execute(List<UiEntity> entities)
         {
-            foreach (var weaponSlotEnt in entities) 
+            foreach (var buttonEnt in entities) 
             {
-                if (!weaponSlotEnt.isSelect)
+                if (!buttonEnt.isSelect)
                 {
-                    weaponSlotEnt.isSelect = true; 
+                    buttonEnt.isSelect = true;  
                 }
             }
         } 

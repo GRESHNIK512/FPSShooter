@@ -14,13 +14,15 @@ public sealed class GameEventSystems : Feature {
         Add(new DeadEventSystem(contexts)); // priority: 0
         Add(new GameHpEventSystem(contexts)); // priority: 0
         Add(new JumpEventSystem(contexts)); // priority: 0
-        Add(new ReloadingEventSystem(contexts)); // priority: 0
+        Add(new GameMagazineAmmoEventSystem(contexts)); // priority: 0
+        Add(new GameReloadingEventSystem(contexts)); // priority: 0
         Add(new GameSelectEventSystem(contexts)); // priority: 0
         Add(new GameSelectRemovedEventSystem(contexts)); // priority: 0
         Add(new SetLocalPositionEventSystem(contexts)); // priority: 0
         Add(new SetPositionEventSystem(contexts)); // priority: 0
         Add(new ShootingDelayEventSystem(contexts)); // priority: 0
         Add(new TimeEventSystem(contexts)); // priority: 0
+        Add(new GameTimeReloadEventSystem(contexts)); // priority: 0
         Add(new UnitRotationEventSystem(contexts)); // priority: 0
         Add(new UnlinkEventSystem(contexts)); // priority: 0
         Add(new VelocityEventSystem(contexts)); // priority: 0

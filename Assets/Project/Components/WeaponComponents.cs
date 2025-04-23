@@ -54,13 +54,13 @@ public class DistanceShootComponent : IComponent
     public float Value;
 }
 
-[Game]
+[Game, Ui, Event(EventTarget.Self)]
 public class TimeReloadComponent : IComponent
 {
     public float Value;
 }
 
-[Game, Event(EventTarget.Self)]
+[Game, Ui, Event(EventTarget.Self)]
 public class ReloadingComponent : IComponent
 {
     public float Value;
@@ -84,7 +84,7 @@ public class MagazineSizeComponent : IComponent
     public int Value;
 }
 
-[Game]
+[Game, Ui, Event(EventTarget.Self)]
 public class MagazineAmmoComponent : IComponent
 {
     public int Value;

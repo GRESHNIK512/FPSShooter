@@ -11,6 +11,7 @@ namespace Game
         private IGroup<GameEntity> _levelObjectGroup;
         private IGroup<GameEntity> _destroyOnEndLevelGroup;
         private IGroup<UiEntity> _starGameButtonGroup;
+        private IGroup<UiEntity> _weaponSlotSelectGroup;
 
         public UnloadLevelSystem(Contexts contexts) : base (contexts.game)
         {
@@ -18,6 +19,7 @@ namespace Game
             _levelObjectGroup = _context.game.GetGroup(GameMatcher.ObjectLevel);
             _starGameButtonGroup = _context.ui.GetGroup(UiMatcher.StartGameButton);
             _destroyOnEndLevelGroup = _context.game.GetGroup(GameMatcher.DestroyOnEndLevel);
+            _weaponSlotSelectGroup = _context.ui.GetGroup(UiMatcher.AllOf(UiMatcher.WeaponSlotButton, UiMatcher.Select));
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -41,6 +43,11 @@ namespace Game
         private async void UnloadLevelAsync(GameEntity levelManagerEnt)
         {
             levelManagerEnt.isUnloadLevelInProcess = true;
+
+            foreach (var weaponSlotEnt in _weaponSlotSelectGroup.GetEntities())
+            {
+                weaponSlotEnt.isSelect = false;
+            }
 
             foreach (var levelObjEnt in _levelObjectGroup.GetEntities())
             { 

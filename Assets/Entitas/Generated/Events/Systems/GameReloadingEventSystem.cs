@@ -6,12 +6,12 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public sealed class ReloadingEventSystem : Entitas.ReactiveSystem<GameEntity> {
+public sealed class GameReloadingEventSystem : Entitas.ReactiveSystem<GameEntity> {
 
-    readonly System.Collections.Generic.List<IReloadingListener> _listenerBuffer;
+    readonly System.Collections.Generic.List<IGameReloadingListener> _listenerBuffer;
 
-    public ReloadingEventSystem(Contexts contexts) : base(contexts.game) {
-        _listenerBuffer = new System.Collections.Generic.List<IReloadingListener>();
+    public GameReloadingEventSystem(Contexts contexts) : base(contexts.game) {
+        _listenerBuffer = new System.Collections.Generic.List<IGameReloadingListener>();
     }
 
     protected override Entitas.ICollector<GameEntity> GetTrigger(Entitas.IContext<GameEntity> context) {
@@ -21,14 +21,14 @@ public sealed class ReloadingEventSystem : Entitas.ReactiveSystem<GameEntity> {
     }
 
     protected override bool Filter(GameEntity entity) {
-        return entity.hasReloading && entity.hasReloadingListener;
+        return entity.hasReloading && entity.hasGameReloadingListener;
     }
 
     protected override void Execute(System.Collections.Generic.List<GameEntity> entities) {
         foreach (var e in entities) {
             var component = e.reloading;
             _listenerBuffer.Clear();
-            _listenerBuffer.AddRange(e.reloadingListener.value);
+            _listenerBuffer.AddRange(e.gameReloadingListener.value);
             foreach (var listener in _listenerBuffer) {
                 listener.OnReloading(e, component.Value);
             }

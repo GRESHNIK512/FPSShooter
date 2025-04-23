@@ -12,7 +12,17 @@ namespace Game
         {
             _context = contexts;
             _playerWeaponGroup = _context.game.GetGroup(GameMatcher.AllOf(GameMatcher.WeaponType, GameMatcher.Player));
+        } 
+
+        protected override ICollector<UiEntity> GetTrigger(IContext<UiEntity> context)
+        {
+            return context.CreateCollector(UiMatcher.Select.Added());
         }
+
+        protected override bool Filter(UiEntity entity)
+        {
+            return entity.isWeaponSlotButton;
+        } 
 
         protected override void Execute(List<UiEntity> entities)
         {
@@ -20,19 +30,20 @@ namespace Game
             {
                 foreach (var weaponEnt in _playerWeaponGroup.GetEntities())
                 {
-                    weaponEnt.isSelect = weaponSlotEnt.weaponType.Value == weaponEnt.weaponType.Value;
+                    if (weaponSlotEnt.weaponType.Value == weaponEnt.weaponType.Value)
+                    {
+                        weaponEnt.isSelect = true;
+                        if (weaponEnt.magazineAmmo.Value == 0) 
+                            weaponEnt.AddReloading(weaponEnt.timeReload.Value);
+                    }
+                    else 
+                    {
+                        weaponEnt.isSelect = false;
+                        if (weaponEnt.hasReloading) 
+                            weaponEnt.RemoveReloading();
+                    } 
                 }
             }
-        }
-
-        protected override bool Filter(UiEntity entity)
-        {
-            return entity.isWeaponSlotButton;
-        }
-
-        protected override ICollector<UiEntity> GetTrigger(IContext<UiEntity> context)
-        {
-            return context.CreateCollector(UiMatcher.Select.Added());
-        }
+        } 
     }
 }

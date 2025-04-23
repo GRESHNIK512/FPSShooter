@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WeaponConfig : ScriptableObject
 {
+    public Color BackgroundColor;
+    public Color SelectColor;
     public WeaponSettings[] Weapons;
 }  
 

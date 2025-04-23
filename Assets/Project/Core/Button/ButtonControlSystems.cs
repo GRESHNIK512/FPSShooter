@@ -18,6 +18,7 @@ namespace Button
             Add(new MainMenuPressButtonSystem(contexts));
            
             Add(new WeaponSlotPressButtonSystem(contexts));
+            Add(new ReloadPressButtonSystem(contexts));
            
 
             Add(new CloseGameLevelPressButtonSystem(contexts));

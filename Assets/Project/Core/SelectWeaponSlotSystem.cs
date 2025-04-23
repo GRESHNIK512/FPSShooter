@@ -27,11 +27,14 @@ namespace Game
         protected override void Execute(List<UiEntity> entities)
         {
             foreach (var selectWeaponSlotEnt in entities) 
-            {
+            { 
                 foreach (var weaponSlotEnt in _weaponSlotGroup.GetEntities())
                 {
-                    if (weaponSlotEnt.isSelect && selectWeaponSlotEnt != weaponSlotEnt) 
-                        weaponSlotEnt.isSelect = false;
+                    if (selectWeaponSlotEnt != weaponSlotEnt)
+                    {
+                        if (weaponSlotEnt.isSelect) weaponSlotEnt.isSelect = false;
+                        if (weaponSlotEnt.hasReloading) weaponSlotEnt.RemoveReloading();
+                    }
                 }
             }
         } 

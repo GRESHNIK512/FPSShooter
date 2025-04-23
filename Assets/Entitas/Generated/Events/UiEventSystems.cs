@@ -14,9 +14,12 @@ public sealed class UiEventSystems : Feature {
         Add(new UiHpEventSystem(contexts)); // priority: 0
         Add(new JoystickEventSystem(contexts)); // priority: 0
         Add(new JoystickDirectionEventSystem(contexts)); // priority: 0
+        Add(new UiMagazineAmmoEventSystem(contexts)); // priority: 0
         Add(new RectTransformEventSystem(contexts)); // priority: 0
+        Add(new UiReloadingEventSystem(contexts)); // priority: 0
         Add(new UiSelectEventSystem(contexts)); // priority: 0
         Add(new UiSelectRemovedEventSystem(contexts)); // priority: 0
+        Add(new UiTimeReloadEventSystem(contexts)); // priority: 0
         Add(new TrigRefreshStatusWindowDelayEventSystem(contexts)); // priority: 0
         Add(new UiWeaponTypeEventSystem(contexts)); // priority: 0
     }

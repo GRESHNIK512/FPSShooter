@@ -42,4 +42,7 @@ namespace Ui
 
     [Ui]
     public class WeaponSlotButtonComponent : IComponent { }
+
+    [Ui]
+    public class ReloadButtonComponent : IComponent { }
 }
