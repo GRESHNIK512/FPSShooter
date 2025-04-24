@@ -9,8 +9,10 @@
 public sealed class GameEventSystems : Feature {
 
     public GameEventSystems(Contexts contexts) {
+        Add(new AmmoTypeEventSystem(contexts)); // priority: 0
         Add(new CameraPositionEventSystem(contexts)); // priority: 0
         Add(new CaplsuleHeightEventSystem(contexts)); // priority: 0
+        Add(new GameCountEventSystem(contexts)); // priority: 0
         Add(new DeadEventSystem(contexts)); // priority: 0
         Add(new GameHpEventSystem(contexts)); // priority: 0
         Add(new JumpEventSystem(contexts)); // priority: 0

@@ -161,6 +161,12 @@ MonoBehaviour:
   - ObjectPrefab: {fileID: 8258902923376479775, guid: 0c23acc55de41a1428f3188310ae4e95,
       type: 3}
     InitialCount: 2
+  - ObjectPrefab: {fileID: 2987223324212383878, guid: 6af486ff6f7eb9348a89054a13166865,
+      type: 3}
+    InitialCount: 2
+  - ObjectPrefab: {fileID: 7432175966873998020, guid: 25bc6277eef2eb147aeefe0e239af510,
+      type: 3}
+    InitialCount: 2
 --- !u!4 &780563572
 Transform:
   m_ObjectHideFlags: 0
@@ -170,7 +176,7 @@ Transform:
   m_GameObject: {fileID: 780563570}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 50, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

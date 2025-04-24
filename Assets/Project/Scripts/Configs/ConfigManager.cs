@@ -8,6 +8,8 @@ public static class ConfigsManager
     public static LevelConfig LevelConfig { get; private set; }
     public static WeaponConfig WeaponConfig { get; private set; }
 
+    public static AmmoConfig AmmoConfig { get; private set; }
+
     public static void LoadConfigs()
     {
         //Dbg.Log("InitCOnfig");
@@ -17,6 +19,7 @@ public static class ConfigsManager
         BotConfig = Resources.Load<BotConfig>(nameof(BotConfig));
         LevelConfig = Resources.Load<LevelConfig>(nameof(LevelConfig));
         WeaponConfig = Resources.Load<WeaponConfig>(nameof(WeaponConfig));
+        AmmoConfig = Resources.Load<AmmoConfig>(nameof(AmmoConfig));
 
         _initialized = true;
     }

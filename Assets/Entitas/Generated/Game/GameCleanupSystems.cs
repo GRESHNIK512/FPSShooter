@@ -11,6 +11,7 @@ public sealed class GameCleanupSystems : Feature {
     public GameCleanupSystems(Contexts contexts) {
         Add(new RemoveTrigTryPlayerClickGameSystem(contexts));
         Add(new RemoveJumpGameSystem(contexts));
+        Add(new RemoveTryAddBackPackGameSystem(contexts));
         Add(new RemoveLevelUnloadGameSystem(contexts));
         Add(new RemoveUnlinkGameSystem(contexts));
         Add(new RemoveShootGameSystem(contexts));

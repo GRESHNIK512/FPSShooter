@@ -10,6 +10,7 @@ public sealed class UiEventSystems : Feature {
 
     public UiEventSystems(Contexts contexts) {
         Add(new CanvasEnableEventSystem(contexts)); // priority: 0
+        Add(new UiCountEventSystem(contexts)); // priority: 0
         Add(new GraphicRaycasterEnableEventSystem(contexts)); // priority: 0
         Add(new UiHpEventSystem(contexts)); // priority: 0
         Add(new JoystickEventSystem(contexts)); // priority: 0

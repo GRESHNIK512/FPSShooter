@@ -31,6 +31,13 @@ namespace Game
                 inventoryEnt.AddId(inventoryEnt.creationIndex);
 
                 unitEnt.AddInventoryId(new List<int> { inventoryEnt.id.Value });
+
+                if (unitEnt.isPlayer) 
+                {
+                    inventoryEnt.AddBackpack(new Dictionary<string, List<int>>());
+                    inventoryEnt.AddMassResult(0);
+                    inventoryEnt.AddMaxMass(100); 
+                }
             }
         } 
     }

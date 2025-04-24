@@ -5,8 +5,10 @@ using Entitas.CodeGeneration.Attributes;
 [Game]
 public class WeaponComponent : IComponent { } 
 
+
 [Game, Cleanup(CleanupMode.RemoveComponent)]
 public class ShootComponent : IComponent { }
+
 
 [Game]
 public class TryShootComponent : IComponent { }
@@ -90,7 +92,7 @@ public class MagazineAmmoComponent : IComponent
     public int Value;
 }
 
-[Game]
+[Game, Event(EventTarget.Self)]
 public class AmmoTypeComponent : IComponent
 {
     public AmmoType Value;

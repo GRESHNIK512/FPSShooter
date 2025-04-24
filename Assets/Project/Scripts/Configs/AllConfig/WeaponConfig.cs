@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponConfig : ScriptableObject
 {
     public Color BackgroundColor;
-    public Color SelectColor;
+    public Color SelectColor; 
     public WeaponSettings[] Weapons;
 }  
 
@@ -41,10 +41,4 @@ public enum FireMode
     //Burst = 2,       // Очередь (например, по 3 выстрела)
     Auto = 4,        // Автоматический
     //BoltAction = 8   // Для снайперских винтовок
-}
-
-public enum AmmoType
-{
-    mm9,     // 9mm для пистолетов
-    mm556   // 5.56mm для M16, AR-15 
-}
+} 

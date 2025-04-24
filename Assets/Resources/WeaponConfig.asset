@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackgroundColor: {r: 0.39607844, g: 0.39607844, b: 0.39607844, a: 0.39215687}
   SelectColor: {r: 0, g: 0.34610033, b: 1, a: 0.39215687}
+  AmmoMaterials:
+  - {fileID: 2100000, guid: 070821f3abbd83e4dbe87c6e18197cfd, type: 2}
+  - {fileID: 2100000, guid: 22c49f91c60b372488aaf66ec9d0399f, type: 2}
   Weapons:
   - Prefab: {fileID: 8258902923376479775, guid: 0c23acc55de41a1428f3188310ae4e95,
       type: 3}

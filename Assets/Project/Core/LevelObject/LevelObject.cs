@@ -10,7 +10,7 @@ public abstract class LevelObject : MonoBehaviour, IUnlinkListener, ISetLocalPos
 
     public GameObject GameObject => gameObject; 
     public Transform Transform => transform; 
-    public event Action<IPoolable> ReturnPoolEvent;
+    public event Action<IPoolable> ReturnPoolEvent;  
 
     public virtual void Init()
     {  
