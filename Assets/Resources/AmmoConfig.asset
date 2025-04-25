@@ -17,8 +17,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 22c49f91c60b372488aaf66ec9d0399f, type: 2}
   AmmosSettings:
   - Type: 0
-    Mass: 0.1
+    Mass: 1
     MaxCountInStack: 30
   - Type: 1
-    Mass: 0.15
+    Mass: 2
     MaxCountInStack: 60

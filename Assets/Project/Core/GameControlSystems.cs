@@ -15,9 +15,10 @@ namespace Game
             Add(new CreateUnitInventorySystem(contexts));
             Add(new AddWeaponPlayerSystem(contexts));
             Add(new AddWeaponBotSystem(contexts));
-            Add(new AddEquipmentToBackpackSystem(contexts));
+            Add(new DefaultItemToBackpackSystem(contexts));
 
             Add(new CalculateMassOnEquipmentSystem(contexts));
+            Add(new TryAddEquipmentItemToBackPackSystem(contexts));
 
             Add(new ChangeWeaponInventoryPlayerSystem(contexts));
             Add(new SelectWeaponSlotSystem(contexts));

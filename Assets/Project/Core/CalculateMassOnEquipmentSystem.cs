@@ -19,14 +19,14 @@ namespace Game
 
         protected override bool Filter(GameEntity entity)
         {
-            return entity.isEquipment;
+            return entity.isEquipment && entity.hasMassByOneItem;
         }
 
         protected override void Execute(List<GameEntity> entities)
         {
             foreach (var equipmetEnt in entities) 
-            {
-                equipmetEnt.ReplaceMassResult(equipmetEnt.massByOneItem.Value * equipmetEnt.count.Value);
+            { 
+                equipmetEnt.ReplaceMassResult(equipmetEnt.massByOneItem.Value * equipmetEnt.count.Value); 
             }
         } 
     }

@@ -9,7 +9,8 @@ public abstract class Equipment : LevelObject
         base.Init();
         _gameEntity.isEquipment = true;
         _gameEntity.AddId(_gameEntity.creationIndex);
+        _gameEntity.AddCount(1);
     }
 
-    public abstract void AddDefaultSetting();
+    public virtual void AddDefaultSetting() { }
 }

@@ -1,7 +1,7 @@
 
 public class AmmoView : Equipment, IAmmoTypeListener
 {
-    private AmmoType _ammoType;  
+    private AmmoType _ammoType;
 
     public override void Init()
     {
@@ -11,23 +11,22 @@ public class AmmoView : Equipment, IAmmoTypeListener
 
     public override void AddDefaultSetting()
     {
-        var ammoSetting = GetAmmoSettingByType();
-        _gameEntity.AddMassByOneItem(ammoSetting.Mass);
-        _gameEntity.AddMaxCountInStack(ammoSetting.MaxCountInStack);
+        _gameEntity.AddEquipmentKey(_ammoType.ToString());
+       
+        foreach (var ammoSetting in ConfigsManager.AmmoConfig.AmmosSettings)
+        {
+            if (ammoSetting.Type != _ammoType) continue;
+            _gameEntity.AddMassByOneItem(ammoSetting.Mass);
+            _gameEntity.AddMaxCountInStack(ammoSetting.MaxCountInStack);
+        }
+       
+        _gameEntity.ReplaceCount(_gameEntity.count.Value); 
     }
 
     public void OnAmmoType(GameEntity entity, AmmoType value)
-    {
-        _ammoType = value;
-        _modelMeshRenderer.material = ConfigsManager.AmmoConfig.AmmoMaterials[(int)value]; 
-    }
-
-    private AmmoSetting GetAmmoSettingByType() 
-    {
-        foreach (var ammoSetting in ConfigsManager.AmmoConfig.AmmosSettings)
-        {
-            if (ammoSetting.Type == _ammoType) return ammoSetting;
-        }
-        return null;
-    }
+    { 
+        _ammoType = value; 
+        _modelMeshRenderer.material = ConfigsManager.AmmoConfig.AmmoMaterials[(int)value];
+        AddDefaultSetting();
+    } 
 } 

@@ -36,7 +36,7 @@ namespace Game
                 {
                     inventoryEnt.AddBackpack(new Dictionary<string, List<int>>());
                     inventoryEnt.AddMassResult(0);
-                    inventoryEnt.AddMaxMass(100); 
+                    inventoryEnt.AddMaxMass(200); 
                 }
             }
         } 

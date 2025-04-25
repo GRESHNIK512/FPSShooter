@@ -6,6 +6,12 @@ using System.Collections.Generic;
 public class EquipmentComponent : IComponent { }
 
 [Game]
+public class EquipmentKeyComponent : IComponent 
+{
+    public string Value;
+}
+
+[Game]
 public class MassResultComponent : IComponent 
 {
     public float Value;
@@ -24,7 +30,7 @@ public class CountComponent : IComponent
 }
 
 [Game]
-public class MaxCountInStackComponent : IComponent 
+public class MaxCountInStackComponent : IComponent
 {
     public int Value;
 }
@@ -32,7 +38,7 @@ public class MaxCountInStackComponent : IComponent
 [Game]
 public class InBackPackComponent : IComponent { }
 
-[Game, Cleanup(CleanupMode.RemoveComponent)]
+[Game]
 public class TryAddBackPackComponent : IComponent { }
 
 

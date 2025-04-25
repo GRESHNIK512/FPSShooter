@@ -4,10 +4,7 @@ public class MedKitView : Equipment
     public override void Init()
     {
         base.Init();
-    }
-
-    public override void AddDefaultSetting()
-    {
-
-    }
+        _gameEntity.AddEquipmentKey($"{GetType()}");
+        _gameEntity.AddMassByOneItem(50);
+    }  
 } 
