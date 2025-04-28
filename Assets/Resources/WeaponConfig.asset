@@ -14,18 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackgroundColor: {r: 0.39607844, g: 0.39607844, b: 0.39607844, a: 0.39215687}
   SelectColor: {r: 0, g: 0.34610033, b: 1, a: 0.39215687}
-  AmmoMaterials:
-  - {fileID: 2100000, guid: 070821f3abbd83e4dbe87c6e18197cfd, type: 2}
-  - {fileID: 2100000, guid: 22c49f91c60b372488aaf66ec9d0399f, type: 2}
   Weapons:
   - Prefab: {fileID: 8258902923376479775, guid: 0c23acc55de41a1428f3188310ae4e95,
       type: 3}
-    WeaponType: 0
+    Type: 0
     DefaultFireMode: 1
     TimeReaload: 2
     TimeShootDelay: 0.1
     MagazineSize: 7
-    AmmoType: 0
+    AmmoType: 2
     DamageFalloffCurve:
       serializedVersion: 2
       m_Curve:
@@ -53,15 +50,14 @@ MonoBehaviour:
     DistanceShoot: 8
     MinDamage: 1
     MaxDamage: 5
-    Sprite: {fileID: 21300000, guid: c0da98efe3f28e6488e1e4f4cf3f0e53, type: 3}
   - Prefab: {fileID: 4047169002933741479, guid: 9495310878e1e8a4eba05fa186d5fdc1,
       type: 3}
-    WeaponType: 1
+    Type: 1
     DefaultFireMode: 4
     TimeReaload: 3
     TimeShootDelay: 0.075
     MagazineSize: 30
-    AmmoType: 1
+    AmmoType: 3
     DamageFalloffCurve:
       serializedVersion: 2
       m_Curve:
@@ -89,4 +85,3 @@ MonoBehaviour:
     DistanceShoot: 20
     MinDamage: 5
     MaxDamage: 15
-    Sprite: {fileID: 21300000, guid: 18dbabb5985e34642a5f8bc63a6f252a, type: 3}

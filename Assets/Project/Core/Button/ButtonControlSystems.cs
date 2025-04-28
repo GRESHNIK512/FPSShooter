@@ -8,7 +8,7 @@ namespace Button
         {
             //UI
             Add(new GameStartPressButtonSystem(contexts));
-            //Add(new GameClosePressButtonSystem(contexts));
+            
             Add(new SitDownPressButtonSystem(contexts));
 
             Add(new ShootPressButtonSystem(contexts));
@@ -22,6 +22,8 @@ namespace Button
            
 
             Add(new CloseGameLevelPressButtonSystem(contexts));
+
+            Add(new ClearButtonClickSystem(contexts));
         }
     }
 }

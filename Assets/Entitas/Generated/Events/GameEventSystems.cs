@@ -9,14 +9,16 @@
 public sealed class GameEventSystems : Feature {
 
     public GameEventSystems(Contexts contexts) {
-        Add(new AmmoTypeEventSystem(contexts)); // priority: 0
+        Add(new GameAmmoTypeEventSystem(contexts)); // priority: 0
         Add(new CameraPositionEventSystem(contexts)); // priority: 0
         Add(new CaplsuleHeightEventSystem(contexts)); // priority: 0
         Add(new GameCountEventSystem(contexts)); // priority: 0
         Add(new DeadEventSystem(contexts)); // priority: 0
+        Add(new GameEquipmentTypeEventSystem(contexts)); // priority: 0
         Add(new GameHpEventSystem(contexts)); // priority: 0
         Add(new JumpEventSystem(contexts)); // priority: 0
         Add(new GameMagazineAmmoEventSystem(contexts)); // priority: 0
+        Add(new ModelMaterialEventSystem(contexts)); // priority: 0
         Add(new GameReloadingEventSystem(contexts)); // priority: 0
         Add(new GameSelectEventSystem(contexts)); // priority: 0
         Add(new GameSelectRemovedEventSystem(contexts)); // priority: 0
@@ -28,6 +30,5 @@ public sealed class GameEventSystems : Feature {
         Add(new UnitRotationEventSystem(contexts)); // priority: 0
         Add(new UnlinkEventSystem(contexts)); // priority: 0
         Add(new VelocityEventSystem(contexts)); // priority: 0
-        Add(new GameWeaponTypeEventSystem(contexts)); // priority: 0
     }
 }

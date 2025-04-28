@@ -1,6 +1,7 @@
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
-using System.Collections.Generic; 
+using System.Collections.Generic;
+using UnityEngine;
 
 [Game]
 public class EquipmentComponent : IComponent { }
@@ -9,6 +10,18 @@ public class EquipmentComponent : IComponent { }
 public class EquipmentKeyComponent : IComponent 
 {
     public string Value;
+}
+
+[Game, Ui, Event(EventTarget.Self)]
+public class EquipmentTypeComponent : IComponent
+{
+    public EquipmentType Value;
+}
+
+[Game, Event(EventTarget.Self)]
+public class ModelMaterialComponent : IComponent
+{
+    public Material Value;
 }
 
 [Game]
@@ -53,4 +66,5 @@ public class BackpackComponent : IComponent
 public class MaxMassComponent : IComponent
 {
     public float Value;
-} 
+}
+

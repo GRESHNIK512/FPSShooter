@@ -1,4 +1,5 @@
 ﻿using Entitas;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace Game
@@ -18,17 +19,21 @@ namespace Game
         {
             foreach (var weaponEnt in _reloadingGroup.GetEntities())
             {
-                if (weaponEnt.hasShootingDelay) continue;
-               
-                var nowReloadingTime = weaponEnt.reloading.Value;
-                var newReloadingTime = nowReloadingTime - Time.deltaTime;
+                if (!weaponEnt.hasShootingDelay || weaponEnt.shootingDelay.Value > 0) continue;
 
-                if (newReloadingTime > 0) weaponEnt.ReplaceReloading(newReloadingTime);
-                else
+                var nowReloadinTime = weaponEnt.reloading.Value;
+                
+                if (nowReloadinTime == 0) continue;
+                
+                var newReloadingTime = nowReloadinTime - Time.deltaTime;
+
+                if (newReloadingTime > 0) 
+                    weaponEnt.ReplaceReloading(newReloadingTime);
+                else 
                 {
                     weaponEnt.ReplaceMagazineAmmo(weaponEnt.magazineSize.Value);
-                    weaponEnt.RemoveReloading();
-                }
+                    weaponEnt.ReplaceReloading(0); 
+                } 
             }
         }
     }

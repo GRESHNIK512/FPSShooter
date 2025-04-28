@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8081926652038273864}
+  - component: {fileID: 3212956998938507578}
   - component: {fileID: 2984112430706988484}
   - component: {fileID: 5488494841198073004}
-  - component: {fileID: 8258902923376479775}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -34,6 +34,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3212956998938507578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4708084258694035102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39b9ea0600a0ab4886fce12953f4613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _modelMeshRenderer: {fileID: 5488494841198073004}
 --- !u!33 &2984112430706988484
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -86,15 +99,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8258902923376479775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4708084258694035102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c6b8f5b689a29445a0bee13b4ff5580, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

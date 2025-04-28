@@ -72,7 +72,7 @@ namespace Game
 
                     foreach (var startGameButtonEnt in _starGameButtonGroup.GetEntities())
                     {
-                        startGameButtonEnt.isTrigTryPlayerClick = true;
+                        startGameButtonEnt.ReplaceTrigTryPlayerClick(true);
                     }
                 }
             }

@@ -21,7 +21,7 @@ namespace Button
 
         protected override bool Filter(UiEntity entity)
         {
-            return entity.isCloseGameLevelButton;
+            return entity.isCloseGameLevelButton && entity.trigTryPlayerClick.Value;
         }
 
         protected override void Execute(List<UiEntity> entities)
@@ -32,7 +32,7 @@ namespace Button
 
                 foreach (var mainMenuButtonEnt in _buttonMainMenuGroup.GetEntities()) 
                 {
-                    mainMenuButtonEnt.isTrigTryPlayerClick = true;
+                    mainMenuButtonEnt.ReplaceTrigTryPlayerClick(true);
                 } 
             }
         }

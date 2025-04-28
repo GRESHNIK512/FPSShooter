@@ -27,11 +27,11 @@ namespace Game
         {
             foreach (var unitEnt in entities)
             {  
-                foreach (var weaponInfo in ConfigsManager.WeaponConfig.Weapons)
+                foreach (var weaponSetting in ConfigsManager.WeaponConfig.Weapons)
                 {
-                    var weapon = PoolService.Instance.GetObjectFromPool<Weapon>(weaponInfo.WeaponType, unitEnt.unitWeaponTransform.Value);  
+                    var weapon = PoolService.Instance.GetObjectFromPool<Weapon>(weaponSetting.Type, unitEnt.unitWeaponTransform.Value);  
 
-                    GameEntity weaponEnt = CreateWeapon(weapon, weaponInfo);
+                    GameEntity weaponEnt = CreateWeapon(weapon, weaponSetting);
                     _weaponsIdPlayer.Add(weaponEnt.id.Value);
                 }      
 
@@ -49,10 +49,8 @@ namespace Game
             var weaponEnt = weapon.GameEntity;
 
             weaponEnt.isPlayer = true;  
-            weaponEnt.AddWeaponType(weaponSetting.WeaponType);
-            //weaponEnt.AddSupportedFireModes(weaponSetting.SupportedFireModes);
-            weaponEnt.AddDefaultFireMode(weaponSetting.DefaultFireMode);
-            //weaponEnt.AddBurstCount(weaponSetting.BurstCount);
+            
+            weaponEnt.AddDefaultFireMode(weaponSetting.DefaultFireMode); 
             weaponEnt.AddTimeReload(weaponSetting.TimeReaload);
             weaponEnt.AddTimeShootDelay(weaponSetting.TimeShootDelay);
             weaponEnt.AddMagazineSize(weaponSetting.MagazineSize);
@@ -61,8 +59,7 @@ namespace Game
             weaponEnt.AddDistanceShoot(weaponSetting.DistanceShoot);
             weaponEnt.AddSetLocalPosition(Vector3.zero);
 
-            weaponEnt.AddMagazineAmmo(weaponEnt.magazineSize.Value);
-
+            weaponEnt.AddMagazineAmmo(weaponEnt.magazineSize.Value); 
             return weaponEnt;
         }
     }

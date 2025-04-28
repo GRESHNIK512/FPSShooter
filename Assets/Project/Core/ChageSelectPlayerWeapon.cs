@@ -11,7 +11,7 @@ namespace Game
         public ChageSelectPlayerWeapon(Contexts contexts) : base (contexts.ui)
         {
             _context = contexts;
-            _playerWeaponGroup = _context.game.GetGroup(GameMatcher.AllOf(GameMatcher.WeaponType, GameMatcher.Player));
+            _playerWeaponGroup = _context.game.GetGroup(GameMatcher.AllOf(GameMatcher.EquipmentType, GameMatcher.Player));
         } 
 
         protected override ICollector<UiEntity> GetTrigger(IContext<UiEntity> context)
@@ -30,7 +30,7 @@ namespace Game
             {
                 foreach (var weaponEnt in _playerWeaponGroup.GetEntities())
                 {
-                    if (weaponSlotEnt.weaponType.Value == weaponEnt.weaponType.Value)
+                    if (weaponSlotEnt.equipmentType.Value == weaponEnt.equipmentType.Value)
                     {
                         weaponEnt.isSelect = true;
                         if (weaponEnt.magazineAmmo.Value == 0) 

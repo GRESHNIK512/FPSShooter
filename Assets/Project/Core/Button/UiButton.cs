@@ -11,11 +11,11 @@ namespace Buttons
             _uiEntity = Contexts.sharedInstance.ui.CreateEntity();
             _uiEntity.isButton = true;
 
-            OnClickEvent += () => _uiEntity.isTrigTryPlayerClick = true;
+            OnClickEvent += () => _uiEntity.ReplaceTrigTryPlayerClick(true); 
 
 #if UNITY_EDITOR
             gameObject.Link(_uiEntity);
 #endif
-        }
+        } 
     }
 }

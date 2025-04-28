@@ -19,14 +19,15 @@ namespace Game
             foreach (var weaponEnt in _shootDelayGroup.GetEntities())
             {
                 var nowDelay = weaponEnt.shootingDelay.Value;
+                
+                if (nowDelay == 0) continue;
+              
                 var newDelay = nowDelay - Time.deltaTime;
-
-                if (newDelay > 0) weaponEnt.ReplaceShootingDelay(newDelay);
-                else
-                {
-                    weaponEnt.RemoveShootingDelay();
-                    //Debug.Log("EndShootingDelay= " + Time.time);
-                }
+              
+                if (newDelay > 0)
+                    weaponEnt.ReplaceShootingDelay(newDelay);
+                else 
+                    weaponEnt.ReplaceShootingDelay(0); 
             }
         }
     }

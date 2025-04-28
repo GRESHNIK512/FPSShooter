@@ -1,5 +1,5 @@
 ﻿using Entitas;
-using System.Collections.Generic;
+using System.Collections.Generic; 
 
 namespace Game
 {
@@ -14,19 +14,19 @@ namespace Game
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
-            return context.CreateCollector(GameMatcher.Count);
+            return context.CreateCollector(GameMatcher.AllOf(GameMatcher.Count, GameMatcher.MassByOneItem));
         }
 
         protected override bool Filter(GameEntity entity)
         {
-            return entity.isEquipment && entity.hasMassByOneItem;
+            return entity.isEquipment;
         }
 
         protected override void Execute(List<GameEntity> entities)
         {
             foreach (var equipmetEnt in entities) 
-            { 
-                equipmetEnt.ReplaceMassResult(equipmetEnt.massByOneItem.Value * equipmetEnt.count.Value); 
+            {  
+                equipmetEnt.ReplaceMassResult(equipmetEnt.count.Value * equipmetEnt.massByOneItem.Value); 
             }
         } 
     }

@@ -3,7 +3,13 @@ using Entitas.CodeGeneration.Attributes;
  
 
 [Game]
-public class WeaponComponent : IComponent { } 
+public class WeaponComponent : IComponent { }
+
+[Game, Ui, Event(EventTarget.Self)]
+public class AmmoTypeComponent : IComponent
+{
+    public EquipmentType Value;
+}
 
 
 [Game, Cleanup(CleanupMode.RemoveComponent)]
@@ -24,13 +30,7 @@ public sealed class IdComponent : IComponent //context.GetEntityWithId(id);
 public class SelectComponent : IComponent 
 {
 
-}
-
-[Game, Ui, Event(EventTarget.Self)]
-public class WeaponTypeComponent : IComponent
-{
-    public WeaponType Value;
-}
+}  
 
 [Game]
 public class SupportedFireModesComponent : IComponent
@@ -90,13 +90,7 @@ public class MagazineSizeComponent : IComponent
 public class MagazineAmmoComponent : IComponent
 {
     public int Value;
-}
-
-[Game, Event(EventTarget.Self)]
-public class AmmoTypeComponent : IComponent
-{
-    public AmmoType Value;
-}
+}  
 
 [Game]
 public class DamageFalloffCurveComponent : IComponent

@@ -10,106 +10,107 @@ public static class GameComponentsLookup {
 
     public const int AgroShootingTimer = 0;
     public const int AmmoType = 1;
-    public const int AmmoTypeListener = 2;
-    public const int Backpack = 3;
-    public const int BurstCount = 4;
-    public const int Camera = 5;
-    public const int CameraOriginalPosition = 6;
-    public const int CameraPosition = 7;
-    public const int CameraPositionListener = 8;
-    public const int CaplsuleHeight = 9;
-    public const int CaplsuleHeightListener = 10;
-    public const int CaplsuleOriginalHeight = 11;
-    public const int CapsuleCollider = 12;
-    public const int Count = 13;
-    public const int DamageFalloffCurve = 14;
-    public const int Dead = 15;
-    public const int DeadListener = 16;
-    public const int DefaultFireMode = 17;
-    public const int DestroyOnEndLevel = 18;
-    public const int DistanceShoot = 19;
-    public const int Equipment = 20;
-    public const int EquipmentKey = 21;
+    public const int Backpack = 2;
+    public const int BurstCount = 3;
+    public const int Camera = 4;
+    public const int CameraOriginalPosition = 5;
+    public const int CameraPosition = 6;
+    public const int CameraPositionListener = 7;
+    public const int CaplsuleHeight = 8;
+    public const int CaplsuleHeightListener = 9;
+    public const int CaplsuleOriginalHeight = 10;
+    public const int CapsuleCollider = 11;
+    public const int Count = 12;
+    public const int DamageFalloffCurve = 13;
+    public const int Dead = 14;
+    public const int DeadListener = 15;
+    public const int DefaultFireMode = 16;
+    public const int DestroyOnEndLevel = 17;
+    public const int DistanceShoot = 18;
+    public const int Equipment = 19;
+    public const int EquipmentKey = 20;
+    public const int EquipmentType = 21;
     public const int FireWeapon = 22;
-    public const int GameCountListener = 23;
-    public const int GameHpListener = 24;
-    public const int GameMagazineAmmoListener = 25;
-    public const int GameReloadingListener = 26;
-    public const int GameSelectListener = 27;
-    public const int GameSelectRemovedListener = 28;
-    public const int GameTimeReloadListener = 29;
-    public const int GameWeaponTypeListener = 30;
-    public const int Hp = 31;
-    public const int Id = 32;
-    public const int InBackPack = 33;
-    public const int Inventory = 34;
-    public const int InventoryId = 35;
-    public const int Jump = 36;
-    public const int JumpListener = 37;
-    public const int Level = 38;
-    public const int LevelManager = 39;
-    public const int LevelStartInit = 40;
-    public const int LevelUnload = 41;
-    public const int MagazineAmmo = 42;
-    public const int MagazineSize = 43;
-    public const int MassByOneItem = 44;
-    public const int MassResult = 45;
-    public const int MaxCountInStack = 46;
-    public const int MaxMass = 47;
-    public const int NeedLoadNextLevelAfterUnload = 48;
-    public const int ObjectLevel = 49;
-    public const int OriginalTimeDelay = 50;
-    public const int Owner = 51;
-    public const int Player = 52;
-    public const int PlayerShootPoints = 53;
-    public const int RefreshWindowStatusTimer = 54;
-    public const int Reloading = 55;
-    public const int RepeatLevel = 56;
-    public const int RigidBody = 57;
-    public const int Select = 58;
-    public const int SetLocalPosition = 59;
-    public const int SetLocalPositionListener = 60;
-    public const int SetPosition = 61;
-    public const int SetPositionListener = 62;
-    public const int Shoot = 63;
-    public const int ShootingDelay = 64;
-    public const int ShootingDelayListener = 65;
-    public const int ShootPoint = 66;
-    public const int SitDown = 67;
-    public const int Spawner = 68;
-    public const int StartLoadLevel = 69;
-    public const int StayOnGround = 70;
-    public const int SupportedFireModes = 71;
-    public const int Time = 72;
-    public const int TimeListener = 73;
-    public const int Timer = 74;
-    public const int TimeReload = 75;
-    public const int TimerOnPause = 76;
-    public const int TimeShootDelay = 77;
-    public const int Transform = 78;
-    public const int TrigTimerEnd = 79;
-    public const int TryAddBackPack = 80;
-    public const int TryShoot = 81;
-    public const int TrigTryPlayerClick = 82;
-    public const int Unit = 83;
-    public const int UnitRotation = 84;
-    public const int UnitRotationListener = 85;
-    public const int UnitWeaponTransform = 86;
-    public const int Unlink = 87;
-    public const int UnlinkListener = 88;
-    public const int UnloadLevelInProcess = 89;
-    public const int Velocity = 90;
-    public const int VelocityListener = 91;
-    public const int Weapon = 92;
-    public const int WeaponsId = 93;
-    public const int WeaponType = 94;
+    public const int GameAmmoTypeListener = 23;
+    public const int GameCountListener = 24;
+    public const int GameEquipmentTypeListener = 25;
+    public const int GameHpListener = 26;
+    public const int GameMagazineAmmoListener = 27;
+    public const int GameReloadingListener = 28;
+    public const int GameSelectListener = 29;
+    public const int GameSelectRemovedListener = 30;
+    public const int GameTimeReloadListener = 31;
+    public const int Hp = 32;
+    public const int Id = 33;
+    public const int InBackPack = 34;
+    public const int Inventory = 35;
+    public const int InventoryId = 36;
+    public const int Jump = 37;
+    public const int JumpListener = 38;
+    public const int Level = 39;
+    public const int LevelManager = 40;
+    public const int LevelStartInit = 41;
+    public const int LevelUnload = 42;
+    public const int MagazineAmmo = 43;
+    public const int MagazineSize = 44;
+    public const int MassByOneItem = 45;
+    public const int MassResult = 46;
+    public const int MaxCountInStack = 47;
+    public const int MaxMass = 48;
+    public const int ModelMaterial = 49;
+    public const int ModelMaterialListener = 50;
+    public const int NeedLoadNextLevelAfterUnload = 51;
+    public const int ObjectLevel = 52;
+    public const int OriginalTimeDelay = 53;
+    public const int Owner = 54;
+    public const int Player = 55;
+    public const int PlayerShootPoints = 56;
+    public const int RefreshWindowStatusTimer = 57;
+    public const int Reloading = 58;
+    public const int RepeatLevel = 59;
+    public const int RigidBody = 60;
+    public const int Select = 61;
+    public const int SetLocalPosition = 62;
+    public const int SetLocalPositionListener = 63;
+    public const int SetPosition = 64;
+    public const int SetPositionListener = 65;
+    public const int Shoot = 66;
+    public const int ShootingDelay = 67;
+    public const int ShootingDelayListener = 68;
+    public const int ShootPoint = 69;
+    public const int SitDown = 70;
+    public const int Spawner = 71;
+    public const int StartLoadLevel = 72;
+    public const int StayOnGround = 73;
+    public const int SupportedFireModes = 74;
+    public const int Time = 75;
+    public const int TimeListener = 76;
+    public const int Timer = 77;
+    public const int TimeReload = 78;
+    public const int TimerOnPause = 79;
+    public const int TimeShootDelay = 80;
+    public const int Transform = 81;
+    public const int TrigTimerEnd = 82;
+    public const int TryAddBackPack = 83;
+    public const int TryShoot = 84;
+    public const int TrigTryPlayerClick = 85;
+    public const int Unit = 86;
+    public const int UnitRotation = 87;
+    public const int UnitRotationListener = 88;
+    public const int UnitWeaponTransform = 89;
+    public const int Unlink = 90;
+    public const int UnlinkListener = 91;
+    public const int UnloadLevelInProcess = 92;
+    public const int Velocity = 93;
+    public const int VelocityListener = 94;
+    public const int Weapon = 95;
+    public const int WeaponsId = 96;
 
-    public const int TotalComponents = 95;
+    public const int TotalComponents = 97;
 
     public static readonly string[] componentNames = {
         "AgroShootingTimer",
         "AmmoType",
-        "AmmoTypeListener",
         "Backpack",
         "BurstCount",
         "Camera",
@@ -129,15 +130,17 @@ public static class GameComponentsLookup {
         "DistanceShoot",
         "Equipment",
         "EquipmentKey",
+        "EquipmentType",
         "FireWeapon",
+        "GameAmmoTypeListener",
         "GameCountListener",
+        "GameEquipmentTypeListener",
         "GameHpListener",
         "GameMagazineAmmoListener",
         "GameReloadingListener",
         "GameSelectListener",
         "GameSelectRemovedListener",
         "GameTimeReloadListener",
-        "GameWeaponTypeListener",
         "Hp",
         "Id",
         "InBackPack",
@@ -155,6 +158,8 @@ public static class GameComponentsLookup {
         "MassResult",
         "MaxCountInStack",
         "MaxMass",
+        "ModelMaterial",
+        "ModelMaterialListener",
         "NeedLoadNextLevelAfterUnload",
         "ObjectLevel",
         "OriginalTimeDelay",
@@ -200,14 +205,12 @@ public static class GameComponentsLookup {
         "Velocity",
         "VelocityListener",
         "Weapon",
-        "WeaponsId",
-        "WeaponType"
+        "WeaponsId"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(AgroShootingTimerComponent),
         typeof(AmmoTypeComponent),
-        typeof(AmmoTypeListenerComponent),
         typeof(BackpackComponent),
         typeof(BurstCountComponent),
         typeof(CameraComponent),
@@ -227,15 +230,17 @@ public static class GameComponentsLookup {
         typeof(DistanceShootComponent),
         typeof(EquipmentComponent),
         typeof(EquipmentKeyComponent),
+        typeof(EquipmentTypeComponent),
         typeof(FireWeaponComponent),
+        typeof(GameAmmoTypeListenerComponent),
         typeof(GameCountListenerComponent),
+        typeof(GameEquipmentTypeListenerComponent),
         typeof(GameHpListenerComponent),
         typeof(GameMagazineAmmoListenerComponent),
         typeof(GameReloadingListenerComponent),
         typeof(GameSelectListenerComponent),
         typeof(GameSelectRemovedListenerComponent),
         typeof(GameTimeReloadListenerComponent),
-        typeof(GameWeaponTypeListenerComponent),
         typeof(HpComponent),
         typeof(IdComponent),
         typeof(InBackPackComponent),
@@ -253,6 +258,8 @@ public static class GameComponentsLookup {
         typeof(MassResultComponent),
         typeof(MaxCountInStackComponent),
         typeof(MaxMassComponent),
+        typeof(ModelMaterialComponent),
+        typeof(ModelMaterialListenerComponent),
         typeof(NeedLoadNextLevelAfterUnloadComponent),
         typeof(ObjectLevelComponent),
         typeof(OriginalTimeDelayComponent),
@@ -298,7 +305,6 @@ public static class GameComponentsLookup {
         typeof(VelocityComponent),
         typeof(VelocityListenerComponent),
         typeof(WeaponComponent),
-        typeof(WeaponsIdComponent),
-        typeof(WeaponTypeComponent)
+        typeof(WeaponsIdComponent)
     };
 }

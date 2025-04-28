@@ -9,7 +9,6 @@
 public sealed class UiCleanupSystems : Feature {
 
     public UiCleanupSystems(Contexts contexts) {
-        Add(new RemoveTrigTryPlayerClickUiSystem(contexts));
         Add(new RemoveTrigButtonUpUiSystem(contexts));
     }
 }

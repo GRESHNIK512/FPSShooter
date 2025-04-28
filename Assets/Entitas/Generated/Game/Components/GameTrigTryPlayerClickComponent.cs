@@ -8,25 +8,25 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Ui.TrigTryPlayerClickComponent trigTryPlayerClickComponent = new Ui.TrigTryPlayerClickComponent();
+    public Ui.TrigTryPlayerClickComponent trigTryPlayerClick { get { return (Ui.TrigTryPlayerClickComponent)GetComponent(GameComponentsLookup.TrigTryPlayerClick); } }
+    public bool hasTrigTryPlayerClick { get { return HasComponent(GameComponentsLookup.TrigTryPlayerClick); } }
 
-    public bool isTrigTryPlayerClick {
-        get { return HasComponent(GameComponentsLookup.TrigTryPlayerClick); }
-        set {
-            if (value != isTrigTryPlayerClick) {
-                var index = GameComponentsLookup.TrigTryPlayerClick;
-                if (value) {
-                    var componentPool = GetComponentPool(index);
-                    var component = componentPool.Count > 0
-                            ? componentPool.Pop()
-                            : trigTryPlayerClickComponent;
+    public void AddTrigTryPlayerClick(bool newValue) {
+        var index = GameComponentsLookup.TrigTryPlayerClick;
+        var component = (Ui.TrigTryPlayerClickComponent)CreateComponent(index, typeof(Ui.TrigTryPlayerClickComponent));
+        component.Value = newValue;
+        AddComponent(index, component);
+    }
 
-                    AddComponent(index, component);
-                } else {
-                    RemoveComponent(index);
-                }
-            }
-        }
+    public void ReplaceTrigTryPlayerClick(bool newValue) {
+        var index = GameComponentsLookup.TrigTryPlayerClick;
+        var component = (Ui.TrigTryPlayerClickComponent)CreateComponent(index, typeof(Ui.TrigTryPlayerClickComponent));
+        component.Value = newValue;
+        ReplaceComponent(index, component);
+    }
+
+    public void RemoveTrigTryPlayerClick() {
+        RemoveComponent(GameComponentsLookup.TrigTryPlayerClick);
     }
 }
 

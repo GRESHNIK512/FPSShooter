@@ -12,8 +12,11 @@ namespace Ui
         public int Value;
     }
 
-    [Game, Ui, Cleanup(CleanupMode.RemoveComponent)]
-    public class TrigTryPlayerClickComponent : IComponent { }
+    [Game, Ui]
+    public class TrigTryPlayerClickComponent : IComponent 
+    {
+        public bool Value;
+    }
 
     [Ui, Cleanup(CleanupMode.RemoveComponent)]
     public class TrigButtonUpComponent : IComponent { }

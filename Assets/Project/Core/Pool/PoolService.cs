@@ -27,9 +27,9 @@ public class PoolService : MonoBehaviour
 
     private void InitializeTypeMappings()
     {
-        // Оружие
-        _enumToTypeMap.Add(WeaponType.Pistol, typeof(Pistol));
-        _enumToTypeMap.Add(WeaponType.M16, typeof(M16)); 
+        // Снаряжение
+        _enumToTypeMap.Add(EquipmentType.Pistol, typeof(PistolView));
+        _enumToTypeMap.Add(EquipmentType.M16, typeof(M16View)); 
     }
 
     private void InitializePools()

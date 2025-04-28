@@ -33,7 +33,7 @@ namespace Game
                 var indexWeapon = Random.Range(0, _weaponConfig.Weapons.Length);
                 var weaponSetting = _weaponConfig.Weapons[indexWeapon];
 
-                var weapon = PoolService.Instance.GetObjectFromPool<Weapon>(weaponSetting.WeaponType, unitEnt.unitWeaponTransform.Value);
+                var weapon = PoolService.Instance.GetObjectFromPool<Weapon>(weaponSetting.Type, unitEnt.unitWeaponTransform.Value);
                   
                 GameEntity weaponEnt = CreateWeapon(weapon, weaponSetting);
 
@@ -47,10 +47,7 @@ namespace Game
             weapon.Init();
             var weaponEnt = weapon.GameEntity;
 
-            weaponEnt.AddWeaponType(weaponSetting.WeaponType);
-            //weaponEnt.AddSupportedFireModes(weaponSetting.SupportedFireModes);
             weaponEnt.AddDefaultFireMode(weaponSetting.DefaultFireMode);
-            //weaponEnt.AddBurstCount(weaponSetting.BurstCount);
             weaponEnt.AddTimeReload(weaponSetting.TimeReaload);
             weaponEnt.AddTimeShootDelay(weaponSetting.TimeShootDelay);
             weaponEnt.AddMagazineSize(weaponSetting.MagazineSize);

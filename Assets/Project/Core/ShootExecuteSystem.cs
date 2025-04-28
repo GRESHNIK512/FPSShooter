@@ -16,8 +16,10 @@ namespace Game
         public void Execute()
         {
             foreach (var weaponEnt in _tryShootGroup.GetEntities())
-            { 
-                if (weaponEnt.hasReloading || weaponEnt.hasShootingDelay || weaponEnt.magazineAmmo.Value == 0) continue;
+            {
+                if ((weaponEnt.hasShootingDelay && weaponEnt.shootingDelay.Value != 0) || 
+                    (weaponEnt.hasReloading && weaponEnt.reloading.Value != 0) || 
+                    weaponEnt.magazineAmmo.Value == 0) continue;
 
                 if (weaponEnt.isFireWeapon)
                 {
@@ -26,15 +28,16 @@ namespace Game
 
                     weaponEnt.ReplaceMagazineAmmo(newAmmo);
 
-                    weaponEnt.AddShootingDelay(weaponEnt.timeShootDelay.Value);
+                    weaponEnt.ReplaceShootingDelay(weaponEnt.timeShootDelay.Value);
                     if (newAmmo == 0)
-                        weaponEnt.AddReloading(weaponEnt.timeReload.Value);
+                        weaponEnt.ReplaceReloading(weaponEnt.timeReload.Value);
                 }
 
                 weaponEnt.isShoot = true;
 
-                if (weaponEnt.defaultFireMode.Value == FireMode.Single && weaponEnt.isPlayer || !weaponEnt.isPlayer) 
+                if (weaponEnt.defaultFireMode.Value == FireMode.Single && weaponEnt.isPlayer || !weaponEnt.isPlayer)
                     weaponEnt.isTryShoot = false;
+
             }
         }
     }

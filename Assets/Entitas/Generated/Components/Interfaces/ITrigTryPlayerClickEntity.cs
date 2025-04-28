@@ -7,5 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 public partial interface ITrigTryPlayerClickEntity {
-    bool isTrigTryPlayerClick { get; set; }
+
+    Ui.TrigTryPlayerClickComponent trigTryPlayerClick { get; }
+    bool hasTrigTryPlayerClick { get; }
+
+    void AddTrigTryPlayerClick(bool newValue);
+    void ReplaceTrigTryPlayerClick(bool newValue);
+    void RemoveTrigTryPlayerClick();
 }

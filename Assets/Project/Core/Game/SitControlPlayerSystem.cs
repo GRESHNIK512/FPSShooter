@@ -33,6 +33,7 @@ namespace Game
 
                 float targetCapsuleHeight = playerEnt.sitDown.Value ?
                     playerEnt.caplsuleOriginalHeight.Value - sitHeight : playerEnt.caplsuleOriginalHeight.Value;
+               
                 Vector3 targetCameraPos = playerEnt.sitDown.Value ?
                     playerEnt.cameraOriginalPosition.Value - (sitHeight * Vector3.up) : playerEnt.cameraOriginalPosition.Value;  
 

@@ -40,7 +40,7 @@ namespace Game
                 _ray.origin = weaponEnt.transform.Value.position; 
                 _ray.direction = (unitEnt.shootPoint.Value.position - _ray.origin).normalized;
                 var dist = Vector3.Distance(_ray.origin, unitEnt.shootPoint.Value.position);
-                Debug.DrawRay(_ray.origin, _ray.direction * dist, Color.green, weaponEnt.shootingDelay.Value); 
+                //Debug.DrawRay(_ray.origin, _ray.direction * dist, Color.green, weaponEnt.shootingDelay.Value); 
               
                 int hitsCount = Physics.RaycastNonAlloc(_ray, _hitsBuffer, dist + 0.05f, ConfigsManager.BotConfig.ShootTargetLayerMask); 
                 

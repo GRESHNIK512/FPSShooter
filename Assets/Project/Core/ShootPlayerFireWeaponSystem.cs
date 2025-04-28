@@ -1,5 +1,4 @@
-﻿using Entitas;
-using NUnit.Framework;
+﻿using Entitas; 
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,9 +33,9 @@ namespace Game
         protected override void Execute(List<GameEntity> entities)
         {
             foreach (var weaponEnt in entities)
-            {
+            { 
                 SetPositionAndDirForRaycast(weaponEnt);
-
+                
                 // Проверяем попадание в объект на нужном слое
                 int hitsCount = Physics.RaycastNonAlloc(_ray, _hitsBuffer, weaponEnt.distanceShoot.Value, ConfigsManager.PlayerConfig.ShootLayerMasks);
 
@@ -84,7 +83,7 @@ namespace Game
 
             _ray.origin = _camTranform.transform.position;
             _ray.direction = _camTranform.transform.forward;
-            Debug.DrawRay(_ray.origin, _ray.direction * weaponEnt.distanceShoot.Value, Color.green, 0.1f);
+            //Debug.DrawRay(_ray.origin, _ray.direction * weaponEnt.distanceShoot.Value, Color.green, 0.1f);
         } 
 
         private float GetDamageMultiplier(BodyPartType partType)

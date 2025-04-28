@@ -9,8 +9,10 @@
 public sealed class UiEventSystems : Feature {
 
     public UiEventSystems(Contexts contexts) {
+        Add(new UiAmmoTypeEventSystem(contexts)); // priority: 0
         Add(new CanvasEnableEventSystem(contexts)); // priority: 0
         Add(new UiCountEventSystem(contexts)); // priority: 0
+        Add(new UiEquipmentTypeEventSystem(contexts)); // priority: 0
         Add(new GraphicRaycasterEnableEventSystem(contexts)); // priority: 0
         Add(new UiHpEventSystem(contexts)); // priority: 0
         Add(new JoystickEventSystem(contexts)); // priority: 0
@@ -22,6 +24,5 @@ public sealed class UiEventSystems : Feature {
         Add(new UiSelectRemovedEventSystem(contexts)); // priority: 0
         Add(new UiTimeReloadEventSystem(contexts)); // priority: 0
         Add(new TrigRefreshStatusWindowDelayEventSystem(contexts)); // priority: 0
-        Add(new UiWeaponTypeEventSystem(contexts)); // priority: 0
     }
 }

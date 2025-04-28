@@ -35,15 +35,15 @@ namespace Game
                     ammoView.Init();
                     var ammoEnt = ammoView.GameEntity;
                    
-                    ammoEnt.AddAmmoType(AmmoType.mm9);
-                    ammoEnt.count.Value = 250;  
+                    ammoEnt.ReplaceEquipmentType(EquipmentType.Mm9);
+                    ammoEnt.ReplaceCount(300);  
                     ammoEnt.isTryAddBackPack = true;
 
                     //var ammoView1 = PoolService.Instance.GetObjectFromPool<AmmoView>(levelEnt.transform.Value);
                     //ammoView1.Init();
                     //var ammoEnt1 = ammoView1.GameEntity;
 
-                    //ammoEnt1.ReplaceAmmoType(AmmoType.mm9);
+                    //ammoEnt1.AddEquipmentType(EquipmentType.Mm556);
                     //ammoEnt1.count.Value = 30;
                     //ammoEnt1.isTryAddBackPack = true;
                 }

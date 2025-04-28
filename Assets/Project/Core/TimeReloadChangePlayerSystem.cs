@@ -31,8 +31,11 @@ namespace Game
             {
                 foreach (var weaponSlotEnt in _weaponSlotGroup.GetEntities())
                 {
-                    if (weaponEnt.weaponType.Value == weaponSlotEnt.weaponType.Value)
+                    if (weaponEnt.equipmentType.Value == weaponSlotEnt.equipmentType.Value)
+                    {
                         weaponSlotEnt.ReplaceTimeReload(weaponEnt.timeReload.Value);
+                        break;
+                    }
                 }
             }
         }

@@ -19,7 +19,7 @@ namespace Button
 
         protected override bool Filter(UiEntity entity)
         {
-            return entity.isNextLevelButton;
+            return entity.isNextLevelButton && entity.trigTryPlayerClick.Value;
         } 
        
         protected override void Execute(List<UiEntity> entities)

@@ -155,10 +155,10 @@ MonoBehaviour:
   - ObjectPrefab: {fileID: 3468302164469902828, guid: 8accd5215cd03214eb18b7b9322bfb69,
       type: 3}
     InitialCount: 2
-  - ObjectPrefab: {fileID: 4047169002933741479, guid: 9495310878e1e8a4eba05fa186d5fdc1,
+  - ObjectPrefab: {fileID: 3212956998938507578, guid: 0c23acc55de41a1428f3188310ae4e95,
       type: 3}
     InitialCount: 2
-  - ObjectPrefab: {fileID: 8258902923376479775, guid: 0c23acc55de41a1428f3188310ae4e95,
+  - ObjectPrefab: {fileID: 3402838138530711847, guid: 9495310878e1e8a4eba05fa186d5fdc1,
       type: 3}
     InitialCount: 2
   - ObjectPrefab: {fileID: 2987223324212383878, guid: 6af486ff6f7eb9348a89054a13166865,

@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WeaponSlotButtonView : UiButton, IUiWeaponTypeListener, IUiSelectRemovedListener, IUiSelectListener,
+public class WeaponSlotButtonView : UiButton, IUiEquipmentTypeListener, IUiSelectRemovedListener, IUiSelectListener,
     IUiMagazineAmmoListener, IUiTimeReloadListener, IUiReloadingListener
 {
     [SerializeField] private int _index;
@@ -19,7 +19,7 @@ public class WeaponSlotButtonView : UiButton, IUiWeaponTypeListener, IUiSelectRe
         base.Init();
         _uiEntity.isWeaponSlotButton = true;
         _uiEntity.AddIndex(_index);
-        _uiEntity.AddUiWeaponTypeListener(this);
+        _uiEntity.AddUiEquipmentTypeListener(this);
         _uiEntity.AddUiSelectRemovedListener(this);
         _uiEntity.AddUiSelectListener(this);
         _uiEntity.AddUiMagazineAmmoListener(this);
@@ -56,8 +56,8 @@ public class WeaponSlotButtonView : UiButton, IUiWeaponTypeListener, IUiSelectRe
         _timeReload = value;
     }
 
-    public void OnWeaponType(UiEntity entity, WeaponType value)
+    public void OnEquipmentType(UiEntity entity, EquipmentType value)
     { 
-        _weaponTypeImage.sprite = ConfigsManager.WeaponConfig.Weapons[(int)value].Sprite;
+        _weaponTypeImage.sprite = ConfigsManager.EquipmentConfig.EquipmentSettings[(int)value].Sprite;
     }
 } 

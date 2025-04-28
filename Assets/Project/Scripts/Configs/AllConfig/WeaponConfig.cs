@@ -13,26 +13,19 @@ public class WeaponConfig : ScriptableObject
 public class WeaponSettings 
 {
     public Weapon Prefab;
-    public WeaponType WeaponType;
+    public EquipmentType Type;
     //public FireMode SupportedFireModes;
     public FireMode DefaultFireMode; // Режим по умолчанию
     //public int BurstCount; // Количество выстрелов в очереди   
     public float TimeReaload;
     public float TimeShootDelay;
     public int MagazineSize;   
-    public AmmoType AmmoType;
+    public EquipmentType AmmoType;
     public AnimationCurve DamageFalloffCurve;
     public float DistanceShoot;
     public float MinDamage;
-    public float MaxDamage;
-    public Sprite Sprite;
-}
-
-public enum WeaponType
-{ 
-    Pistol,
-    M16,
-}
+    public float MaxDamage; 
+}  
 
 [Flags]
 public enum FireMode

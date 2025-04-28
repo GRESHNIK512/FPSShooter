@@ -30,8 +30,10 @@ namespace Button
             {
                 foreach (var weaponEnt in _selectWeaponPlayerGroup.GetEntities()) 
                 {
-                    if (weaponEnt.hasReloading || weaponEnt.magazineSize.Value == weaponEnt.magazineAmmo.Value) break;
-                        weaponEnt.AddReloading(weaponEnt.timeReload.Value);
+                    if (weaponEnt.hasReloading && weaponEnt.reloading.Value > 0 || 
+                        weaponEnt.magazineSize.Value == weaponEnt.magazineAmmo.Value) break;
+                        
+                    weaponEnt.ReplaceReloading(weaponEnt.timeReload.Value);
                 }
             }
         }

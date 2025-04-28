@@ -1,5 +1,6 @@
 ﻿using Entitas;
-using System.Collections.Generic; 
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Button
 {
@@ -17,21 +18,20 @@ namespace Button
 
         protected override ICollector<UiEntity> GetTrigger(IContext<UiEntity> context)
         {
-            return context.CreateCollector(UiMatcher.TrigTryPlayerClick.Added());
+            return context.CreateCollector(UiMatcher.TrigTryPlayerClick);
         }
 
         protected override bool Filter(UiEntity entity)
         {
-            return entity.isShootButton;
+            return entity.isShootButton && entity.trigTryPlayerClick.Value;
         }
 
         protected override void Execute(List<UiEntity> entities)
         {
             foreach (var buttoEnt in entities)
-            {
+            { 
                 foreach (var weaponEnt in _selectWeaponPlayer.GetEntities()) 
                 {
-                    //Debug.Log("AddTryShoot");
                     weaponEnt.isTryShoot = true;
                 } 
             }
