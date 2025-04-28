@@ -19,6 +19,7 @@ public sealed class GameEventSystems : Feature {
         Add(new JumpEventSystem(contexts)); // priority: 0
         Add(new GameMagazineAmmoEventSystem(contexts)); // priority: 0
         Add(new ModelMaterialEventSystem(contexts)); // priority: 0
+        Add(new ObjectVisibleEventSystem(contexts)); // priority: 0
         Add(new GameReloadingEventSystem(contexts)); // priority: 0
         Add(new GameSelectEventSystem(contexts)); // priority: 0
         Add(new GameSelectRemovedEventSystem(contexts)); // priority: 0

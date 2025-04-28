@@ -61,52 +61,54 @@ public static class GameComponentsLookup {
     public const int ModelMaterialListener = 50;
     public const int NeedLoadNextLevelAfterUnload = 51;
     public const int ObjectLevel = 52;
-    public const int OriginalTimeDelay = 53;
-    public const int Owner = 54;
-    public const int Player = 55;
-    public const int PlayerShootPoints = 56;
-    public const int RefreshWindowStatusTimer = 57;
-    public const int Reloading = 58;
-    public const int RepeatLevel = 59;
-    public const int RigidBody = 60;
-    public const int Select = 61;
-    public const int SetLocalPosition = 62;
-    public const int SetLocalPositionListener = 63;
-    public const int SetPosition = 64;
-    public const int SetPositionListener = 65;
-    public const int Shoot = 66;
-    public const int ShootingDelay = 67;
-    public const int ShootingDelayListener = 68;
-    public const int ShootPoint = 69;
-    public const int SitDown = 70;
-    public const int Spawner = 71;
-    public const int StartLoadLevel = 72;
-    public const int StayOnGround = 73;
-    public const int SupportedFireModes = 74;
-    public const int Time = 75;
-    public const int TimeListener = 76;
-    public const int Timer = 77;
-    public const int TimeReload = 78;
-    public const int TimerOnPause = 79;
-    public const int TimeShootDelay = 80;
-    public const int Transform = 81;
-    public const int TrigTimerEnd = 82;
-    public const int TryAddBackPack = 83;
-    public const int TryShoot = 84;
-    public const int TrigTryPlayerClick = 85;
-    public const int Unit = 86;
-    public const int UnitRotation = 87;
-    public const int UnitRotationListener = 88;
-    public const int UnitWeaponTransform = 89;
-    public const int Unlink = 90;
-    public const int UnlinkListener = 91;
-    public const int UnloadLevelInProcess = 92;
-    public const int Velocity = 93;
-    public const int VelocityListener = 94;
-    public const int Weapon = 95;
-    public const int WeaponsId = 96;
+    public const int ObjectVisible = 53;
+    public const int ObjectVisibleListener = 54;
+    public const int OriginalTimeDelay = 55;
+    public const int Owner = 56;
+    public const int Player = 57;
+    public const int PlayerShootPoints = 58;
+    public const int RefreshWindowStatusTimer = 59;
+    public const int Reloading = 60;
+    public const int RepeatLevel = 61;
+    public const int RigidBody = 62;
+    public const int Select = 63;
+    public const int SetLocalPosition = 64;
+    public const int SetLocalPositionListener = 65;
+    public const int SetPosition = 66;
+    public const int SetPositionListener = 67;
+    public const int Shoot = 68;
+    public const int ShootingDelay = 69;
+    public const int ShootingDelayListener = 70;
+    public const int ShootPoint = 71;
+    public const int SitDown = 72;
+    public const int Spawner = 73;
+    public const int StartLoadLevel = 74;
+    public const int StayOnGround = 75;
+    public const int SupportedFireModes = 76;
+    public const int Time = 77;
+    public const int TimeListener = 78;
+    public const int Timer = 79;
+    public const int TimeReload = 80;
+    public const int TimerOnPause = 81;
+    public const int TimeShootDelay = 82;
+    public const int Transform = 83;
+    public const int TrigTimerEnd = 84;
+    public const int TryAddBackPack = 85;
+    public const int TryShoot = 86;
+    public const int TrigTryPlayerClick = 87;
+    public const int Unit = 88;
+    public const int UnitRotation = 89;
+    public const int UnitRotationListener = 90;
+    public const int UnitWeaponTransform = 91;
+    public const int Unlink = 92;
+    public const int UnlinkListener = 93;
+    public const int UnloadLevelInProcess = 94;
+    public const int Velocity = 95;
+    public const int VelocityListener = 96;
+    public const int Weapon = 97;
+    public const int WeaponsId = 98;
 
-    public const int TotalComponents = 97;
+    public const int TotalComponents = 99;
 
     public static readonly string[] componentNames = {
         "AgroShootingTimer",
@@ -162,6 +164,8 @@ public static class GameComponentsLookup {
         "ModelMaterialListener",
         "NeedLoadNextLevelAfterUnload",
         "ObjectLevel",
+        "ObjectVisible",
+        "ObjectVisibleListener",
         "OriginalTimeDelay",
         "Owner",
         "Player",
@@ -262,6 +266,8 @@ public static class GameComponentsLookup {
         typeof(ModelMaterialListenerComponent),
         typeof(NeedLoadNextLevelAfterUnloadComponent),
         typeof(ObjectLevelComponent),
+        typeof(ObjectVisibleComponent),
+        typeof(ObjectVisibleListenerComponent),
         typeof(OriginalTimeDelayComponent),
         typeof(OwnerComponent),
         typeof(PlayerComponent),

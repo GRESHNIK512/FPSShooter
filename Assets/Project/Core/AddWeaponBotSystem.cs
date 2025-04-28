@@ -33,7 +33,10 @@ namespace Game
                 var indexWeapon = Random.Range(0, _weaponConfig.Weapons.Length);
                 var weaponSetting = _weaponConfig.Weapons[indexWeapon];
 
-                var weapon = PoolService.Instance.GetObjectFromPool<Weapon>(weaponSetting.Type, unitEnt.unitWeaponTransform.Value);
+                var weapon = PoolService.Instance.GetObjectFromPool<Weapon>(
+                    weaponSetting.Type, 
+                    unitEnt.unitWeaponTransform.Value, 
+                    unitEnt.unitWeaponTransform.Value.position);
                   
                 GameEntity weaponEnt = CreateWeapon(weapon, weaponSetting);
 
@@ -54,7 +57,7 @@ namespace Game
             weaponEnt.AddAmmoType(weaponSetting.AmmoType);
             weaponEnt.AddDamageFalloffCurve(weaponSetting.DamageFalloffCurve);
             weaponEnt.AddDistanceShoot(weaponSetting.DistanceShoot);
-            weaponEnt.AddSetLocalPosition(Vector3.zero);
+            //weaponEnt.AddSetLocalPosition(Vector3.zero);
             weaponEnt.AddReloading(1);
 
             return weaponEnt;

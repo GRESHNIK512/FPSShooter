@@ -5,11 +5,17 @@ using UnityEngine;
 [Game, Ui]
 public class DestroyOnEndLevelComponent : IComponent { }
 
-[Game]
+[Game, Unique]
 public class LevelComponent : IComponent { }
 
 [Game]
 public class ObjectLevelComponent : IComponent { }
+
+[Game, Event(EventTarget.Self) ]
+public class ObjectVisibleComponent : IComponent 
+{
+    public bool Value;
+} 
 
 [Game]
 public class TransformComponent : IComponent 

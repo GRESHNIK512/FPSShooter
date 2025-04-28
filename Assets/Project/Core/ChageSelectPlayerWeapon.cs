@@ -34,14 +34,15 @@ namespace Game
                     {
                         weaponEnt.isSelect = true;
                         if (weaponEnt.magazineAmmo.Value == 0) 
-                            weaponEnt.AddReloading(weaponEnt.timeReload.Value);
+                            weaponEnt.ReplaceReloading(weaponEnt.timeReload.Value); 
                     }
                     else 
                     {
                         weaponEnt.isSelect = false;
                         if (weaponEnt.hasReloading) 
-                            weaponEnt.RemoveReloading();
-                    } 
+                            weaponEnt.reloading.Value = 0; // empty reload 
+                    }
+                    weaponEnt.ReplaceObjectVisible(weaponEnt.isSelect);
                 }
             }
         } 

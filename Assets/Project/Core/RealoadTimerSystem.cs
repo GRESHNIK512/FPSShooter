@@ -1,4 +1,5 @@
 ﻿using Entitas;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ namespace Game
         {
             foreach (var weaponEnt in _reloadingGroup.GetEntities())
             {
-                if (!weaponEnt.hasShootingDelay || weaponEnt.shootingDelay.Value > 0) continue;
+                if (!weaponEnt.isSelect || !weaponEnt.hasShootingDelay || weaponEnt.shootingDelay.Value > 0) continue;
 
                 var nowReloadinTime = weaponEnt.reloading.Value;
                 

@@ -156,6 +156,7 @@
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\ITouchDeltaPositionListener.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\UiComponentsLookup.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IUiHpListener.cs" />
+    <Compile Include="Assets\Entitas\Generated\Game\Components\GameObjectVisibleComponent.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Entitas\Generated\Data\Components\DataCurrentSceneIndexComponent.cs" />
     <Compile Include="Assets\Project\Scripts\SceneUI\Button\GameLevelWindow\WeaponSlotButtonView.cs" />
@@ -224,6 +225,7 @@
     <Compile Include="Assets\Project\Scripts\SceneUI\HeadCanvas.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameShootingDelayListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiTrigTryPlayerClickComponent.cs" />
+    <Compile Include="Assets\Entitas\Generated\Events\Components\ObjectVisibleListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\UiContext.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiCountComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Components\GameHpListenerComponent.cs" />
@@ -259,8 +261,8 @@
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IGameCountListener.cs" />
     <Compile Include="Assets\Project\Core\HpControlDeadSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Data\Components\DataDataLoadFailComponent.cs" />
-    <Compile Include="Assets\Project\Components\ButtonComponents.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Systems\GameEquipmentTypeEventSystem.cs" />
+    <Compile Include="Assets\Project\Components\ButtonComponents.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IRectTransformListener.cs" />
     <Compile Include="Assets\Project\Core\ShootExecuteSystem.cs" />
     <Compile Include="Assets\Project\Core\Button\MainMenuPressButtonSystem.cs" />
@@ -315,6 +317,7 @@
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameEquipmentTypeComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Components\UnlinkListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameMagazineAmmoComponent.cs" />
+    <Compile Include="Assets\Entitas\Generated\Game\Components\GameObjectVisibleListenerComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Components\UiReloadingComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Systems\UnlinkEventSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Components\Interfaces\IEquipmentTypeEntity.cs" />
@@ -479,6 +482,7 @@
     <Compile Include="Assets\Project\Scripts\Configs\AllConfig\BotConfig.cs" />
     <Compile Include="Assets\Project\Scripts\GameLevel\Equipment\MedKit\MedKitView.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameLevelStartInitComponent.cs" />
+    <Compile Include="Assets\Entitas\Generated\Events\Systems\ObjectVisibleEventSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IUiEquipmentTypeListener.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IGameSelectRemovedListener.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IGameTimeReloadListener.cs" />
@@ -502,6 +506,7 @@
     <Compile Include="Assets\Project\Core\InputSystems.cs" />
     <Compile Include="Assets\Entitas\Generated\Events\Systems\CanvasEnableEventSystem.cs" />
     <Compile Include="Assets\Entitas\Generated\Ui\Systems\RemoveTrigButtonUpUiSystem.cs" />
+    <Compile Include="Assets\Entitas\Generated\Events\Interfaces\IObjectVisibleListener.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameSitDownComponent.cs" />
     <Compile Include="Assets\Entitas\Generated\Game\Components\GameCameraPositionListenerComponent.cs" />
     <Compile Include="Assets\Project\Scripts\Root.cs" />

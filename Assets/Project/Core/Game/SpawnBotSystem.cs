@@ -37,10 +37,10 @@ namespace Game
                     {
                         if (spawnEnt.owner.Value == Owner.Bot) 
                         {
-                            var botView = PoolService.Instance.GetObjectFromPool<BotView>(levelEnt.transform.Value); 
+                            var botView = PoolService.Instance.GetObjectFromPool<BotView>(levelEnt.transform.Value, spawnEnt.setPosition.Value); 
                             
                             botView.Init();
-                            botView.GameEntity.ReplaceSetPosition(spawnEnt.setPosition.Value);
+                            //botView.GameEntity.ReplaceSetPosition(spawnEnt.setPosition.Value);
                             botView.GameEntity.ReplaceUnitRotation(new Vector3(0f, 180f, 0f));
                         }
                     }

@@ -1,16 +1,17 @@
 ﻿using Entitas;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Game
 {
     internal class SpawnPlayerSystem : ReactiveSystem<GameEntity>
-    { 
+    {
         private Contexts _context;
         private IGroup<GameEntity> _playerUnitGroup;
         private IGroup<GameEntity> _spawnGroup;
         private IGroup<GameEntity> _levelGroup;
 
-        public SpawnPlayerSystem(Contexts contexts) : base (contexts.game)
+        public SpawnPlayerSystem(Contexts contexts) : base(contexts.game)
         {
             _context = contexts;
 
@@ -37,23 +38,28 @@ namespace Game
                 {
                     foreach (var levelEnt in _levelGroup.GetEntities())
                     {
-                        var playerView = PoolService.Instance.GetObjectFromPool<PlayerView>(levelEnt.transform.Value);
+                        var playerView = PoolService.Instance.GetObjectFromPool<PlayerView>(levelEnt.transform.Value, GetSpawnPlayerPosition());
                         playerView.Init();
                     }
-                }  
-
-                foreach (var playerEnt in _playerUnitGroup.GetEntities())
-                { 
-                    foreach (var spawnEnt in _spawnGroup.GetEntities())
-                    {
-                        if (spawnEnt.owner.Value == Owner.Player)
-                        {
-                            playerEnt.ReplaceSetPosition(spawnEnt.setPosition.Value);
-                            break;
-                        }
-                    }
-                } 
+                }
             }
+        }
+
+        private Vector3 GetSpawnPlayerPosition()
+        {
+            var tPos = Vector3.zero; 
+
+            foreach (var spawnEnt in _spawnGroup.GetEntities())
+            {
+                if (spawnEnt.owner.Value == Owner.Player)
+                {
+                    tPos = spawnEnt.setPosition.Value;
+
+                    break;
+                }
+            } 
+
+            return tPos;
         }
     }
 }

@@ -8,7 +8,7 @@ public class PoolService : MonoBehaviour
 
     [SerializeField] private PoolSettings[] PoolSettingsList; 
     private readonly Dictionary<System.Type, ObjectPool> _pools = new ();
-    private readonly Dictionary<System.Enum, System.Type> _enumToTypeMap = new();  
+    private readonly Dictionary<System.Enum, System.Type> _typeMap = new();  
 
     void Awake()
     {
@@ -28,8 +28,13 @@ public class PoolService : MonoBehaviour
     private void InitializeTypeMappings()
     {
         // Снаряжение
-        _enumToTypeMap.Add(EquipmentType.Pistol, typeof(PistolView));
-        _enumToTypeMap.Add(EquipmentType.M16, typeof(M16View)); 
+        _typeMap.Add(EquipmentType.Pistol, typeof(PistolView));
+        _typeMap.Add(EquipmentType.M16, typeof(M16View));
+        _typeMap.Add(EquipmentType.Mm9, typeof(AmmoView));
+        _typeMap.Add(EquipmentType.Mm556, typeof(AmmoView));
+        _typeMap.Add(EquipmentType.MedKit, typeof(MedKitView));
+        
+        //_typeMap.Add(EquipmentType., typeof());
     }
 
     private void InitializePools()
@@ -45,13 +50,13 @@ public class PoolService : MonoBehaviour
         } 
     } 
 
-    public T GetObjectFromPool<T>(Transform parent) where T : MonoBehaviour =>
+    public T GetObjectFromPool<T>(Transform parent, Vector3 pos) where T : MonoBehaviour =>
         _pools.TryGetValue(typeof(T), out var pool) 
-        ? (T)pool.GetObject(parent) 
+        ? (T)pool.GetObject(parent, pos) 
         : null;
 
-    public T GetObjectFromPool<T>(System.Enum enumType, Transform parent) where T : MonoBehaviour =>
-    _enumToTypeMap.TryGetValue(enumType, out var type) && _pools.TryGetValue(type, out var pool)
-        ? (T)pool.GetObject(parent)
+    public T GetObjectFromPool<T>(System.Enum enumType, Transform parent, Vector3 pos) where T : MonoBehaviour =>
+    _typeMap.TryGetValue(enumType, out var type) && _pools.TryGetValue(type, out var pool)
+        ? (T)pool.GetObject(parent, pos)
         : null;
 }

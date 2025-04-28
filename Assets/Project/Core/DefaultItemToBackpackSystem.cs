@@ -31,7 +31,7 @@ namespace Game
             {
                 foreach (var levelEnt in _levelGroup.GetEntities())
                 {
-                    var ammoView = PoolService.Instance.GetObjectFromPool<AmmoView>(levelEnt.transform.Value);
+                    var ammoView = PoolService.Instance.GetObjectFromPool<AmmoView>(levelEnt.transform.Value, Vector3.zero);
                     ammoView.Init();
                     var ammoEnt = ammoView.GameEntity;
                    

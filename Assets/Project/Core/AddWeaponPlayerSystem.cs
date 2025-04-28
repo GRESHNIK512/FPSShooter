@@ -29,7 +29,10 @@ namespace Game
             {  
                 foreach (var weaponSetting in ConfigsManager.WeaponConfig.Weapons)
                 {
-                    var weapon = PoolService.Instance.GetObjectFromPool<Weapon>(weaponSetting.Type, unitEnt.unitWeaponTransform.Value);  
+                    var weapon = PoolService.Instance.GetObjectFromPool<Weapon>(
+                        weaponSetting.Type,
+                        unitEnt.unitWeaponTransform.Value,
+                        unitEnt.unitWeaponTransform.Value.position);  
 
                     GameEntity weaponEnt = CreateWeapon(weapon, weaponSetting);
                     _weaponsIdPlayer.Add(weaponEnt.id.Value);
@@ -57,7 +60,7 @@ namespace Game
             weaponEnt.AddAmmoType(weaponSetting.AmmoType);
             weaponEnt.AddDamageFalloffCurve(weaponSetting.DamageFalloffCurve);
             weaponEnt.AddDistanceShoot(weaponSetting.DistanceShoot);
-            weaponEnt.AddSetLocalPosition(Vector3.zero);
+            //weaponEnt.AddSetLocalPosition(Vector3.zero);
 
             weaponEnt.AddMagazineAmmo(weaponEnt.magazineSize.Value); 
             return weaponEnt;

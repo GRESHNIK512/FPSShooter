@@ -63,6 +63,7 @@ namespace Game
                         _clientDataEnt.ReplaceLevelCompleteCount(++nowLevelCompleteCount); 
                         _clientDataEnt.isSaveData = true;    
                     }
+                    unitEnt.ReplaceObjectVisible(false);
                 }  
                 _context.ui.CreateEntity().AddTrigRefreshStatusWindowDelay(1f);
             }

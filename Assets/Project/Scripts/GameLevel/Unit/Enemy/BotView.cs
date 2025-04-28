@@ -45,6 +45,6 @@ public class BotView : Unit, IUnitRotationListener
 
     public override void OnDead(GameEntity entity)
     {
-        EnableObject(false);
+        
     }
 }

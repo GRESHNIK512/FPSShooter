@@ -13,5 +13,5 @@ public interface IPoolable
     event Action<IPoolable> ReturnPoolEvent;
     GameObject GameObject { get; }
     Transform Transform { get; }   
-    void EnableObject(bool visible);    
+    void EnableObject(bool visible);   
 }

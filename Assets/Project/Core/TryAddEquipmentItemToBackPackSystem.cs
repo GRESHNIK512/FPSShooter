@@ -8,11 +8,13 @@ namespace Game
     {
         private Contexts _context;
         private IGroup<GameEntity> _inventoryPlayerGroup;
+        private IGroup<GameEntity> _playerUnitGroup;
 
         public TryAddEquipmentItemToBackPackSystem(Contexts contexts) : base(contexts.game)
         {
             _context = contexts;
-            _inventoryPlayerGroup = _context.game.GetGroup(GameMatcher.AllOf(GameMatcher.Player, GameMatcher.Inventory));
+            _inventoryPlayerGroup = _context.game.GetGroup(GameMatcher.AllOf(GameMatcher.Inventory, GameMatcher.Player));
+            _playerUnitGroup = _context.game.GetGroup(GameMatcher.AllOf(GameMatcher.Unit, GameMatcher.Player));
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -24,7 +26,8 @@ namespace Game
         protected override bool Filter(GameEntity entity)
         {
             return entity.isEquipment &&
-                   entity.massByOneItem.Value > 0;
+                   entity.massByOneItem.Value > 0 &&
+                  !entity.isWeapon;
         }
 
         protected override void Execute(List<GameEntity> entities)
@@ -48,7 +51,7 @@ namespace Game
                         stackMass = canAddCountInBackPack * oneItemMass;
                         leftCount = equipmentCount - canAddCountInBackPack; 
                         equipmentCount = canAddCountInBackPack;
-                        isTotalAbsorption = false;
+                        isTotalAbsorption = false; 
                     }
 
                     var itemsDictionary = inventoryEnt.backpack.Items;
@@ -63,10 +66,12 @@ namespace Game
                         list.Add(equipmentEnt.id.Value);
 
                         if (!isTotalAbsorption)
-                            CloneEquipmentWithCount(equipmentEnt, leftCount);
+                            CloneEquipmentWithCount(equipmentEnt.equipmentType.Value, leftCount);
                         
                         equipmentEnt.ReplaceCount(equipmentCount); //ent in dictionary
                         equipmentEnt.isInBackPack = true;
+                        equipmentEnt.transform.Value.SetParent(GetPlayerTransform());
+                        equipmentEnt.ReplaceObjectVisible(false);
                     }
                     else //add to line
                     {
@@ -81,13 +86,33 @@ namespace Game
                     }
                     inventoryEnt.ReplaceMassResult(inventoryMass + stackMass);
                 }
+                equipmentEnt.ReplaceSetPosition(GetPlayerTransform().position);
                 equipmentEnt.isTryAddBackPack = false;
             }
         }
 
-        private void CloneEquipmentWithCount(GameEntity equipmentEnt, int countLeft)
+        private void CloneEquipmentWithCount(EquipmentType equipmentType, int count)
         {
-            Debug.Log("Create entity with Count= " + countLeft);
+            var equipmentView = PoolService.Instance.GetObjectFromPool<Equipment>(
+                equipmentType, 
+                _context.game.levelEntity.transform.Value,
+                GetPlayerTransform().position);
+
+            equipmentView.Init();
+          
+            var equipmentEnt = equipmentView.GameEntity;
+            equipmentEnt.ReplaceEquipmentType(equipmentType);
+            equipmentEnt.ReplaceCount(count);
+        }
+
+        private Transform GetPlayerTransform() 
+        {  
+            foreach (var playerEnt in _playerUnitGroup.GetEntities())
+            {
+                return playerEnt.transform.Value;
+            }
+
+            return null;
         }
     }
 }
