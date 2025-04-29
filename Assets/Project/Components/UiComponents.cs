@@ -46,6 +46,12 @@ namespace Ui
         public Vector2 Value;
     }
 
+    [Ui, Event(EventTarget.Self)]
+    public class ColorComponent : IComponent
+    {
+        public Color Value;
+    }
+
     //Window
     [Ui, Unique]
     public class MainMenuWindowComponent : IComponent { }

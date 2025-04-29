@@ -1,5 +1,6 @@
 ﻿using Entitas;
 using System.Collections.Generic;
+using UnityEngine; 
 
 namespace Button
 {
@@ -27,7 +28,7 @@ namespace Button
         protected override void Execute(List<UiEntity> entities)
         {
             foreach (var buttonEnt in entities)
-            {
+            { 
                 _context.game.levelManagerEntity.isRepeatLevel = true;
 
                 foreach (var mainMenuButtonEnt in _buttonMainMenuGroup.GetEntities()) 

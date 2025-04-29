@@ -50,7 +50,8 @@ namespace Game
             }
 
             foreach (var levelObjEnt in _levelObjectGroup.GetEntities())
-            { 
+            {
+                Debug.Log(levelObjEnt.transform.Value.gameObject.name);
                 levelObjEnt.isUnlink = true;
             }
 

@@ -42,7 +42,7 @@ namespace Game
                         if (weaponEnt.hasReloading) 
                             weaponEnt.reloading.Value = 0; // empty reload 
                     }
-                    weaponEnt.ReplaceObjectVisible(weaponEnt.isSelect);
+                    weaponEnt.ReplaceVisibleObject(weaponEnt.isSelect);
                 }
             }
         } 

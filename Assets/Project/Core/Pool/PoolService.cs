@@ -6,7 +6,7 @@ public class PoolService : MonoBehaviour
     private static PoolService _instance;
     public static PoolService Instance => _instance;
 
-    [SerializeField] private PoolSettings[] PoolSettingsList; 
+    [SerializeField] private PoolSettings[] _poolSettingsList; 
     private readonly Dictionary<System.Type, ObjectPool> _pools = new ();
     private readonly Dictionary<System.Enum, System.Type> _typeMap = new();  
 
@@ -39,7 +39,7 @@ public class PoolService : MonoBehaviour
 
     private void InitializePools()
     {
-        foreach (var settings in PoolSettingsList)
+        foreach (var settings in _poolSettingsList)
         {
             var poolGameObject = new GameObject(settings.ObjectPrefab.name);
             poolGameObject.transform.SetParent(transform);

@@ -21,7 +21,7 @@ namespace Button
 
         protected override bool Filter(UiEntity entity)
         {
-            return entity.isReloadButton;
+            return entity.isReloadButton && entity.trigTryPlayerClick.Value;
         }
 
         protected override void Execute(List<UiEntity> entities)

@@ -60,19 +60,19 @@ namespace Game
                         list = new List<int>();
                         itemsDictionary.Add(equipmentEnt.equipmentKey.Value, list);
                     }
-
+                    
                     if (list.Count == 0) //first registration
                     {
                         list.Add(equipmentEnt.id.Value);
 
                         if (!isTotalAbsorption)
                             CloneEquipmentWithCount(equipmentEnt.equipmentType.Value, leftCount);
-                        
-                        equipmentEnt.ReplaceCount(equipmentCount); //ent in dictionary
+
                         equipmentEnt.isInBackPack = true;
-                        equipmentEnt.transform.Value.SetParent(GetPlayerTransform());
-                        equipmentEnt.ReplaceObjectVisible(false);
-                    }
+                        equipmentEnt.ReplaceCount(equipmentCount); //ent in dictionary  
+                        equipmentEnt.ReplaceParent(GetPlayerTransform());
+                        equipmentEnt.ReplaceVisibleObject(false);
+                    }   
                     else //add to line
                     {
                         var equipmentInDictionaryEnt = _context.game.GetEntityWithId(list[0]);

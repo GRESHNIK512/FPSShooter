@@ -2,7 +2,8 @@ using Entitas.Unity;
 using System;
 using UnityEngine;
 
-public abstract class LevelObject : MonoBehaviour, IUnlinkListener, ISetLocalPositionListener, IObjectVisibleListener, ISetPositionListener,
+public abstract class LevelObject : MonoBehaviour, IUnlinkListener, ISetLocalPositionListener,
+    IVisibleObjectListener, ISetPositionListener, IParentListener,
     IPoolable
 {
     protected GameEntity _gameEntity; 
@@ -20,11 +21,12 @@ public abstract class LevelObject : MonoBehaviour, IUnlinkListener, ISetLocalPos
 
         _gameEntity.AddUnlinkListener(this);
         _gameEntity.AddSetLocalPositionListener(this);
-        _gameEntity.AddObjectVisibleListener(this);
+        _gameEntity.AddVisibleObjectListener(this);
         _gameEntity.AddSetPositionListener(this);
+        _gameEntity.AddParentListener(this);
 
         _gameEntity.AddTransform(transform); 
-        _gameEntity.AddObjectVisible(true);
+        _gameEntity.AddVisibleObject(true);
 
 #if UNITY_EDITOR
         gameObject.Link(_gameEntity);
@@ -50,7 +52,7 @@ public abstract class LevelObject : MonoBehaviour, IUnlinkListener, ISetLocalPos
         transform.localPosition = value;
     }
 
-    public void OnObjectVisible(GameEntity entity, bool value)
+    public void OnVisibleObject(GameEntity entity, bool value)
     {
         EnableObject(value);    
     }
@@ -58,5 +60,10 @@ public abstract class LevelObject : MonoBehaviour, IUnlinkListener, ISetLocalPos
     public void OnSetPosition(GameEntity entity, Vector3 value)
     {
         transform.position = value;
+    }
+
+    public void OnParent(GameEntity entity, Transform value)
+    {
+        transform.SetParent(value);
     }
 }

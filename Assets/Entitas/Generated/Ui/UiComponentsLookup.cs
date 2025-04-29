@@ -8,59 +8,62 @@
 //------------------------------------------------------------------------------
 public static class UiComponentsLookup {
 
-    public const int AmmoType = 0;
-    public const int CanvasEnableListener = 1;
-    public const int Count = 2;
-    public const int DestroyOnEndLevel = 3;
-    public const int EquipmentType = 4;
-    public const int GraphicRaycasterEnableListener = 5;
-    public const int Hp = 6;
-    public const int JoystickDirectionListener = 7;
-    public const int JoystickListener = 8;
-    public const int MagazineAmmo = 9;
-    public const int RectTransformListener = 10;
-    public const int Reloading = 11;
-    public const int Select = 12;
-    public const int TimeReload = 13;
-    public const int TrigRefreshStatusWindowDelayListener = 14;
-    public const int Button = 15;
-    public const int CanvasEnable = 16;
-    public const int CloseGameLevelButton = 17;
-    public const int GameLevelWindow = 18;
-    public const int GraphicRaycasterEnable = 19;
-    public const int Index = 20;
-    public const int Joystick = 21;
-    public const int JoystickDirection = 22;
-    public const int JumpPlayerButton = 23;
-    public const int LoseEndGameWindow = 24;
-    public const int MainMenuButton = 25;
-    public const int MainMenuWindow = 26;
-    public const int NextLevelButton = 27;
-    public const int RectTransform = 28;
-    public const int ReloadButton = 29;
-    public const int ShootButton = 30;
-    public const int ShowOnlyThisWindow = 31;
-    public const int SitDownButton = 32;
-    public const int StartGameButton = 33;
-    public const int TrigButtonUp = 34;
-    public const int TrigRefreshStatusWindowDelay = 35;
-    public const int TrigTryPlayerClick = 36;
-    public const int WeaponSlotButton = 37;
-    public const int Window = 38;
-    public const int WinEndGameWindow = 39;
-    public const int UiAmmoTypeListener = 40;
-    public const int UiCountListener = 41;
-    public const int UiEquipmentTypeListener = 42;
-    public const int UiHpListener = 43;
-    public const int UiMagazineAmmoListener = 44;
-    public const int UiReloadingListener = 45;
-    public const int UiSelectListener = 46;
-    public const int UiSelectRemovedListener = 47;
-    public const int UiTimeReloadListener = 48;
+    public const int AllAmmo = 0;
+    public const int AmmoType = 1;
+    public const int CanvasEnableListener = 2;
+    public const int Count = 3;
+    public const int DestroyOnEndLevel = 4;
+    public const int EquipmentType = 5;
+    public const int GraphicRaycasterEnableListener = 6;
+    public const int Hp = 7;
+    public const int JoystickDirectionListener = 8;
+    public const int JoystickListener = 9;
+    public const int MagazineAmmo = 10;
+    public const int RectTransformListener = 11;
+    public const int Reloading = 12;
+    public const int Select = 13;
+    public const int TimeReload = 14;
+    public const int TrigRefreshStatusWindowDelayListener = 15;
+    public const int Button = 16;
+    public const int CanvasEnable = 17;
+    public const int CloseGameLevelButton = 18;
+    public const int GameLevelWindow = 19;
+    public const int GraphicRaycasterEnable = 20;
+    public const int Index = 21;
+    public const int Joystick = 22;
+    public const int JoystickDirection = 23;
+    public const int JumpPlayerButton = 24;
+    public const int LoseEndGameWindow = 25;
+    public const int MainMenuButton = 26;
+    public const int MainMenuWindow = 27;
+    public const int NextLevelButton = 28;
+    public const int RectTransform = 29;
+    public const int ReloadButton = 30;
+    public const int ShootButton = 31;
+    public const int ShowOnlyThisWindow = 32;
+    public const int SitDownButton = 33;
+    public const int StartGameButton = 34;
+    public const int TrigButtonUp = 35;
+    public const int TrigRefreshStatusWindowDelay = 36;
+    public const int TrigTryPlayerClick = 37;
+    public const int WeaponSlotButton = 38;
+    public const int Window = 39;
+    public const int WinEndGameWindow = 40;
+    public const int UiAllAmmoListener = 41;
+    public const int UiAmmoTypeListener = 42;
+    public const int UiCountListener = 43;
+    public const int UiEquipmentTypeListener = 44;
+    public const int UiHpListener = 45;
+    public const int UiMagazineAmmoListener = 46;
+    public const int UiReloadingListener = 47;
+    public const int UiSelectListener = 48;
+    public const int UiSelectRemovedListener = 49;
+    public const int UiTimeReloadListener = 50;
 
-    public const int TotalComponents = 49;
+    public const int TotalComponents = 51;
 
     public static readonly string[] componentNames = {
+        "AllAmmo",
         "AmmoType",
         "CanvasEnableListener",
         "Count",
@@ -101,6 +104,7 @@ public static class UiComponentsLookup {
         "WeaponSlotButton",
         "Window",
         "WinEndGameWindow",
+        "UiAllAmmoListener",
         "UiAmmoTypeListener",
         "UiCountListener",
         "UiEquipmentTypeListener",
@@ -113,6 +117,7 @@ public static class UiComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AllAmmoComponent),
         typeof(AmmoTypeComponent),
         typeof(CanvasEnableListenerComponent),
         typeof(CountComponent),
@@ -153,6 +158,7 @@ public static class UiComponentsLookup {
         typeof(Ui.WeaponSlotButtonComponent),
         typeof(Ui.WindowComponent),
         typeof(Ui.WinEndGameWindowComponent),
+        typeof(UiAllAmmoListenerComponent),
         typeof(UiAmmoTypeListenerComponent),
         typeof(UiCountListenerComponent),
         typeof(UiEquipmentTypeListenerComponent),

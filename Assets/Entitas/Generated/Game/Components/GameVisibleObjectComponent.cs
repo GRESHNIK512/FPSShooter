@@ -8,25 +8,25 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public ObjectVisibleComponent objectVisible { get { return (ObjectVisibleComponent)GetComponent(GameComponentsLookup.ObjectVisible); } }
-    public bool hasObjectVisible { get { return HasComponent(GameComponentsLookup.ObjectVisible); } }
+    public VisibleObjectComponent visibleObject { get { return (VisibleObjectComponent)GetComponent(GameComponentsLookup.VisibleObject); } }
+    public bool hasVisibleObject { get { return HasComponent(GameComponentsLookup.VisibleObject); } }
 
-    public void AddObjectVisible(bool newValue) {
-        var index = GameComponentsLookup.ObjectVisible;
-        var component = (ObjectVisibleComponent)CreateComponent(index, typeof(ObjectVisibleComponent));
+    public void AddVisibleObject(bool newValue) {
+        var index = GameComponentsLookup.VisibleObject;
+        var component = (VisibleObjectComponent)CreateComponent(index, typeof(VisibleObjectComponent));
         component.Value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceObjectVisible(bool newValue) {
-        var index = GameComponentsLookup.ObjectVisible;
-        var component = (ObjectVisibleComponent)CreateComponent(index, typeof(ObjectVisibleComponent));
+    public void ReplaceVisibleObject(bool newValue) {
+        var index = GameComponentsLookup.VisibleObject;
+        var component = (VisibleObjectComponent)CreateComponent(index, typeof(VisibleObjectComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
     }
 
-    public void RemoveObjectVisible() {
-        RemoveComponent(GameComponentsLookup.ObjectVisible);
+    public void RemoveVisibleObject() {
+        RemoveComponent(GameComponentsLookup.VisibleObject);
     }
 }
 
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherObjectVisible;
+    static Entitas.IMatcher<GameEntity> _matcherVisibleObject;
 
-    public static Entitas.IMatcher<GameEntity> ObjectVisible {
+    public static Entitas.IMatcher<GameEntity> VisibleObject {
         get {
-            if (_matcherObjectVisible == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ObjectVisible);
+            if (_matcherVisibleObject == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.VisibleObject);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherObjectVisible = matcher;
+                _matcherVisibleObject = matcher;
             }
 
-            return _matcherObjectVisible;
+            return _matcherVisibleObject;
         }
     }
 }

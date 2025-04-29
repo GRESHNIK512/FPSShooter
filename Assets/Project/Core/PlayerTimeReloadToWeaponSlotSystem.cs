@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace Game
 {
-    internal class TimeReloadChangePlayerSystem : ReactiveSystem<GameEntity>
+    internal class PlayerTimeReloadToWeaponSlotSystem : ReactiveSystem<GameEntity>
     {
         private Contexts _context;
         private IGroup<UiEntity> _weaponSlotGroup;
 
-        public TimeReloadChangePlayerSystem(Contexts contexts) : base(contexts.game)
+        public PlayerTimeReloadToWeaponSlotSystem(Contexts contexts) : base(contexts.game)
         {
             _context = contexts;
             _weaponSlotGroup = _context.ui.GetGroup(UiMatcher.WeaponSlotButton);

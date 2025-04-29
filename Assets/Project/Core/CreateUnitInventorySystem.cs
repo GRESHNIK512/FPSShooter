@@ -28,6 +28,7 @@ namespace Game
             {
                 var inventoryEnt = _context.game.CreateEntity();
                 inventoryEnt.isInventory = true;
+                inventoryEnt.isDestroyOnEndLevel = true;
                 inventoryEnt.AddId(inventoryEnt.creationIndex);
 
                 unitEnt.AddInventoryId(new List<int> { inventoryEnt.id.Value });
@@ -36,7 +37,7 @@ namespace Game
                 {
                     inventoryEnt.AddBackpack(new Dictionary<string, List<int>>());
                     inventoryEnt.AddMassResult(0);
-                    inventoryEnt.AddMaxMass(200); 
+                    inventoryEnt.AddMaxMass(200);  
                 }
             }
         } 

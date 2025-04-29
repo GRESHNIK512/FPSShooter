@@ -13,7 +13,7 @@ namespace Game
         public RealoadTimerSystem(Contexts contexts)
         {
             _context = contexts;
-            _reloadingGroup = _context.game.GetGroup(GameMatcher.Reloading);
+            _reloadingGroup = _context.game.GetGroup(GameMatcher.AllOf(GameMatcher.Weapon, GameMatcher.Reloading));
         }
 
         public void Execute()

@@ -18,10 +18,11 @@ public class Root : MonoBehaviour
 
     private void Start()
     {
+        QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
-        _fixedCoreSystems.Initialize();
-        _gameCoreSystems.Initialize(); 
         DOTween.Init();
+        _fixedCoreSystems.Initialize();
+        _gameCoreSystems.Initialize();  
     }
 
     private void FixedUpdate()

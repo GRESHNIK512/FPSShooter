@@ -12,10 +12,16 @@ public class LevelComponent : IComponent { }
 public class ObjectLevelComponent : IComponent { }
 
 [Game, Event(EventTarget.Self) ]
-public class ObjectVisibleComponent : IComponent 
+public class VisibleObjectComponent : IComponent 
 {
     public bool Value;
-} 
+}
+
+[Game, Event(EventTarget.Self)]
+public class ParentComponent : IComponent
+{
+    public Transform Value;
+}
 
 [Game]
 public class TransformComponent : IComponent 

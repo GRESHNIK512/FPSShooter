@@ -7,6 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 [Entitas.CodeGeneration.Attributes.DontGenerate(false)]
-public sealed class ObjectVisibleListenerComponent : Entitas.IComponent {
-    public System.Collections.Generic.List<IObjectVisibleListener> value;
+public sealed class GameAllAmmoListenerComponent : Entitas.IComponent {
+    public System.Collections.Generic.List<IGameAllAmmoListener> value;
 }

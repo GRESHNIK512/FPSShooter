@@ -33,7 +33,7 @@ namespace Game
                     if (selectWeaponSlotEnt != weaponSlotEnt)
                     {
                         if (weaponSlotEnt.isSelect) weaponSlotEnt.isSelect = false;
-                        if (weaponSlotEnt.hasReloading) weaponSlotEnt.RemoveReloading();
+                        if (weaponSlotEnt.hasReloading) weaponSlotEnt.reloading.Value = 0;
                     }
                 }
             }

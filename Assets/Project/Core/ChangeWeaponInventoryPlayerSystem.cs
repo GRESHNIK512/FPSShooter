@@ -40,7 +40,8 @@ namespace Game
                     {
                         if (weaponSlotEnt.index.Value != index) continue;
 
-                        weaponSlotEnt.ReplaceEquipmentType(weaponEnt.equipmentType.Value); 
+                        weaponSlotEnt.ReplaceEquipmentType(weaponEnt.equipmentType.Value);
+                        weaponSlotEnt.ReplaceAmmoType(weaponEnt.ammoType.Value);
                         ++index;
                         break;
                     }

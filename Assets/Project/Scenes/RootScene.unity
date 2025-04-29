@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ac4db0ea4bc8e4cb76d7864c6008ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PoolSettingsList:
+  _poolSettingsList:
   - ObjectPrefab: {fileID: 874196266426237651, guid: f51c3788e860843449c749c5981b294b,
       type: 3}
     InitialCount: 1

@@ -6,31 +6,31 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public sealed class ObjectVisibleEventSystem : Entitas.ReactiveSystem<GameEntity> {
+public sealed class VisibleObjectEventSystem : Entitas.ReactiveSystem<GameEntity> {
 
-    readonly System.Collections.Generic.List<IObjectVisibleListener> _listenerBuffer;
+    readonly System.Collections.Generic.List<IVisibleObjectListener> _listenerBuffer;
 
-    public ObjectVisibleEventSystem(Contexts contexts) : base(contexts.game) {
-        _listenerBuffer = new System.Collections.Generic.List<IObjectVisibleListener>();
+    public VisibleObjectEventSystem(Contexts contexts) : base(contexts.game) {
+        _listenerBuffer = new System.Collections.Generic.List<IVisibleObjectListener>();
     }
 
     protected override Entitas.ICollector<GameEntity> GetTrigger(Entitas.IContext<GameEntity> context) {
         return Entitas.CollectorContextExtension.CreateCollector(
-            context, Entitas.TriggerOnEventMatcherExtension.Added(GameMatcher.ObjectVisible)
+            context, Entitas.TriggerOnEventMatcherExtension.Added(GameMatcher.VisibleObject)
         );
     }
 
     protected override bool Filter(GameEntity entity) {
-        return entity.hasObjectVisible && entity.hasObjectVisibleListener;
+        return entity.hasVisibleObject && entity.hasVisibleObjectListener;
     }
 
     protected override void Execute(System.Collections.Generic.List<GameEntity> entities) {
         foreach (var e in entities) {
-            var component = e.objectVisible;
+            var component = e.visibleObject;
             _listenerBuffer.Clear();
-            _listenerBuffer.AddRange(e.objectVisibleListener.value);
+            _listenerBuffer.AddRange(e.visibleObjectListener.value);
             foreach (var listener in _listenerBuffer) {
-                listener.OnObjectVisible(e, component.Value);
+                listener.OnVisibleObject(e, component.Value);
             }
         }
     }

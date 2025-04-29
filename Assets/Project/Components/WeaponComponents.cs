@@ -11,6 +11,9 @@ public class AmmoTypeComponent : IComponent
     public EquipmentType Value;
 }
 
+[Game]
+public class AmmoComponent : IComponent { }
+
 
 [Game, Cleanup(CleanupMode.RemoveComponent)]
 public class ShootComponent : IComponent { }
@@ -90,7 +93,13 @@ public class MagazineSizeComponent : IComponent
 public class MagazineAmmoComponent : IComponent
 {
     public int Value;
-}  
+}
+
+[Game, Ui, Event(EventTarget.Self)]
+public class AllAmmoComponent : IComponent
+{
+    public int Value;
+}
 
 [Game]
 public class DamageFalloffCurveComponent : IComponent

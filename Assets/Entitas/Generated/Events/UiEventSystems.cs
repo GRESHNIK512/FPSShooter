@@ -9,6 +9,7 @@
 public sealed class UiEventSystems : Feature {
 
     public UiEventSystems(Contexts contexts) {
+        Add(new UiAllAmmoEventSystem(contexts)); // priority: 0
         Add(new UiAmmoTypeEventSystem(contexts)); // priority: 0
         Add(new CanvasEnableEventSystem(contexts)); // priority: 0
         Add(new UiCountEventSystem(contexts)); // priority: 0
