@@ -22,7 +22,7 @@ namespace Button
 
         protected override bool Filter(UiEntity entity)
         {
-            return entity.isSitDownButton && entity.trigTryPlayerClick.Value;
+            return entity.isSitDownButton;
         }
 
         protected override void Execute(List<UiEntity> entities)

@@ -9,7 +9,7 @@ public class SpawnerView : LevelObject
         base.Init();
         _gameEntity.isSpawner = true;
         _gameEntity.AddOwner(_owner);
-        _gameEntity.AddSetPosition(transform.position);
+        _gameEntity.ReplaceSetPosition(transform.position);
     }
 }
 

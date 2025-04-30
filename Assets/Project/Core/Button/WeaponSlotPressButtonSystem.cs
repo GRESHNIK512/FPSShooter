@@ -19,7 +19,7 @@ namespace Button
 
         protected override bool Filter(UiEntity entity)
         {
-            return entity.isWeaponSlotButton && entity.trigTryPlayerClick.Value;
+            return entity.isWeaponSlotButton;
         } 
 
         protected override void Execute(List<UiEntity> entities)

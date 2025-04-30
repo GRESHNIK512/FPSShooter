@@ -9,7 +9,7 @@ namespace Buttons
         public override void Init()
         {
             _uiEntity = Contexts.sharedInstance.ui.CreateEntity();
-            _uiEntity.isButton = true;
+            _uiEntity.isButton = true; 
 
             OnClickEvent += () => _uiEntity.ReplaceTrigTryPlayerClick(true); 
 

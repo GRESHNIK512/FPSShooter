@@ -1,8 +1,8 @@
 ﻿using Cysharp.Threading.Tasks;
 using Entitas;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 namespace Button
 {
@@ -30,7 +30,7 @@ namespace Button
 
         protected override bool Filter(UiEntity entity)
         {
-            return entity.isStartGameButton && entity.trigTryPlayerClick.Value;
+            return entity.isStartGameButton;
         }
 
         protected override void Execute(List<UiEntity> entities)
@@ -55,31 +55,26 @@ namespace Button
                         if (!_levelManagerEnt.isRepeatLevel)
                             SetNewIndexScene(ref currentSceneIndex);
                     }
-                    else
-                        currentSceneIndex = levelCompleteCount;
+                    else currentSceneIndex = levelCompleteCount;
 
                     _clientDataEnt.ReplaceCurrentSceneIndex(currentSceneIndex);
                     _levelManagerEnt.isRepeatLevel = false;
 
-                    StartLoadLevelAsync(currentSceneIndex); 
-                } 
+                    StartLoadLevelAsync(currentSceneIndex);
+                }
             }
         }
 
         private async void StartLoadLevelAsync(int levelIndex)
-        {
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelIndex, LoadSceneMode.Additive);
-            await asyncLoad;
+        { 
+            await SceneManager.LoadSceneAsync(levelIndex, LoadSceneMode.Additive);
            
-            if (asyncLoad.isDone)
+            foreach (var windowEnt in _windowGroup.GetEntities())
             {
-                foreach (var windowEnt in _windowGroup.GetEntities())
-                {
-                    windowEnt.isShowOnlyThisWindow = windowEnt.isGameLevelWindow;
-                }
-
-                _context.ui.CreateEntity().AddTrigRefreshStatusWindowDelay(0f);
+                windowEnt.isShowOnlyThisWindow = windowEnt.isGameLevelWindow;
             }
+
+            _context.ui.CreateEntity().AddTrigRefreshStatusWindowDelay(0f); 
         }
 
         private void SetNewIndexScene(ref int sceneIndex)

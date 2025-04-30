@@ -13,7 +13,7 @@ namespace Game
         private IGroup<UiEntity> _starGameButtonGroup;
         private IGroup<UiEntity> _weaponSlotSelectGroup;
 
-        public UnloadLevelSystem(Contexts contexts) : base (contexts.game)
+        public UnloadLevelSystem(Contexts contexts) : base(contexts.game)
         {
             _context = contexts;
             _levelObjectGroup = _context.game.GetGroup(GameMatcher.ObjectLevel);
@@ -30,52 +30,57 @@ namespace Game
         protected override bool Filter(GameEntity entity)
         {
             return entity.isLevelManager;
-        } 
+        }
 
         protected override void Execute(List<GameEntity> entities)
         {
-            foreach (var levelManagerEnt in entities) 
+            foreach (var levelManagerEnt in entities)
             {
-                UnloadLevelAsync(levelManagerEnt);
+                levelManagerEnt.isUnloadLevelInProcess = true;
+               
+                UiClear();
+
+                BaseClear();
+
+                UnloadLevelAsync(levelManagerEnt); 
             }
         }
 
         private async void UnloadLevelAsync(GameEntity levelManagerEnt)
-        {
-            levelManagerEnt.isUnloadLevelInProcess = true;
+        {  
+            await SceneManager.UnloadSceneAsync(_context.data.clientDataEntity.currentSceneIndex.Value);  
 
+            levelManagerEnt.isUnloadLevelInProcess = false;
+
+            if (levelManagerEnt.isNeedLoadNextLevelAfterUnload)
+            {
+                levelManagerEnt.isNeedLoadNextLevelAfterUnload = false;
+
+                foreach (var startGameButtonEnt in _starGameButtonGroup.GetEntities())
+                {
+                    startGameButtonEnt.ReplaceTrigTryPlayerClick(true);
+                }
+            } 
+        }
+
+        private void UiClear() 
+        {
             foreach (var weaponSlotEnt in _weaponSlotSelectGroup.GetEntities())
             {
                 weaponSlotEnt.isSelect = false;
             }
+        }
 
+        private void BaseClear() 
+        {
             foreach (var levelObjEnt in _levelObjectGroup.GetEntities())
             {
-                Debug.Log(levelObjEnt.transform.Value.gameObject.name);
                 levelObjEnt.isUnlink = true;
             }
 
             foreach (var destroyEnt in _destroyOnEndLevelGroup.GetEntities())
             {
                 destroyEnt.Destroy();
-            }
-
-            AsyncOperation asyncUnLoad = SceneManager.UnloadSceneAsync(_context.data.clientDataEntity.currentSceneIndex.Value);
-            await asyncUnLoad;
-
-            if (asyncUnLoad.isDone)
-            {
-                levelManagerEnt.isUnloadLevelInProcess = false;
-
-                if (levelManagerEnt.isNeedLoadNextLevelAfterUnload)
-                {
-                    levelManagerEnt.isNeedLoadNextLevelAfterUnload = false;
-
-                    foreach (var startGameButtonEnt in _starGameButtonGroup.GetEntities())
-                    {
-                        startGameButtonEnt.ReplaceTrigTryPlayerClick(true);
-                    }
-                }
             }
         }
     }

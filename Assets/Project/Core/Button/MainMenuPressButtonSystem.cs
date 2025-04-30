@@ -21,7 +21,7 @@ namespace Button
 
         protected override bool Filter(UiEntity entity)
         {
-            return entity.isMainMenuButton && entity.trigTryPlayerClick.Value;
+            return entity.isMainMenuButton;
         } 
 
         protected override void Execute(List<UiEntity> entities)

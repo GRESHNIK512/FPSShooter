@@ -25,7 +25,8 @@ public abstract class LevelObject : MonoBehaviour, IUnlinkListener, ISetLocalPos
         _gameEntity.AddSetPositionListener(this);
         _gameEntity.AddParentListener(this);
 
-        _gameEntity.AddTransform(transform); 
+        _gameEntity.AddTransform(transform);
+        _gameEntity.ReplaceSetPosition(transform.position);
         _gameEntity.AddVisibleObject(true);
 
 #if UNITY_EDITOR

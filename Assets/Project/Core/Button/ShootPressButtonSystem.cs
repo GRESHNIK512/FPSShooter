@@ -23,7 +23,7 @@ namespace Button
 
         protected override bool Filter(UiEntity entity)
         {
-            return entity.isShootButton && entity.trigTryPlayerClick.Value;
+            return entity.isShootButton;
         }
 
         protected override void Execute(List<UiEntity> entities)

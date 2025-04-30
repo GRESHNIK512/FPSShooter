@@ -25,8 +25,8 @@ namespace Button
         protected override void Execute(List<UiEntity> entities)
         {
             foreach (var buttoEnt in entities)
-            { 
-                buttoEnt.ReplaceTrigTryPlayerClick(false);  
+            {
+                buttoEnt.trigTryPlayerClick.Value = false;
             }
         } 
     }
